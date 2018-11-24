@@ -1,0 +1,6 @@
+<!DOCTYPE KPOVLIBINDEX>
+<library description="povray shapes 2" readonly="true" sublibrary="false" author="eticre" name="povray-shapes2">
+ <object_list>
+  <object_entry name="finish" file="objectdata.kpm"/>
+ </object_list>
+</library>

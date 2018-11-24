@@ -1,0 +1,37 @@
+if test "$KPOVMODELER_OPENGL" = "no"; then
+  if test "$have_gl_headers" = "no"; then
+    echo ""
+    echo "You are missing"
+    if test "$ac_cv_header_GL_gl_h" = "no"; then
+      echo "    - OpenGL (mesa)"
+    fi
+    if test "$ac_cv_header_GL_glu_h" = "no"; then
+      echo "    - GLU"
+    fi
+    if test "$ac_cv_header_GL_glx_h" = "no"; then
+      echo "    - GLX"
+    fi
+    echo "KPovModeler will not be compiled."
+    echo "You can download them from"
+    echo "http://mesa3d.sf.net"
+    echo ""
+  else
+    echo ""
+    echo "Your system fails at linking a small OpenGL application!"
+    echo "KPovModeler will not be compiled."
+    echo "Check, if OpenGL and GLU are installed correctly on your system."
+    echo "For more details about this problem, look at config.log after"
+    echo "the line \"checking for GL\"."
+    echo ""
+  fi
+  all_tests=bad
+fi
+
+if test -z "$LIBFREETYPE_LIBS"; then
+  echo ""
+  echo "You're missing freetype2. KPovModeler will not display true type texts."
+  echo "You can download it from"
+  echo "http://www.freetype.org"
+  echo ""
+  all_tests=bad
+fi

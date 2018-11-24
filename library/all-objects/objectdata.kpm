@@ -1,0 +1,199 @@
+<!DOCTYPE KPOVMODELER>
+<objects minorFormat="0" majorFormat="1" visibility_level="10" >
+ <comment>KPovModeler example scene
+-------------------------
+Shows a sample of most objects
+
+Autor: Andreas Zehender &lt;zehender@kde.org></comment>
+ <light media_interaction="1" area_light="0" fading="0" lighttype="shadowless" location="-9.1 -0.8 0" name="" color="1 1 1 0 0" media_attenuation="1" />
+ <camera confidence="0.9" right="1.3333 0 0" focal_blur="0" aperture="0.4" angle_enabled="0" cylinder_type="1" direction="0 0 1" variance="0.008" sky="0 1 0" location="-10 0 0" focal_point="0 0 0" up="0 1 0" name="" look_at="0 0 0" angle="45" blur_samples="10" camera_type="perspective" />
+ <plane normal="1 0 0" inverse="0" name="" no_shadow="0" distance="0" relative_visibility="1" visibility_level="0" >
+  <pigment name="" >
+   <colorlist mortar="0.5" listtype="checker" bricksize="8 6 4.5" >
+    <solidcolor color="0.501961 0.501961 0.501961 0 0" />
+    <solidcolor color="1 1 1 0 0" />
+   </colorlist>
+  </pigment>
+ </plane>
+ <box corner_a="-0.5 -0.5 -0.5" inverse="0" corner_b="0.5 0.5 0.5" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <scale value="1.1 1.1 1.1" />
+  <rotate value="19 6 58" />
+  <translate value="-1 3 4" />
+  <pigment name="" >
+   <solidcolor color="0 0.752941 0 0 0" />
+  </pigment>
+ </box>
+ <sphere radius="0.5" inverse="0" centre="0 0 0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <scale value="1.2 1.2 1.2" />
+  <rotate value="0 0 0" />
+  <translate value="-1 1 4" />
+  <pigment name="" >
+   <solidcolor color="1 0 0 0 0" />
+  </pigment>
+ </sphere>
+ <cylinder radius="0.5" end_a="0 0.5 0" end_b="0 -0.5 0" open="0" inverse="0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <scale value="1.2 1.2 1.2" />
+  <rotate value="-24 12 26" />
+  <translate value="-1 -1 4" />
+  <pigment name="" >
+   <solidcolor color="0.235294 0.235294 1 0 0" />
+  </pigment>
+ </cylinder>
+ <cone radius_a="0" radius_b="0.5" end_a="0 0.5 0" end_b="0 -0.5 0" open="0" inverse="0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <scale value="1.2 1.2 1.2" />
+  <rotate value="-13 7 28.3" />
+  <translate value="-1 -3 4" />
+  <pigment name="" >
+   <solidcolor color="1 0.866667 0 0 0" />
+  </pigment>
+ </cone>
+ <torus minor_radius="0.15" sturm="0" inverse="0" name="" no_shadow="0" relative_visibility="1" major_radius="0.5" visibility_level="0" >
+  <scale value="1.2 1.2 1.2" />
+  <rotate value="102 41 8" />
+  <translate value="-1 3 2" />
+  <pigment name="" >
+   <solidcolor color="0 0.752941 0 0 0" />
+  </pigment>
+ </torus>
+ <superquadricellipsoid value_n="0.7" value_e="0.7" inverse="0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <scale value="0.6 0.6 0.6" />
+  <rotate value="31 -27 0" />
+  <translate value="-1 1 2" />
+  <pigment name="" >
+   <solidcolor color="0.752941 0.752941 1 0 0" />
+  </pigment>
+ </superquadricellipsoid>
+ <heightfield hf_type="png" file_name="plasma3.png" water_level="0" inverse="0" name="" no_shadow="0" hierarchy="1" relative_visibility="1" visibility_level="0" smooth="1" >
+  <scale value="1.2 1.2 1.2" />
+  <rotate value="0 -0 67" />
+  <translate value="-0.7 -1.8 1.4" />
+  <pigment name="" >
+   <solidcolor color="1 0 0 0 0" />
+  </pigment>
+ </heightfield>
+ <text offset="0 0" thickness="0.2" inverse="0" name="" no_shadow="0" relative_visibility="1" text="a" font="timrom.ttf" visibility_level="0" >
+  <scale value="2.2 2.2 2.2" />
+  <rotate value="0 80 10" />
+  <translate value="-1.1 -3.6 2.4" />
+  <pigment name="" >
+   <solidcolor color="0 0.752941 0 0 0" />
+  </pigment>
+ </text>
+ <juliafractal exponent="0 0" slice_distance="0" max_iterations="8" slice_normal="0 0 0 1" inverse="0" name="" function_type="sqr" no_shadow="0" precision="20" algebra_type="quaternion" relative_visibility="1" visibility_level="0" julia_parameter="-0.083 0 -0.83 -0.025" >
+  <scale value="0.8 0.8 0.8" />
+  <rotate value="0 80 0" />
+  <translate value="-1 3 0" />
+  <pigment name="" >
+   <solidcolor color="0.458824 0.529412 1 0 0" />
+  </pigment>
+ </juliafractal>
+ <blob threshold="0.6" sturm="0" inverse="0" name="" no_shadow="0" hierarchy="0" relative_visibility="1" visibility_level="0" >
+  <blobsphere radius="1" strength="1" centre="0 0 0.75" name="" />
+  <blobsphere radius="1" strength="1" centre="0 0.64952 -0.375" name="" />
+  <blobsphere radius="1" strength="1" centre="0 -0.64952 -0.375" name="" />
+  <scale value="0.6 0.6 0.6" />
+  <rotate value="13.8 -5.9 22.8" />
+  <translate value="-1 1 0" />
+  <pigment name="" >
+   <solidcolor color="0.756863 0.498039 0.937255 0 0" />
+  </pigment>
+ </blob>
+ <lathe spline_type="0" sturm="0" inverse="0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <extra_data>
+   <point vector="-0 1.2" />
+   <point vector="0.5 0.7" />
+   <point vector="0.5 0.3" />
+   <point vector="0 -0.1" />
+  </extra_data>
+  <scale value="1 1 1" />
+  <rotate value="0 0 9.9" />
+  <translate value="-1 -1.5 0" />
+  <pigment name="" >
+   <solidcolor color="1 0 0 0 0" />
+  </pigment>
+ </lathe>
+ <prism spline_type="2" sturm="0" open="0" sweep_type="0" inverse="0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <extra_data>
+   <sub_prism>
+    <point vector="0.404699 0.506107" />
+    <point vector="1 0" />
+    <point vector="1.1964 -1.1161" />
+    <point vector="-0.5 -1" />
+    <point vector="-1 0" />
+    <point vector="-0.0064186 0.61483" />
+    <point vector="1.15831 -0.665607" />
+   </sub_prism>
+  </extra_data>
+  <scale value="0.7 0.7 0.7" />
+  <rotate value="-103.1 74.1 -180" />
+  <translate value="-1 -3.2 0" />
+  <pigment name="" >
+   <solidcolor color="0.352941 0.494118 1 0 0" />
+  </pigment>
+ </prism>
+ <prism spline_type="2" sturm="0" open="0" sweep_type="1" inverse="0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <extra_data>
+   <sub_prism>
+    <point vector="0.3 0.6" />
+    <point vector="0.5 -0.3" />
+    <point vector="0.1 -0.5" />
+    <point vector="-0.2 -1.3" />
+    <point vector="-1.1 0.5" />
+    <point vector="-0 0.6" />
+    <point vector="0.7 -1.2" />
+   </sub_prism>
+  </extra_data>
+  <scale value="0.7 0.7 0.7" />
+  <rotate value="-103.1 66.8 171.2" />
+  <translate value="-1 2.8 -2" />
+  <pigment name="" >
+   <solidcolor color="0.352941 0.494118 1 0 0" />
+  </pigment>
+ </prism>
+ <surfaceofrevolution sturm="0" open="0" inverse="0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <extra_data>
+   <point vector="1.6 -0.8" />
+   <point vector="0.5 -0.5" />
+   <point vector="0.5 0.5" />
+   <point vector="1.6 0.8" />
+  </extra_data>
+  <scale value="1 1 1" />
+  <rotate value="0 0 0" />
+  <translate value="-1 1 -2" />
+  <pigment name="" >
+   <solidcolor color="1 0.501961 0 0 0" />
+  </pigment>
+ </surfaceofrevolution>
+ <csg csgtype="intersection" inverse="0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <polynom coefficients="-0.5 0 0 -0.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0" order="5" sturm="0" inverse="0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" />
+  <box corner_a="-1 -1 -1" inverse="0" corner_b="1 1 1" name="" no_shadow="0" relative_visibility="1" visibility_level="0" />
+  <scale value="0.6 0.6 0.6" />
+  <rotate value="12 -25.5 63.8" />
+  <translate value="-1 -1 -2" />
+  <pigment name="" >
+   <solidcolor color="1 1 0 0 0" />
+  </pigment>
+ </csg>
+ <bicubicpatch cp15="3 0 3" cp0="-3 0 -3" cp1="-1.1 4.6 -3" cp2="0.9 4.6 -3" cp3="3 0 -3" vSteps="3" cp4="-3.1 4.6 -1" uSteps="3" cp5="-1 11.1 -1" cp6="1 11.1 -1" flatness="0" cp7="2.9 4.6 -1" cp8="-3.1 4.6 1" cp9="-1 11.1 1" type="0" cp10="1 11.1 1" name="" cp11="2.9 4.6 1" no_shadow="0" cp12="-3 0 3" relative_visibility="1" cp13="-1.1 4.6 3" visibility_level="0" cp14="0.9 4.6 3" >
+  <scale value="0.2 0.2 0.2" />
+  <translate value="0 -0.5 0" />
+  <rotate value="-2.9 -23.8 7.1" />
+  <translate value="-1 -3.2 -2" />
+  <pigment name="" >
+   <solidcolor color="1 0 0 0 0" />
+  </pigment>
+ </bicubicpatch>
+ <disc hole_radius="0" radius="0.627178" center="-1 3 -4.1" normal="-0.643064 0.214033 0" name="" no_shadow="0" relative_visibility="1" visibility_level="0" >
+  <scale value="1 1 1" />
+  <rotate value="0 0 0" />
+  <translate value="0 0 0" />
+  <pigment name="" >
+   <solidcolor color="0.862745 0.862745 0.862745 0 0" />
+  </pigment>
+ </disc>
+ <triangle normal0="0 1 0" point0="-1.7456 1.17608 -4.41824" normal1="0 1 0" point1="-0.212573 0.5 -4.04738" normal2="0 1 0" point2="-1.061 1.26667 -3.5109" name="" no_shadow="0" relative_visibility="1" visibility_level="0" smooth="0" >
+  <pigment name="" >
+   <solidcolor color="0 0 1 0 0" />
+  </pigment>
+ </triangle>
+</objects>

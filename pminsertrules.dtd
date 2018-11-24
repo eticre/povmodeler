@@ -1,0 +1,97 @@
+<!-- Simple dtd for kpovmodeler insert rules
+ Autor: Andreas Zehender <zehender@kde.org> -->
+
+<!-- Validation command for xemacs:
+ nsgmls -sv /usr/doc/jade-1.2.1/pubtext/xml.dcl <file> -->
+
+<!-- The root element. -->
+<!ELEMENT insertrules (definegroup*, targetclass+)>
+<!ATTLIST insertrules
+  format CDATA #REQUIRED
+>
+
+<!-- Groups together a list of classes. Groups can be nested. -->
+<!ELEMENT definegroup ((class | group)+)>
+<!ATTLIST definegroup
+  name CDATA #REQUIRED
+>
+
+<!-- Reference to an object class. -->
+<!ELEMENT class EMPTY>
+<!ATTLIST class
+  name CDATA #REQUIRED
+>
+
+<!-- Reference to a defined group. -->
+<!ELEMENT group EMPTY>
+<!ATTLIST group
+  name CDATA #REQUIRED
+>
+
+<!-- Contains the insert rules for one class
+ (the class where the new object is inserted) -->
+<!ELEMENT targetclass (definegroup*, rule+)>
+<!ATTLIST targetclass
+  name CDATA #REQUIRED
+>
+
+<!-- One rule for the current class.
+ Insert a list of groups and classes (the object classes that can be inserted)
+ and one condition. If the condition is omitted,
+ the classes can allways be inserted. --> 
+<!ELEMENT rule ((group | class)+, (and | or | not | before | after | contains
+                                   | greater | less | equal)?)>
+
+<!-- Simple negation. Insert one condition -->
+<!ELEMENT not (and | or | before | after | contains | greater | less | equal)>
+
+<!-- Logical and. Insert any number of conditions -->
+<!ELEMENT and (and | or | not | before | after | contains | greater | less | equal)+>
+
+<!-- Logical or. Insert any number of conditions -->
+<!ELEMENT or (and | or | not | before | after | contains | greater | less | equal)+>
+
+<!-- Condition. Value is true if the object already contains
+ objects of the given class or group before the insert point. -->
+<!ELEMENT before (class | group)>
+
+<!-- Condition. Value is true if the object already contains
+ objects of the given class or group after the insert point. -->
+<!ELEMENT after (class | group)>
+
+<!-- Condition. Value is true if the two values (child xml tags)
+ are equal. -->
+<!ELEMENT equal ((property | count | const), (property | count | const))>
+
+<!-- Condition. Value is true if the first value (child xml tag)
+ is greater than the second. -->
+<!ELEMENT greater ((property | count | const), (property | count | const))>
+
+<!-- Condition. Value is true if the first value (child xml tag)
+ is less than the second. -->
+<!ELEMENT less ((property | count | const), (property | count | const))>
+
+<!-- Condition. Value is true if the object contains
+ objects of the given classes and groups. -->
+<!ELEMENT contains (group | class)+>
+
+
+<!-- Value. Value is the class property of the object, where the 
+ new object should be inserted into. -->
+<!ELEMENT property EMPTY>
+<!ATTLIST property
+  name CDATA #REQUIRED
+>
+
+<!-- Value. Defines a constant (number or string). -->
+<!ELEMENT const EMPTY>
+<!ATTLIST const
+  value CDATA #REQUIRED
+>
+
+<!-- Value. Counts the number of already inserted instances of the given
+ groups or classes. -->
+<!ELEMENT count (group | class)+>
+
+
+

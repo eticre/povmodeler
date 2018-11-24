@@ -1,0 +1,4 @@
+for f in *.png; do
+    a="$(echo $f | sed s/hi22-action-//)"
+    mv "$f" "$a"
+done

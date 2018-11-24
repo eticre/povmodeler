@@ -1,0 +1,6 @@
+<!DOCTYPE KPOVLIBINDEX>
+<library description="povray metals" readonly="true" sublibrary="false" author="eticre" name="povray-metals">
+ <object_list>
+  <object_entry name="metals" file="objectdata.kpm"/>
+ </object_list>
+</library>

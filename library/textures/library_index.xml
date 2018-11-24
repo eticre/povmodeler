@@ -1,0 +1,6 @@
+<!DOCTYPE KPOVLIBINDEX>
+<library description="kpov textures" readonly="false" sublibrary="false" author="eticre" name="textures">
+ <object_list>
+  <object_entry name="textures" file="objectdata.kpm"/>
+ </object_list>
+</library>

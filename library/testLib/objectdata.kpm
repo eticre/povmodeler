@@ -1,0 +1,101 @@
+<!DOCTYPE KPOVMODELER>
+<objects minorFormat="0" visibility_level="10" majorFormat="1">
+ <globalsettings brightness="1" max_intersections="0" ambient_light="1 1 1 0 0" radiosity="0" assumed_gamma="1,5" low_error_factor="0,5" minimum_reuse="0,015" count="35" adc_bailout="0,00392156862745098" irid_wavelength="0.25 0.18 0.14 0 0" recursion_limit="2" noise_generator="range_corrected" error_bound="1,8" number_of_waves="10" gray_threshold="0" nearest_count="5" max_trace_level="0" distance_maximum="0" hf_gray_16="0">
+  <radiosity low_error_factor="0,5" nearest_count="5" error_bound="1,8" max_sample="-1" always_sample="1" recursion_limit="2" pretrace_start="0,08" normal="1" brightness="1" count="35" gray_threshold="0" adc_bailout="0,01" media="1" minimum_reuse="0,015" pretrace_end="0,04"/>
+ </globalsettings>
+ <declare id="mat_nera_sweep">
+  <material name="">
+   <interior enable_caustics="1" enable_ior="1" enable_dispersion="1" enable_disp_samples="0" enable_fade_power="0" disp_samples="7" ior="1,3" caustics="33" name="" enable_fade_distance="0" dispersion="1" fade_distance="0" fade_power="0"/>
+   <texture uv_mapping="0" name="">
+    <pigment uv_mapping="0" name="">
+     <solidcolor color="0 0 0 0.99 0.1"/>
+    </pigment>
+    <finish enable_reflection_exponent="0" enable_phong_size="1" enable_reflection_min="1" enable_phong="1" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="1" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="0.270588 0.270588 0.270588 0 0" irid_amount="0,4" phongsize="33" diffuse="0,6" specular="0,4" roughness="0,05" enable_metallic="0" brilliance="25" reflection_falloff="0" crand="0,1" enable_diffuse="0" conserve_energy="0" irid="0" phong="3" enable_reflection="0" reflection_min="1 1 1 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+    <normal accuracy="0,02" enable_bump_size="1" uv_mapping="0" name="" bump_size="0,2">
+     <pattern patterntype="agate" cracklesolid="0" fractalmagnet="0" depth="0,5" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,2" lambda="2" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0.1 0.2 0.1" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    </normal>
+   </texture>
+  </material>
+ </declare>
+ <declare id="mat_nera">
+  <material name="">
+   <interior enable_caustics="1" enable_ior="1" enable_dispersion="1" enable_disp_samples="1" enable_fade_power="0" disp_samples="7" ior="1,3" caustics="33" name="" enable_fade_distance="0" dispersion="1" fade_distance="0" fade_power="0"/>
+   <texture uv_mapping="0" name="">
+    <pigment uv_mapping="0" name="">
+     <solidcolor color="0 0 0 0.99 0.25"/>
+    </pigment>
+    <finish enable_reflection_exponent="0" enable_phong_size="1" enable_reflection_min="1" enable_phong="1" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="1" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="0.1 0.1 0.1 0 0" irid_amount="0,4" phongsize="4" diffuse="0,6" specular="0,1" roughness="0,5" enable_metallic="0" brilliance="25" reflection_falloff="0" crand="0,1" enable_diffuse="0" conserve_energy="0" irid="0" phong="1" enable_reflection="0" reflection_min="1 1 1 0 0" enable_roughness="1" enable_reflection_falloff="0"/>
+    <normal accuracy="0,02" enable_bump_size="1" uv_mapping="0" name="" bump_size="0,6">
+     <pattern patterntype="bumps" cracklesolid="0" fractalmagnet="0" depth="0,1" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="0" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2" slopedirection="0 -1 0" noise_generator="perlin" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0.2 0.2 0.1" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+     <rotate value="90 0 0"/>
+     <scale value="0.2 0.2 0.2"/>
+    </normal>
+   </texture>
+  </material>
+ </declare>
+ <light media_interaction="1" lighttype="point" parallel="0" location="-0.466667 -0.92165 0.0472335" area_light="0" media_attenuation="1" fading="0" name="" color="1 1 1 0 0"/>
+ <sphere visibility_level="0" inverse="0" radius="1" no_image="0" export="1" double_illuminate="1" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" centre="0 1 0" name="sfera_nera" no_shadow="0">
+  <material prototype="mat_nera" name=""/>
+  <scale value="1 1 1"/>
+  <rotate value="0 0 0"/>
+  <translate value="0 0 0"/>
+ </sphere>
+ <spheresweep spline_type="2" visibility_level="0" inverse="0" no_image="0" export="1" tolerance="1e-06" double_illuminate="1" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+  <extra_data>
+   <point vector="-0.224175 0.452764 -0.39153" radius="0,07000000000000001"/>
+   <point vector="-0.34216 0.5451 -0.39153" radius="0,07000000000000001"/>
+   <point vector="0.66621 0.41247 -0.60556" radius="0,07000000000000001"/>
+   <point vector="0.54844 0.7574 -1.0991" radius="0,07000000000000001"/>
+   <point vector="-0.29382 0.34352 -0.98276" radius="0,07000000000000001"/>
+   <point vector="0.37322 0.72913 -0.053356" radius="0,07000000000000001"/>
+   <point vector="0.4911 1.1388 0.13286" radius="0,07000000000000001"/>
+   <point vector="-0.013302 0.93289 -0.25965" radius="0,07000000000000001"/>
+   <point vector="0.18768 0.83331 -0.93999" radius="0,07000000000000001"/>
+   <point vector="0.74725 0.93333 -0.08712" radius="0,07000000000000001"/>
+   <point vector="0.79358 0.62083 -0.35291" radius="0,07000000000000001"/>
+   <point vector="0.23949 0.59583 -0.53047" radius="0,07000000000000001"/>
+   <point vector="-0.28536 0.81791 -0.4692" radius="0,07000000000000001"/>
+   <point vector="-0.083333 1.116 -0.074776" radius="0,07000000000000001"/>
+   <point vector="0.081687 0.58726 -0.03255" radius="0,07000000000000001"/>
+  </extra_data>
+  <material prototype="mat_nera_sweep" name=""/>
+  <translate value="-0.267943 0.21976 0.447514"/>
+ </spheresweep>
+ <camera direction="0 0 1" sky="0 1 0" cylinder_type="1" variance="0,004" right="1.3333 0 0" name="" camera_type="perspective" export="1" focal_point="0 1.7 0" angle_enabled="0" focal_blur="0" confidence="0,4" look_at="0 0 0" up="0 1 0" aperture="0,02" location="0 4 -0.072118" blur_samples="1" angle="45"/>
+ <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 1 0" no_reflection="0" relative_visibility="1" distance="0" local_detail_level="1" global_detail="1" name="" hollow="1" no_shadow="0">
+  <interior enable_caustics="0" enable_ior="0" enable_dispersion="0" enable_disp_samples="0" enable_fade_power="0" disp_samples="7" ior="1" caustics="0" name="" enable_fade_distance="0" dispersion="1" fade_distance="0" fade_power="0">
+   <media aa_threshold="0,1" scattering_eccentricity="0" enable_scattering="1" variance="0,0078125" name="" scattering_type="4" intervals="10" scattering_color="0.560784 0.560784 0.560784 0 0" emission="0 0 0 0 0" enable_absorption="0" absorption="0 0 0 0 0" confidence="0,9" method="1" enable_emission="0" aa_level="4" samples_min="1" samples_max="1" ratio="0,9" scattering_extinction="1"/>
+  </interior>
+  <pigment uv_mapping="0" name="">
+   <pattern patterntype="crackle" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="0" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0 0 0" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+   <pigmentmap name="" map_values="0 0.2 0.6 1">
+    <pigment uv_mapping="0" name="">
+     <solidcolor color="0 0 0 0 0"/>
+    </pigment>
+    <pigment uv_mapping="0" name="">
+     <solidcolor color="1 1 1 0.9 0"/>
+    </pigment>
+    <pigment uv_mapping="0" name="">
+     <solidcolor color="0 0 0 0 0"/>
+    </pigment>
+    <pigment uv_mapping="0" name="">
+     <solidcolor color="1 1 1 0.5 0"/>
+    </pigment>
+   </pigmentmap>
+  </pigment>
+  <scale value="0.4 0.4 0.4"/>
+  <rotate value="0 0 0"/>
+  <translate value="0 0 0"/>
+ </plane>
+ <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 1 0" no_reflection="0" relative_visibility="1" distance="0" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+  <pigment uv_mapping="0" name="">
+   <solidcolor color="1 1 1 0 0"/>
+  </pigment>
+  <scale value="1 1 1"/>
+  <rotate value="0 0 0"/>
+  <translate value="0 -1 0"/>
+ </plane>
+ <light media_interaction="1" radius="4" lighttype="spotlight" parallel="0" tightness="8" location="1.4523 3.67681 0.156315" area_light="0" media_attenuation="1" point_at="0.031951 0.92662 -0.0049831" fading="0" name="" color="1 1 1 0 0" falloff="10"/>
+ <light media_interaction="1" radius="4" lighttype="spotlight" parallel="0" tightness="8" location="-0.0131268 -0.875492 0.976397" area_light="0" media_attenuation="1" point_at="0.031951 0.92662 -0.0049831" fading="0" name="" color="1 1 1 0 0" falloff="10"/>
+ <light media_interaction="1" radius="4" lighttype="spotlight" parallel="0" tightness="8" location="-0.0131268 0.949827 -2.85018" area_light="0" media_attenuation="1" point_at="0.031951 0.92662 -0.0049831" fading="0" name="" color="1 1 1 0 0" falloff="10"/>
+</objects>

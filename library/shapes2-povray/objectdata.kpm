@@ -1,0 +1,300 @@
+<!DOCTYPE KPOVMODELER>
+<objects minorFormat="0" visibility_level="10" majorFormat="1">
+ <comment>
+Persistence of Vision Raytracer Version 3.1
+Implements additional, useful, but seldom used shapes
+
+Contents:
+=========
+Tetrahedron       HalfCone_Y
+Octahedron        Pyramid
+Dodecahedron      Pyramid2
+Icosahedron       Square_X
+Rhomboid          Square_Y
+Hexagon           Square_Z
+</comment>
+ <comment>Shapes by Tom Price [75300,620]:</comment>
+ <declare id="Tetrahedron">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="intersection" no_shadow="0">
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 -1 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="19.47 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="19.47 -120 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="19.47 120 0"/>
+   </plane>
+   <boundedby>
+    <sphere visibility_level="0" inverse="0" radius="3" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" centre="0 0 0" name="" no_shadow="0"/>
+   </boundedby>
+  </csg>
+ </declare>
+ <declare id="Octahedron">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="intersection" no_shadow="0">
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="35.2644 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-35.2644 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="35.2644 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-35.2644 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="1 0 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="0 0 -35.2644"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="1 0 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="0 0 35.2644"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="-1 0 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="0 0 -35.2644"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="-1 0 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="0 0 35.2644"/>
+   </plane>
+   <boundedby>
+    <sphere visibility_level="0" inverse="0" radius="1,7321" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" centre="0 0 0" name="" no_shadow="0"/>
+   </boundedby>
+  </csg>
+ </declare>
+ <declare id="Dodecahedron">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="intersection" no_shadow="0">
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-26.5651 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-26.5651 -72 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-26.5651 -144 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-26.5651 -216 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-26.5651 -288 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="26.5651 -36 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="26.5651 -108 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="26.5651 -180 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="26.5651 -252 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="26.5651 -324 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 1 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 -1 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <boundedby>
+    <sphere visibility_level="0" inverse="0" radius="1,2585" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" centre="0 0 0" name="" no_shadow="0"/>
+   </boundedby>
+  </csg>
+ </declare>
+ <declare id="Icosahedron">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="intersection" no_shadow="0">
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="52.6625 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="52.6625 -72 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="52.6625 -144 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="52.6625 -216 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="52.6625 -288 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="10.8125 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="10.8125 -72 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="10.8125 -144 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="10.8125 -216 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="10.8125 -288 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-52.6625 -36 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-52.6625 -108 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-52.6625 -180 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-52.6625 -252 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-52.6625 -324 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-10.8125 -36 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-10.8125 -108 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-10.8125 -180 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-10.8125 -252 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-10.8125 -324 0"/>
+   </plane>
+   <boundedby>
+    <sphere visibility_level="0" inverse="0" radius="1,2585" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" centre="0 0 0" name="" no_shadow="0"/>
+   </boundedby>
+  </csg>
+ </declare>
+ <comment>Shapes by others
+Convenient  finite cone primitive, pointing up in the Y axis</comment>
+ <declare id="HalfCone_Y">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="intersection" no_shadow="0">
+   <cone visibility_level="0" inverse="0" radius_a="0" no_image="0" export="1" radius_b="1" double_illuminate="0" no_reflection="0" relative_visibility="1" end_a="0 2 0" local_detail_level="1" end_b="0 -2 0" open="0" global_detail="1" name="" no_shadow="0">
+    <scale value="1 1 1"/>
+    <rotate value="0 0 0"/>
+    <translate value="0 0 0"/>
+   </cone>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 1 0" no_reflection="0" relative_visibility="1" distance="0" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 -1 0" no_reflection="0" relative_visibility="1" distance="2" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <translate value="0 1 0"/>
+   <scale value="0.5 1 0.5"/>
+   <boundedby>
+    <sphere visibility_level="0" inverse="0" radius="1,5" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" centre="0 0 0" name="" no_shadow="0"/>
+   </boundedby>
+  </csg>
+ </declare>
+ <comment>Hexagonal Solid, axis along x </comment>
+ <declare id="Hexagon">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="intersection" no_shadow="0">
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <comment>Rotate 90 in z axis to stand up </comment>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="60 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="120 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="180 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="240 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="300 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="1 0 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="-1 0 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <boundedby>
+    <sphere visibility_level="0" inverse="0" radius="1,5" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" centre="0 0 0" name="" no_shadow="0"/>
+   </boundedby>
+  </csg>
+ </declare>
+ <comment>Three Dimensional 4-Sided Diamond </comment>
+ <declare id="Rhomboid">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="intersection" no_shadow="0">
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="-1 0 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="0 0 -30"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="1 0 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="0 0 -30"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 1 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 -1 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <boundedby>
+    <sphere visibility_level="0" inverse="0" radius="2,3" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" centre="0 0 0" name="" no_shadow="0"/>
+   </boundedby>
+  </csg>
+ </declare>
+ <comment>Classic four-sided pyramids.
+The first can't be used correctly in CSG, the second can.</comment>
+ <declare id="Pyramid">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="union" no_shadow="0">
+   <comment>This isn't true CSG, it's just used for convenience</comment>
+   <triangle smooth="0" point0="-1 0 -1" no_image="0" point1="1 0 -1" visibility_level="0" point2="0 1 0" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+   <triangle smooth="0" point0="1 0 -1" no_image="0" point1="1 0 1" visibility_level="0" point2="0 1 0" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+   <triangle smooth="0" point0="-1 0 1" no_image="0" point1="1 0 1" visibility_level="0" point2="0 1 0" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+   <triangle smooth="0" point0="-1 0 1" no_image="0" point1="-1 0 -1" visibility_level="0" point2="0 1 0" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+   <triangle smooth="0" point0="-1 0 -1" no_image="0" point1="-1 0 1" visibility_level="0" point2="1 0 1" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+   <triangle smooth="0" point0="-1 0 -1" no_image="0" point1="1 0 -1" visibility_level="0" point2="1 0 1" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+   <scale value="1 2 1"/>
+   <translate value="0 -1 0"/>
+  </csg>
+ </declare>
+ <declare id="Pyramid2">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="intersection" no_shadow="0">
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="1 0 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="0 0 40"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="-1 0 0" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="0 0 -40"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="-40 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 0 -1" no_reflection="0" relative_visibility="1" distance="1" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <rotate value="40 0 0"/>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 -1 0" no_reflection="0" relative_visibility="1" distance="0" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   <translate value="0 -1 0"/>
+   <boundedby>
+    <box visibility_level="0" corner_a="-1 0 -1" inverse="0" corner_b="1 1 1" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" no_shadow="0"/>
+   </boundedby>
+  </csg>
+ </declare>
+ <comment>These next three are finite planes.</comment>
+ <declare id="Square_X">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="union" no_shadow="0">
+   <comment>Scale-able plane in x </comment>
+   <triangle smooth="0" point0="0 1 -1" no_image="0" point1="0 -1 1" visibility_level="0" point2="0 1 1" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+   <triangle smooth="0" point0="0 1 -1" no_image="0" point1="0 -1 1" visibility_level="0" point2="0 -1 -1" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+  </csg>
+ </declare>
+ <declare id="Square_Y">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="union" no_shadow="0">
+   <comment>Scale-able plane in y </comment>
+   <triangle smooth="0" point0="-1 0 1" no_image="0" point1="1 0 -1" visibility_level="0" point2="1 0 1" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+   <triangle smooth="0" point0="-1 0 1" no_image="0" point1="1 0 -1" visibility_level="0" point2="-1 0 -1" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+  </csg>
+ </declare>
+ <declare id="Square_Z">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="union" no_shadow="0">
+   <comment>Scale-able plane in z </comment>
+   <triangle smooth="0" point0="-1 1 0" no_image="0" point1="1 -1 0" visibility_level="0" point2="-1 -1 0" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+   <triangle smooth="0" point0="-1 1 0" no_image="0" point1="1 -1 0" visibility_level="0" point2="1 1 0" name="" no_reflection="0" uvVector0="0 0" relative_visibility="1" uvVector1="1 0" export="1" uvVector2="0.5 1" uvEnabled="0" local_detail_level="1" no_shadow="0" double_illuminate="0" global_detail="1" normal0="0 1 0" normal1="0 1 0" normal2="0 1 0"/>
+  </csg>
+ </declare>
+ <objectlink visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" prototype="HalfCone_Y" name="" no_shadow="0">
+  <pigment uv_mapping="0" name="">
+   <solidcolor color="1 0.501961 0 0 0"/>
+  </pigment>
+  <scale value="1 1 1"/>
+  <rotate value="0 0 0"/>
+  <translate value="0 0 0"/>
+ </objectlink>
+</objects>

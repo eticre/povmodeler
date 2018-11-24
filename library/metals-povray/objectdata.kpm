@@ -1,0 +1,870 @@
+<!DOCTYPE KPOVMODELER>
+<objects minorFormat="0" visibility_level="10" majorFormat="1">
+ <comment>
+Persistence of Vision Raytracer Version 3.1
+Metallic pigments, finishes, and textures.
+
+
+*****************************************************************************
+                           BASIC METAL COLORS
+*****************************************************************************
+ Note: Describing metallic textures is difficult, at best.  The reflectivity
+and other qualities make them highly dependant on lighting and surroundings.
+
+The following notes are intended as a rough guide only.
+P_Brass1: Dark brown bronze.
+P_Brass2: Somewhat lighter brown than Brass4. Old penny, in soft finishes.
+P_Brass3: Used by Steve Anger's Polished_Brass. Slightly coppery.
+P_Brass4: A little yellower than Brass1.
+P_Brass5: Very light bronze, ranges from med tan to almost white.
+
+P_Copper1: bronze-like.  Best in finish #C.
+P_Copper2: slightly brownish copper/bronze.  Best in finishes #B-#D.
+P_Copper3: reddish-brown copper.  Best in finishes #C-#E.
+P_Copper4: pink copper, like new tubing.  Best in finishes #C-#E.
+P_Copper5: Bronze in softer finishes, gold in harder finishes.
+
+P_Chrome1: 20% Gray. Used in Steve Anger's Polished_Chrome.
+P_Chrome2: Slightly blueish 60% gray. Good steel w/finish #A
+P_Chrome3: 50% neutral gray.
+P_Chrome4: 75% neutral gray.
+P_Chrome5: 95% neutral gray.
+
+P_Silver1: Yellowish silverplate.  Somewhat tarnished looking.
+P_Silver2: Not quite as yellowish as Silver1 but more so than Silver3.
+P_Silver3: Reasonably neutral silver.
+P_Silver4: REDUNDANT (unused)
+P_Silver5: REDUNDANT (unused)
+
+</comment>
+ <comment>*****************************************************************************
+                          BASIC METAL FINISHES
+*****************************************************************************</comment>
+ <comment>F_MetalA  :  Very soft and dull.  
+F_MetalB  :  Fairly soft and dull.
+F_MetalC  :  Medium reflectivity. Holds color well.
+F_MetalD  :  Highly hard and polished. High reflectivity.   
+F_MetalE  :  Very highly polished &amp; reflective.</comment>
+ <declare id="F_MetalA">
+  <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="1" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0.1 0.1 0.1 0.1 0.1" enable_specular="1" name="" irid_thickness="0" reflection_metallic="1" ambient="0.35 0.35 0.35 0.35 0.35" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0,3" specular="0,8" roughness="0,05" enable_metallic="1" brilliance="2" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="1" reflection_min="0 0 0 0 0" enable_roughness="1" enable_reflection_falloff="0"/>
+ </declare>
+ <declare id="F_MetalB">
+  <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="1" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0.25 0.25 0.25 0.25 0.25" enable_specular="1" name="" irid_thickness="0" reflection_metallic="1" ambient="0.3 0.3 0.3 0.3 0.3" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0,4" specular="0,7" roughness="0,01666666666666667" enable_metallic="1" brilliance="3" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="1" reflection_min="0 0 0 0 0" enable_roughness="1" enable_reflection_falloff="0"/>
+ </declare>
+ <declare id="F_MetalC">
+  <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="1" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0.5 0.5 0.5 0.5 0.5" enable_specular="1" name="" irid_thickness="0" reflection_metallic="1" ambient="0.25 0.25 0.25 0.25 0.25" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0,5" specular="0,8" roughness="0,0125" enable_metallic="1" brilliance="4" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="1" reflection_min="0 0 0 0 0" enable_roughness="1" enable_reflection_falloff="0"/>
+ </declare>
+ <declare id="F_MetalD">
+  <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="1" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0.65 0.65 0.65 0.65 0.65" enable_specular="1" name="" irid_thickness="0" reflection_metallic="1" ambient="0.15 0.15 0.15 0.15 0.15" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0,6" specular="0,8" roughness="0,01" enable_metallic="1" brilliance="5" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="1" reflection_min="0 0 0 0 0" enable_roughness="1" enable_reflection_falloff="0"/>
+ </declare>
+ <declare id="F_MetalE">
+  <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="1" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0.8 0.8 0.8 0.8 0.8" enable_specular="1" name="" irid_thickness="0" reflection_metallic="1" ambient="0.1 0.1 0.1 0.1 0.1" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0,7" specular="0,8" roughness="0,008333333333333333" enable_metallic="1" brilliance="6" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="1" reflection_min="0 0 0 0 0" enable_roughness="1" enable_reflection_falloff="0"/>
+ </declare>
+ <comment>*****************************************************************************
+                          METAL TEXTURES
+*****************************************************************************</comment>
+ <comment>                             BRASSES</comment>
+ <declare id="T_Brass_1A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.3 0.2 0.1 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_1B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.3 0.2 0.1 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_1C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.3 0.2 0.1 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_1D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.3 0.2 0.1 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_1E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.3 0.2 0.1 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_2A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.35 0.25 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_2B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.35 0.25 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_2C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.35 0.25 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_2D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.35 0.25 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_2E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.35 0.25 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_3A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.58 0.42 0.2 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_3B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.58 0.42 0.2 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_3C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.58 0.42 0.2 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_3D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.58 0.42 0.2 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_3E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.58 0.42 0.2 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_4A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.65 0.5 0.25 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_4B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.65 0.5 0.25 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_4C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.65 0.5 0.25 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_4D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.65 0.5 0.25 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_4E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.65 0.5 0.25 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_5A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.7 0.55 0.4 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_5B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.7 0.55 0.4 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_5C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.7 0.55 0.4 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_5D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.7 0.55 0.4 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Brass_5E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.7 0.55 0.4 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <comment>                          COPPERS &amp; BRONZES</comment>
+ <declare id="T_Copper_1A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.4 0.2 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_1B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.4 0.2 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_1C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.4 0.2 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_1D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.4 0.2 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_1E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.4 0.2 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_2A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.25 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_2B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.25 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_2C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.25 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_2D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.25 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_2E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.25 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_3A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.6 0.3 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_3B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.6 0.3 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_3C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.6 0.3 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_3D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.6 0.3 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_3E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.6 0.3 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_4A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.7 0.25 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_4B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.7 0.25 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_4C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.7 0.25 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_4D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.7 0.25 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_4E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.7 0.25 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_5A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.65 0.35 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_5B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.65 0.35 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_5C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.65 0.35 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_5D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.65 0.35 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Copper_5E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.65 0.35 0.15 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <comment>                          CHROMES &amp; STEELS  </comment>
+ <declare id="T_Chrome_1A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.2 0.2 0.2 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_1B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.2 0.2 0.2 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_1C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.2 0.2 0.2 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_1D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.2 0.2 0.2 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_1E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.2 0.2 0.2 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_2A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.39 0.41 0.43 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_2B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.39 0.41 0.43 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_2C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.39 0.41 0.43 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_2D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.39 0.41 0.43 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_2E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.39 0.41 0.43 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_3A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.5 0.5 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_3B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.5 0.5 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_3C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.5 0.5 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_3D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.5 0.5 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_3E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.5 0.5 0.5 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_4A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.75 0.75 0.75 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_4B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.75 0.75 0.75 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_4C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.75 0.75 0.75 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_4D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.75 0.75 0.75 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_4E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.75 0.75 0.75 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_5A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.95 0.95 0.95 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_5B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.95 0.95 0.95 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_5C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.95 0.95 0.95 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_5D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.95 0.95 0.95 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Chrome_5E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.95 0.95 0.95 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <comment>                              SILVERS        </comment>
+ <declare id="T_Silver_1A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.8 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_1B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.8 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_1C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.8 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_1D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.8 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_1E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.8 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_2A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.85 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_2B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.85 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_2C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.85 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_2D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.85 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_2E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.85 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_3A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.9 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_3B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.9 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_3C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.9 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_3D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.9 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_3E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.94 0.93 0.9 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_4A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.95 0.91 0.91 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_4B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.95 0.91 0.91 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_4C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.95 0.91 0.91 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_4D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.95 0.91 0.91 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_4E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.95 0.91 0.91 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_5A">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.91 0.95 0.91 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalA" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_5B">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.91 0.95 0.91 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalB" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_5C">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.91 0.95 0.91 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalC" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_5D">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.91 0.95 0.91 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalD" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Silver_5E">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.91 0.95 0.91 0 0"/>
+   </pigment>
+   <finish enable_roughness="0" metallic="1" roughness="0,05" enable_reflection="0" enable_specular="0" enable_reflection_falloff="0" ambient="0 0 0 0 0" enable_brilliance="0" specular="0" reflection_metallic="1" enable_ambient="0" enable_reflection_metallic="0" phongsize="40" irid="0" reflection_min="0 0 0 0 0" enable_diffuse="0" reflection_fresnel="0" conserve_energy="0" enable_phong="0" crand="0" irid_thickness="0" enable_phong_size="0" reflection_exponent="1" enable_crand="0" diffuse="0,6" prototype="F_MetalE" enable_reflection_min="0" phong="0" enable_reflection_exponent="0" irid_amount="0" enable_metallic="0" reflection="0 0 0 0 0" reflection_falloff="0" enable_emission="0" brilliance="1" name="" emission="0 0 0 0 0" irid_turbulence="0"/>
+  </texture>
+ </declare>
+</objects>

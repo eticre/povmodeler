@@ -1,0 +1,6 @@
+<!DOCTYPE KPOVLIBINDEX>
+<library description="all kpov objects" readonly="true" sublibrary="false" author="eticre" name="allobjects">
+ <object_list>
+  <object_entry name="allobjects" file="objectdata.kpm"/>
+ </object_list>
+</library>

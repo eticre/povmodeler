@@ -1,0 +1,59 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="KPovModelerShell" version="7">
+<MenuBar>
+   <Menu name="file"><text>&amp;File</text>
+      <DefineGroup name="file_export_actions" append="save_merge"/>
+      <DefineGroup name="file_import_actions" append="open_merge"/>
+   </Menu>
+   <Menu name="edit"><text>&amp;Edit</text>
+      <MergeLocal/>
+   </Menu>
+   <Menu name="insert"><text>&amp;Insert</text>
+      <MergeLocal/>
+   </Menu>
+   <Menu name="view"><text>&amp;View</text>
+      <Action name="view_new_treeview"/>
+      <Action name="view_new_dialogview"/>
+      <Action name="view_new_librarybrowser"/>
+      <DefineGroup name="view_new_views_merge"/>
+      <Separator/>
+      <Action name="view_new_topview"/>
+      <Action name="view_new_bottomview"/>
+      <Action name="view_new_leftview"/>
+      <Action name="view_new_rightview"/>
+      <Action name="view_new_frontview"/>
+      <Action name="view_new_backview"/>
+      <Action name="view_new_cameraview"/>
+      <Separator/>
+      <Action name="view_layouts_menu"/>
+      <Action name="save_view_layout"/>
+      <Separator/>
+      <MergeLocal/>
+   </Menu>
+   <Menu name="settings"><text>&amp;Settings</text>
+      <Action name="options_show_path" append="show_merge"/>
+      <Action name="options_show_lib" append="show_merge"/>
+   </Menu>
+   <Merge/>
+</MenuBar>
+
+<ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
+  <Action name="file_new"/>
+  <Action name="file_open"/>
+  <Action name="file_save"/>
+  <Action name="file_print"/>
+  <Action name="file_print_preview"/>
+  <Action name="file_mail"/>
+  <Separator/>
+  <Merge/>
+</ToolBar>
+
+<ToolBar name="libraryToolbar" noMerge="1"><text>Library Toolbar</text>
+  <Action name="library_up"/>
+  <Action name="library_object_new"/>
+  <Action name="library_object_edit"/>
+  <Action name="library_object_delete"/>
+</ToolBar>
+
+</kpartgui>
+

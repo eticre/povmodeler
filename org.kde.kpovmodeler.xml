@@ -1,0 +1,38 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+	<interface name="org.kde.kpovmodeler">
+		<method name="deleteContents"/>
+		<method name="closeDocument"/>
+		<method name="newDocument"/>	
+		<method name="initDocument"/>
+		<method name="clearSelection"/>
+		<method name="slotEditCut"/>
+		<method name="slotEditDelete"/>
+		<method name="slotEditCopy"/>
+		<method name="slotEditPaste"/>	
+		<method name="slotRender"/>
+		<method name="slotNewObject">
+			<arg name="type" type="s" direction="in"/>
+			<arg name="pos" type="s" direction="in"/>
+		</method>
+		<method name="activeObjectName">
+			<arg type="s" direction="out"/>
+		</method>
+		<method name="setActiveObject">
+			<arg type="b" direction="out"/>
+			<arg name="name" type="s" direction="in"/>
+		</method>
+		<method name="getProperties">
+			<arg type="as" direction="out"/>
+		</method>
+		<method name="setProperty">
+			<arg type="b" direction="out"/>
+			<arg name="property" type="s" direction="in"/>
+			<arg name="value" type="s" direction="in"/>
+		</method>
+		<method name="getObjectTypes">
+			<arg type="as" direction="out"/>
+		</method>
+  </interface>
+</node>

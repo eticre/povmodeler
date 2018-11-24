@@ -1,0 +1,9 @@
+<!DOCTYPE KPOVOBJINDEX>
+<objinfo name="test">
+  <description>desc tttttteeeest text</description>
+  <keywords>keyw.</keywords>
+  <file_entries>
+    <file name="test.kpm">
+    </file>
+  </file_entries>
+</objinfo>

@@ -1,0 +1,43 @@
+<!DOCTYPE KPOVMODELER>
+<objects minorFormat="0" visibility_level="10" majorFormat="1">
+ <comment>
+Persistence of Vision Raytracer Version 3.1
+
+Some basic finishes.  Others may be defined in
+specific .inc files (see metals.inc).
+
+</comment>
+ <comment>Dull creates a large, soft highlight on the object's surface</comment>
+ <declare id="Dull">
+  <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="0" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="1" name="" irid_thickness="0" reflection_metallic="1" ambient="0 0 0 0 0" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0,6" specular="0,5" roughness="0,15" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="0" conserve_energy="0" irid="0" phong="0" enable_reflection="0" reflection_min="0 0 0 0 0" enable_roughness="1" enable_reflection_falloff="0"/>
+ </declare>
+ <comment>Shiny creates a small, tight highlight on the object's surface</comment>
+ <declare id="Shiny">
+  <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="0" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="1" name="" irid_thickness="0" reflection_metallic="1" ambient="0 0 0 0 0" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0,6" specular="1" roughness="0,001" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="0" conserve_energy="0" irid="0" phong="0" enable_reflection="0" reflection_min="0 0 0 0 0" enable_roughness="1" enable_reflection_falloff="0"/>
+ </declare>
+ <comment>Phong highlights are less "realistic" than specular, but useful
+for different effects.
+Dull creates a large, soft highlight on the object's surface</comment>
+ <declare id="Phong_Dull">
+  <finish enable_reflection_exponent="0" enable_phong_size="1" enable_reflection_min="0" enable_phong="1" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="0" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="0 0 0 0 0" irid_amount="0" emission="0 0 0 0 0" phongsize="1" diffuse="0,6" specular="0" roughness="0,05" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="0" conserve_energy="0" irid="0" phong="0,5" enable_reflection="0" reflection_min="0 0 0 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+ </declare>
+ <comment>Shiny creates a small, tight highlight on the object's surface</comment>
+ <declare id="Phong_Shiny">
+  <finish enable_reflection_exponent="0" enable_phong_size="1" enable_reflection_min="0" enable_phong="1" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="0" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="0 0 0 0 0" irid_amount="0" emission="0 0 0 0 0" phongsize="200" diffuse="0,6" specular="0" roughness="0,05" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="0" conserve_energy="0" irid="0" phong="1" enable_reflection="0" reflection_min="0 0 0 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+ </declare>
+ <comment>Very shiny with very tight highlights and a fair amount of reflection</comment>
+ <declare id="Glossy">
+  <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="0" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0.13 0.13 0.13 0.13 0.13" enable_specular="1" name="" irid_thickness="0" reflection_metallic="1" ambient="0 0 0 0 0" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0,6" specular="1" roughness="0,0001" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="0" conserve_energy="0" irid="0" phong="0" enable_reflection="1" reflection_min="0 0 0 0 0" enable_roughness="1" enable_reflection_falloff="0"/>
+ </declare>
+ <declare id="Phong_Glossy">
+  <finish enable_reflection_exponent="0" enable_phong_size="1" enable_reflection_min="0" enable_phong="1" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="0" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0.13 0.13 0.13 0.13 0.13" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="0 0 0 0 0" irid_amount="0" emission="0 0 0 0 0" phongsize="300" diffuse="0,6" specular="0" roughness="0,05" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="0" conserve_energy="0" irid="0" phong="1" enable_reflection="1" reflection_min="0 0 0 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+ </declare>
+ <comment>Luminous for shadowless skies and light_sources.</comment>
+ <declare id="Luminous">
+  <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="1 1 1 1 1" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0" specular="0" roughness="0,05" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="0" reflection_min="0 0 0 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+ </declare>
+ <comment>a perfectly mirrored finish with no highlights</comment>
+ <declare id="Mirror">
+  <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="1 1 1 1 1" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="0 0 0 0 0" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0" specular="0" roughness="0,05" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="1" reflection_min="0 0 0 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+ </declare>
+</objects>

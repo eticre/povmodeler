@@ -1,0 +1,10 @@
+# These are the rules used by makekdedoc to generate the kpovmodeler
+# documentation with KDOC. 
+#
+# $Id: kdoc.rules 695884 2007-08-03 07:43:24Z mlaurent $
+
+kde_MODULES = kpovmodeler
+
+kpovmodeler_FILES = *.h 
+kpovmodeler_LIBS = -lkdeui -lkparts -lkdecore -ldcop -lkfile -lkio -lqt -p
+kpovmodeler_PATH = .

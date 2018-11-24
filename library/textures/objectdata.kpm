@@ -1,0 +1,1183 @@
+<!DOCTYPE KPOVMODELER>
+<objects minorFormat="0" majorFormat="1" visibility_level="10" >
+ <extra_data>
+  <rendermode sampling_method="0" width="640" subsection="0" antialiasing="0" end_column="640" start_row="1" radiosity="0" height="480" alpha="0" start_column="1" end_row="480" aa_depth="2" aa_jitter="0" aa_jitter_amount="1" aa_threshold="0.3" quality="9" description="Default" />
+ </extra_data>
+ <comment>
+
+Persistence of Vision Raytracer Version 3.1
+Standard textures include file
+
+Contents:
+===========================
+DMFWood6
+NBglass            (Norm Bowler)
+NBoldglass         (Norm Bowler)
+NBwinebottle       (Norm Bowler)
+NBbeerbottle       (Norm Bowler)
+Ruby_Glass         (after Norm Bowler)
+Dark_Green_Glass   (after Norm Bowler)
+Yellow_Glass       (after Norm Bowler)
+Orange_Glass       (after Norm Bowler)
+Vicks_Bottle_Glass (after Norm Bowler)
+Soft_Silver        (Dan Farmer)
+New_Penny          (Dan Farmer)
+Tinny_Brass        (Dan Farmer)
+Gold_Nugget        (Dan Farmer)
+Aluminum           (Dan Farmer)
+Bright_Bronze      (Dan Farmer)
+Lightening1        (Dan Farmer)
+Lightening2        (Dan Farmer)
+Brushed_Aluminum   (Dan Farmer)
+Starfield          (Jeff Burton )
+Shadow_Clouds      (Bill Pulver)
+
+</comment>
+ <comment>Some textures removed because of the old ior syntax.</comment>
+ <comment>*****************************************************************************
+                     STONE PIGMENTS
+*****************************************************************************</comment>
+ <declare id="Jade_Map" >
+  <colormap map_values="0 0.8 0.8 1" name="" >
+   <solidcolor color="0.1 0.6 0.1 0 0" />
+   <solidcolor color="0 0.3 0 0 0" />
+   <solidcolor color="0.1 0.6 0.1 0 0" />
+   <solidcolor color="0 0.2 0 0 0" />
+  </colormap>
+ </declare>
+ <comment>Drew Wells' superb Jade.  Color map works nicely with other textures, too.</comment>
+ <declare id="Jade" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="1.8 1.8 1.8" depth="0" agateturbulence="0.5" patterntype="marble" />
+   <colormap map_values="0 0.8 0.8 1" name="" >
+    <solidcolor color="0.1 0.6 0.1 0 0" />
+    <solidcolor color="0 0.3 0 0 0" />
+    <solidcolor color="0.1 0.6 0.1 0 0" />
+    <solidcolor color="0 0.2 0 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="Red_Marble_Map" >
+  <colormap map_values="0 0.8 1" name="" >
+   <solidcolor color="0.8 0.8 0.6 0 0" />
+   <solidcolor color="0.8 0.4 0.4 0 0" />
+   <solidcolor color="0.8 0.2 0.2 0 0" />
+  </colormap>
+ </declare>
+ <comment>Classic white marble with red veins.  Over-worked, like checkers.</comment>
+ <declare id="Red_Marble" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="1 1 1" depth="0" agateturbulence="0.5" patterntype="marble" />
+   <colormap map_values="0 0.8 1" name="" >
+    <solidcolor color="0.8 0.8 0.6 0 0" />
+    <solidcolor color="0.8 0.4 0.4 0 0" />
+    <solidcolor color="0.8 0.2 0.2 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="White_Marble_Map" >
+  <colormap map_values="0 0.8 1" name="" >
+   <solidcolor color="0.9 0.9 0.9 0 0" />
+   <solidcolor color="0.5 0.5 0.5 0 0" />
+   <solidcolor color="0.2 0.2 0.2 0 0" />
+  </colormap>
+ </declare>
+ <comment>White marble with black veins.</comment>
+ <declare id="White_Marble" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="1 1 1" depth="0" agateturbulence="0.5" patterntype="marble" />
+   <colormap map_values="0 0.8 1" name="" >
+    <solidcolor color="0.9 0.9 0.9 0 0" />
+    <solidcolor color="0.5 0.5 0.5 0 0" />
+    <solidcolor color="0.2 0.2 0.2 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>Light blue and black marble with a thin red vein 
+Try changing LBlue and Vein below to modify the marble.</comment>
+ <declare id="Blood_Marble_Map" >
+  <colormap map_values="0 0.8 0.9 1" name="" >
+   <solidcolor color="0 0 0 0 0" />
+   <solidcolor color="0 0.6 0.6 0 0" />
+   <solidcolor color="0.6 0 0 0 0" />
+   <solidcolor color="0 0 0 0 0" />
+  </colormap>
+ </declare>
+ <declare id="Blood_Marble" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="2.3 2.3 2.3" depth="0" agateturbulence="0.5" patterntype="marble" />
+   <colormap map_values="0 0.8 0.9 1" name="" >
+    <solidcolor color="0 0 0 0 0" />
+    <solidcolor color="0 0.6 0.6 0 0" />
+    <solidcolor color="0.6 0 0 0 0" />
+    <solidcolor color="0 0 0 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="Blue_Agate_Map" >
+  <colormap map_values="0.5 0.55 0.6 0.7 0.8 0.9 1" name="" >
+   <solidcolor color="0.3 0.3 0.5 0 0" />
+   <solidcolor color="0.2 0.2 0.3 0 0" />
+   <solidcolor color="0.25 0.25 0.35 0 0" />
+   <solidcolor color="0.15 0.15 0.26 0 0" />
+   <solidcolor color="0.1 0.1 0.2 0 0" />
+   <solidcolor color="0.3 0.3 0.5 0 0" />
+   <solidcolor color="0.1 0.1 0.2 0 0" />
+  </colormap>
+ </declare>
+ <comment>a grey blue agate -- kind of purplish.</comment>
+ <declare id="Blue_Agate" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="agate" />
+   <colormap map_values="0.5 0.55 0.6 0.7 0.8 0.9 1" name="" >
+    <solidcolor color="0.3 0.3 0.5 0 0" />
+    <solidcolor color="0.2 0.2 0.3 0 0" />
+    <solidcolor color="0.25 0.25 0.35 0 0" />
+    <solidcolor color="0.15 0.15 0.26 0 0" />
+    <solidcolor color="0.1 0.1 0.2 0 0" />
+    <solidcolor color="0.3 0.3 0.5 0 0" />
+    <solidcolor color="0.1 0.1 0.2 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="Sapphire_Agate_Map" >
+  <colormap map_values="0 0.3 1" name="" >
+   <solidcolor color="0 0 0.9 0 0" />
+   <solidcolor color="0 0 0.8 0 0" />
+   <solidcolor color="0 0 0.4 0 0" />
+  </colormap>
+ </declare>
+ <comment>Deep blue agate -- almost glows.</comment>
+ <declare id="Sapphire_Agate" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="agate" />
+   <colormap map_values="0 0.3 1" name="" >
+    <solidcolor color="0 0 0.9 0 0" />
+    <solidcolor color="0 0 0.8 0 0" />
+    <solidcolor color="0 0 0.4 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="Brown_Agate_Map" >
+  <colormap map_values="0 0.5 0.6 1" name="" >
+   <solidcolor color="0 0 0 0 0" />
+   <solidcolor color="0.9 0.7 0.6 0 0" />
+   <solidcolor color="0.9 0.7 0.4 0 0" />
+   <solidcolor color="0.7 0.4 0.2 0 0" />
+  </colormap>
+ </declare>
+ <comment>Brown and white agate -- very pretty.</comment>
+ <declare id="Brown_Agate" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="agate" />
+   <colormap map_values="0 0.5 0.6 1" name="" >
+    <solidcolor color="0 0 0 0 0" />
+    <solidcolor color="0.9 0.7 0.6 0 0" />
+    <solidcolor color="0.9 0.7 0.4 0 0" />
+    <solidcolor color="0.7 0.4 0.2 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="Pink_Granite_Map" >
+  <colormap map_values="0.4 0.4 0.45 0.5 0.55 0.8 1" name="" >
+   <solidcolor color="0 0 0 0 0" />
+   <solidcolor color="0.85 0.85 0.95 0 0" />
+   <solidcolor color="0.85 0.85 0.95 0 0" />
+   <solidcolor color="0.75 0.75 0.75 0 0" />
+   <solidcolor color="0.82 0.57 0.46 0 0" />
+   <solidcolor color="0.82 0.57 0.46 0 0" />
+   <solidcolor color="1 0.5 0 0 0" />
+  </colormap>
+ </declare>
+ <declare id="Pink_Granite" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="granite" />
+   <colormap map_values="0.4 0.4 0.45 0.5 0.55 0.8 1" name="" >
+    <solidcolor color="0 0 0 0 0" />
+    <solidcolor color="0.85 0.85 0.95 0 0" />
+    <solidcolor color="0.85 0.85 0.95 0 0" />
+    <solidcolor color="0.75 0.75 0.75 0 0" />
+    <solidcolor color="0.82 0.57 0.46 0 0" />
+    <solidcolor color="0.82 0.57 0.46 0 0" />
+    <solidcolor color="1 0.5 0 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>*****************************************************************************
+                     STONE TEXTURES
+*****************************************************************************</comment>
+ <comment>Gray-pink alabaster or marble.  Layers are scaled for a unit object
+and relative to each other.
+NOTE: This texture has very tiny dark blue specks that are often
+      mistaken for rendering errors.  They are not errors.  Just a
+      strange texture design.</comment>
+ <declare id="PinkAlabaster" >
+  <texture name="" >
+   <comment>Underlying surface is very subtly mottled with bozo</comment>
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.25 0.25 0.25" depth="0" agateturbulence="0.5" patterntype="bozo" />
+    <colormap map_values="0 1" name="" >
+     <solidcolor color="0.9 0.75 0.75 0 0" />
+     <solidcolor color="0.6 0.6 0.6 0 0" />
+    </colormap>
+    <scale value="0.4 0.4 0.4" />
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="0" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.25 0.25 0.25 0.25 0.25" reflection="0 0 0 0 0" diffuse="0.6" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+  <texture name="" >
+   <comment>Second layer texture has some filter values, yet a fair amount of color
+Viening is kept quite thin in color map and by the largish scale.</comment>
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="granite" />
+    <colormap map_values="0 0.9 0.9" name="" >
+     <solidcolor color="0.52 0.39 0.39 1 0" />
+     <solidcolor color="0.52 0.39 0.39 0.5 0" />
+     <solidcolor color="0.42 0.14 0.55 0 0" />
+    </colormap>
+    <scale value="2 2 2" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="0" enable_exponent="0" enable_diffuse="0" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="4" enable_roughness="1" enable_specular="1" enable_ambient="0" irid_amount="0" reflection_exponent="1" roughness="0.0001" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.25" ambient="0 0 0 0 0" reflection="0 0 0 0 0" diffuse="0.6" name="" specular="1" phongsize="75" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>*****************************************************************************
+                          SKY PIGMENTS
+*****************************************************************************</comment>
+ <declare id="Blue_Sky_Map" >
+  <colormap map_values="0.5 0.6 1" name="" >
+   <solidcolor color="0.25 0.25 0.5 0 0" />
+   <solidcolor color="0.7 0.7 0.7 0 0" />
+   <solidcolor color="0.3 0.3 0.3 0 0" />
+  </colormap>
+ </declare>
+ <comment>Basic Blue Sky w/ clouds.</comment>
+ <declare id="Blue_Sky" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.3 0.3 0.3" depth="0" agateturbulence="0.5" patterntype="bozo" />
+   <colormap map_values="0.5 0.6 1" name="" >
+    <solidcolor color="0.25 0.25 0.5 0 0" />
+    <solidcolor color="0.7 0.7 0.7 0 0" />
+    <solidcolor color="0.3 0.3 0.3 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>Bright Blue Sky w/ very white clouds.</comment>
+ <declare id="Bright_Blue_Sky" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.56 0.56 0.56" depth="0" agateturbulence="0.5" patterntype="bozo" />
+   <colormap map_values="0.5 0.6 1" name="" >
+    <solidcolor color="0.5 0.5 1 0 0" />
+    <solidcolor color="1 1 1 0 0" />
+    <solidcolor color="0.5 0.5 0.5 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>Another sky</comment>
+ <declare id="Blue_Sky2" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="agate" />
+   <colormap map_values="0.3 1" name="" >
+    <solidcolor color="0 0 1 0 0" />
+    <solidcolor color="1 1 1 0 0" />
+   </colormap>
+   <scale value="0.75 0.75 0.75" />
+  </pigment>
+ </declare>
+ <comment>Small puffs of white clouds</comment>
+ <declare id="Blue_Sky3" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.1 0.1 0.1" depth="0" agateturbulence="0.5" patterntype="granite" />
+   <colormap map_values="0.3 1" name="" >
+    <solidcolor color="0 0 1 0 0" />
+    <solidcolor color="1 1 1 0 0" />
+   </colormap>
+   <scale value="0.75 0.75 0.75" />
+  </pigment>
+ </declare>
+ <comment>Red sky w/ yellow clouds -- very surreal.</comment>
+ <declare id="Blood_Sky" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.5 0.5 0.5" depth="0" agateturbulence="0.5" patterntype="bozo" />
+   <colormap map_values="0 0.5 0.5 0.6 0.6" name="" >
+    <solidcolor color="0.9 0.7 0 0 0" />
+    <solidcolor color="0.3 0.2 0 0 0" />
+    <solidcolor color="0.6 0.025 0 0 0" />
+    <solidcolor color="0.9 0.7 0 0 0" />
+    <solidcolor color="0.6 0.025 0 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>Black sky with red and purple clouds 
+Try adding turbulence values from 0.1 - 5.0 -- CdW</comment>
+ <declare id="Apocalypse" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="bozo" />
+   <colormap map_values="0 0.4 0.6 1" name="" >
+    <solidcolor color="0.8 0 0 0 0" />
+    <solidcolor color="0.4 0 0.4 0 0" />
+    <solidcolor color="0 0 0.2 0 0" />
+    <solidcolor color="0 0 0 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>White clouds w/ transparent sky.</comment>
+ <declare id="Clouds" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="bozo" />
+   <colormap map_values="0.1 0.5" name="" >
+    <solidcolor color="0.8 0.8 0.8 0 0" />
+    <solidcolor color="1 1 1 1 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="FBM_Clouds" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.7" turbulence="0.65 0.65 0.65" depth="0" agateturbulence="0.5" patterntype="bozo" />
+   <colormap map_values="0 0.1 0.5 0.5" name="" >
+    <solidcolor color="0.85 0.85 0.85 0 0" />
+    <solidcolor color="0.75 0.75 0.75 0 0" />
+    <solidcolor color="0.75 0.75 0.75 0 0" />
+    <solidcolor color="1 1 1 1 0" />
+   </colormap>
+   <scale value="6 1 6" />
+  </pigment>
+ </declare>
+ <declare id="Shadow_Clouds" >
+  <texture name="" >
+   <comment>The blue sky background for the clouds </comment>
+   <pigment name="" >
+    <solidcolor color="0.196078 0.6 0.8 0 0" />
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.7 0.7 0.7 0.7 0.7" reflection="0 0 0 0 0" diffuse="0" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+  <texture name="" >
+   <comment>The upper part of the clouds</comment>
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.7" turbulence="0.65 0.65 0.65" depth="0" agateturbulence="0.5" patterntype="bozo" />
+    <colormap map_values="0 0.1 0.5 0.5" name="" >
+     <solidcolor color="0.85 0.85 0.85 0 0" />
+     <solidcolor color="0.75 0.75 0.75 0 0" />
+     <solidcolor color="0.75 0.75 0.75 0 0" />
+     <solidcolor color="1 1 1 1 0" />
+    </colormap>
+    <scale value="6 1 6" />
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="1 1 1 1 1" reflection="0 0 0 0 0" diffuse="0" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+  <texture name="" >
+   <comment>The darker underside of the clouds</comment>
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.7" turbulence="0.65 0.65 0.65" depth="0" agateturbulence="0.5" patterntype="bozo" />
+    <colormap map_values="0 0.1 0.5 0.5" name="" >
+     <solidcolor color="0.85 0.85 0.85 0 0" />
+     <solidcolor color="0.75 0.75 0.75 0 0" />
+     <solidcolor color="0.75 0.75 0.75 0 0" />
+     <solidcolor color="1 1 1 1 0" />
+    </colormap>
+    <scale value="6 1 6" />
+    <translate value="-0 -0.15 -0" />
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.6 0.6 0.6 0.6 0.6" reflection="0 0 0 0 0" diffuse="0" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>*****************************************************************************
+                          WOODEN PIGMENTS
+*****************************************************************************</comment>
+ <comment>Several wooden pigments by Tom Price:
+A light reddish wood.</comment>
+ <declare id="Cherry_Wood" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.3 0.3 0.3" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <colormap map_values="0.8 0.8 1" name="" >
+    <solidcolor color="0.66 0.31 0.2 0 0" />
+    <solidcolor color="0.4 0.13 0.06 0 0" />
+    <solidcolor color="0.2 0.06 0.03 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>A light tan wood with,ish rings.</comment>
+ <declare id="Pine_Wood" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.2 0.2 0.2" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <colormap map_values="0.8 0.8 1" name="" >
+    <solidcolor color="1 0.72 0.25 0 0" />
+    <solidcolor color="0.5 0.5 0.06 0 0" />
+    <solidcolor color="0.4 0.4 0.03 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>Dark wood with a,ish hue to it.</comment>
+ <declare id="Dark_Wood" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.2 0.2 0.2" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <colormap map_values="0.8 0.8 1" name="" >
+    <solidcolor color="0.43 0.24 0.05 0 0" />
+    <solidcolor color="0.4 0.33 0.06 0 0" />
+    <solidcolor color="0.2 0.03 0.03 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>Light tan wood with brown rings.</comment>
+ <declare id="Tan_Wood" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.1 0.1 0.1" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <colormap map_values="0.8 0.8 1" name="" >
+    <solidcolor color="0.88 0.6 0.3 0 0" />
+    <solidcolor color="0.6 0.4 0.2 0 0" />
+    <solidcolor color="0.4 0.3 0.2 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>A very pale wood with tan rings -- kind of balsa-ish.</comment>
+ <declare id="White_Wood" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.6 0.6 0.6" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <colormap map_values="0 0.8 0.8 1" name="" >
+    <solidcolor color="0.93 0.71 0.53 0 0" />
+    <solidcolor color="0.98 0.81 0.6 0 0" />
+    <solidcolor color="0.6 0.33 0.27 0 0" />
+    <solidcolor color="0.7 0.6 0.23 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>Brown wood - looks stained.</comment>
+ <declare id="Tom_Wood" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.31 0.31 0.31" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <colormap map_values="0.8 0.8 1" name="" >
+    <solidcolor color="0.7 0.3 0 0 0" />
+    <solidcolor color="0.5 0.2 0 0 0" />
+    <solidcolor color="0.4 0.1 0 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>The scaling in these definitions is relative to a unit-sized object
+(radius 1).  Note that woods are functionally equivilent to a log lying
+along the z axis.  For best results, think like a woodcutter trying to
+extract the nicest board out of that log.  A little tilt along the x axis
+will give elliptical rings of grain like you'd expect to find on most
+boards.  Experiment.
+(The first five came from DODEC2.POV in the POV Scenefile Library.)</comment>
+ <declare id="DMFWood1" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="3" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.04 0.04 0.04" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <scale value="0.05 0.05 1" />
+   <colormap map_values="0.1 0.9" name="" >
+    <solidcolor color="0.6 0.3 0.18 0 0" />
+    <solidcolor color="0.3 0.15 0.09 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="DMFWood2" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="4" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.03 0.03 0.03" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <scale value="0.05 0.05 1" />
+   <colormap map_values="0.1 0.9" name="" >
+    <solidcolor color="0.52 0.37 0.26 0 0" />
+    <solidcolor color="0.42 0.26 0.15 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="DMFWood3" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="2" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.05 0.05 0.05" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <scale value="0.05 0.05 1" />
+   <colormap map_values="0.1 0.9" name="" >
+    <solidcolor color="0.4 0.133 0.066 0 0" />
+    <solidcolor color="0.2 0.065 0.033 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="DMFWood4" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="3" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.04 0.04 0.04" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <scale value="0.05 0.05 1" />
+   <colormap map_values="0.1 0.9" name="" >
+    <solidcolor color="0.888 0.6 0.3 0 0" />
+    <solidcolor color="0.6 0.4 0.2 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="DMFWood5" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.05 0.05 0.05" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <scale value="0.075 0.075 1" />
+   <colormap map_values="0.1 0.9" name="" >
+    <solidcolor color="0.3 0.1 0.05 0 0" />
+    <solidcolor color="0.25 0.07 0.038 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>This is a three-layer wood texture.  Renders rather slowly because of
+the transparent layers and the two layers of turbulence, but it looks
+great.  Try other colors of &quot;varnish&quot; for simple variations.  </comment>
+ <declare id="DMFWood6" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="3" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.04 0.04 0.04" depth="0" agateturbulence="0.5" patterntype="wood" />
+    <scale value="0.05 0.05 1" />
+    <colormap map_values="0.1 0.9" name="" >
+     <solidcolor color="0.88 0.6 0.4 0 0" />
+     <solidcolor color="0.6 0.4 0.3 0 0" />
+    </colormap>
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.45 0.45 0.45 0.45 0.45" reflection="0.15 0.15 0.15 0.15 0.15" diffuse="0.33" name="" specular="0.25" phongsize="40" enable_crand="0" />
+  </texture>
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="5" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="3.25" omega="0.5" turbulence="0.1 0.5 1" depth="0" agateturbulence="0.5" patterntype="wood" />
+    <scale value="0.15 0.5 1" />
+    <colormap map_values="0 0.1 0.1 0.9 1" name="" >
+     <solidcolor color="0.7 0.6 0.4 0.1 0" />
+     <solidcolor color="0.8 0.6 0.3 0.5 0" />
+     <solidcolor color="0.8 0.6 0.3 0.65 0" />
+     <solidcolor color="0.6 0.4 0.2 0.975 0" />
+     <solidcolor color="0.6 0.4 0.2 1 0" />
+    </colormap>
+    <rotate value="5 10 5" />
+    <translate value="-2 -0 -0" />
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.0005" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.1 0.1 0.1 0.1 0.1" reflection="0 0 0 0 0" diffuse="0.33" name="" specular="0.25" phongsize="40" enable_crand="0" />
+  </texture>
+  <texture name="" >
+   <comment>A &quot;coat of varnish&quot; to modify the overall color of the wood</comment>
+   <pigment name="" >
+    <solidcolor color="0.75 0.15 0 0.95 0" />
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.01" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0 0 0 0 0" reflection="0 0 0 0 0" diffuse="0.33" name="" specular="0.25" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>Is this really oak?  I dunno.  Quite light, maybe more like spruce.</comment>
+ <declare id="DMFLightOak" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.05 0.05 0.05" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <comment>For best results,  keep this low!</comment>
+   <scale value="0.2 0.2 1" />
+   <comment>Scaled for a unit object</comment>
+   <colormap map_values="0.1 0.9" name="" >
+    <solidcolor color="0.42 0.26 0.15 0 0" />
+    <solidcolor color="0.52 0.37 0.26 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>Looks like old desk oak if used correctly.</comment>
+ <declare id="DMFDarkOak" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="3" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.04 0.04 0.04" depth="0" agateturbulence="0.5" patterntype="wood" />
+   <comment>For best results,  keep this low!</comment>
+   <scale value="0.2 0.2 1" />
+   <comment>Scaled for a unit object</comment>
+   <colormap map_values="0.1 0.9" name="" >
+    <solidcolor color="0.6 0.3 0.18 0 0" />
+    <solidcolor color="0.3 0.15 0.09 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>Wood by Eric Barish</comment>
+ <declare id="EMBWood1" >
+  <texture name="" >
+   <comment>Bottom wood-grain layer </comment>
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.05 0.05 0.05" depth="0" agateturbulence="0.5" patterntype="wood" />
+    <colormap map_values="0 0.34 0.4 0.47 1" name="" >
+     <solidcolor color="0.58 0.45 0.23 0 0" />
+     <solidcolor color="0.65 0.45 0.25 0 0" />
+     <solidcolor color="0.33 0.23 0.13 0 0" />
+     <solidcolor color="0.6 0.4 0.2 0 0" />
+     <solidcolor color="0.25 0.15 0.05 0 0" />
+    </colormap>
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0.02" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.2" ambient="0.32 0.32 0.32 0.32 0.32" reflection="0 0 0 0 0" diffuse="0.63" name="" specular="0" phongsize="10" enable_crand="1" />
+   <normal enable_bump_size="0" bump_size="0" name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0.05" agateturbulence="0.5" patterntype="bumps" />
+   </normal>
+  </texture>
+  <texture name="" >
+   <comment>top layer, adds small dark spots </comment>
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="bozo" />
+    <colormap map_values="0 0.8 1" name="" >
+     <solidcolor color="1 1 1 1 0" />
+     <solidcolor color="1 0.9 0.8 0.8 0" />
+     <solidcolor color="0.3 0.2 0.1 0.4 0" />
+    </colormap>
+    <scale value="0.25 0.25 0.25" />
+   </pigment>
+  </texture>
+ </declare>
+ <comment>  Doug Otwell woods
+  Yellow pine, close grained
+</comment>
+ <declare id="Yellow_Pine" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.02 0.02 0.02" depth="0" agateturbulence="0.5" patterntype="wood" />
+    <colormap map_values="0.222 0.342 0.393 0.709 0.821 1" name="" >
+     <solidcolor color="0.808 0.671 0.251 0 0" />
+     <solidcolor color="0.6 0.349 0.043 0 0" />
+     <solidcolor color="0.808 0.671 0.251 0 0" />
+     <solidcolor color="0.808 0.671 0.251 0 0" />
+     <solidcolor color="0.533 0.298 0.027 0 0" />
+     <solidcolor color="0.808 0.671 0.251 0 0" />
+    </colormap>
+    <scale value="0.1 0.1 0.1" />
+    <translate value="10 0 0" />
+   </pigment>
+  </texture>
+  <texture name="" >
+   <comment>Yellow_Pine layer 2</comment>
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.01 0.01 0.01" depth="0" agateturbulence="0.5" patterntype="wood" />
+    <colormap map_values="0 0.12 0.496 0.701 0.829 1" name="" >
+     <solidcolor color="1 1 1 1 0" />
+     <solidcolor color="0.702 0.467 0.118 0.608 0" />
+     <solidcolor color="1 1 1 1 0" />
+     <solidcolor color="1 1 1 1 0" />
+     <solidcolor color="0.702 0.467 0.118 0.608 0" />
+     <solidcolor color="1 1 1 1 0" />
+    </colormap>
+    <scale value="0.5 0.5 0.5" />
+    <translate value="10 0 0" />
+   </pigment>
+  </texture>
+ </declare>
+ <comment>
+  Rosewood
+</comment>
+ <declare id="Rosewood" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.04 0.04 0.04" depth="0" agateturbulence="0.5" patterntype="bozo" />
+    <colormap map_values="0 0.256 0.393 0.581 0.726 0.983 1" name="" >
+     <solidcolor color="0.204 0.11 0.078 0 0" />
+     <solidcolor color="0.231 0.125 0.09 0 0" />
+     <solidcolor color="0.247 0.133 0.09 0 0" />
+     <solidcolor color="0.204 0.11 0.075 0 0" />
+     <solidcolor color="0.259 0.122 0.102 0 0" />
+     <solidcolor color="0.231 0.125 0.086 0 0" />
+     <solidcolor color="0.204 0.11 0.078 0 0" />
+    </colormap>
+    <scale value="0.5 0.5 1" />
+    <translate value="10 0 0" />
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.5 0.5 0.5 0.5 0.5" reflection="0 0 0 0 0" diffuse="0.8" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+  <texture name="" >
+   <comment>Rosewood layer 2</comment>
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.04 0.04 0.04" depth="0" agateturbulence="0.5" patterntype="wood" />
+    <colormap map_values="0 0.139 0.148 0.287 0.443 0.626 0.635 0.843" name="" >
+     <solidcolor color="0.545 0.349 0.247 1 0" />
+     <solidcolor color="0 0 0 0.004 0" />
+     <solidcolor color="0 0 0 0.004 0" />
+     <solidcolor color="0.545 0.349 0.247 1 0" />
+     <solidcolor color="0.545 0.349 0.247 1 0" />
+     <solidcolor color="0 0 0 0.004 0" />
+     <solidcolor color="0 0 0 0.004 0" />
+     <solidcolor color="0.545 0.349 0.247 1 0" />
+    </colormap>
+    <scale value="0.5 0.5 1" />
+    <translate value="10 0 0" />
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.5 0.5 0.5 0.5 0.5" reflection="0 0 0 0 0" diffuse="0.8" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>
+  Sandalwood ( makes a great burled maple, too)
+</comment>
+ <declare id="Sandalwood" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.2 0.2 0.2" depth="0" agateturbulence="0.5" patterntype="bozo" />
+    <colormap map_values="0 0.171 0.274 0.393 0.564 0.701 1" name="" >
+     <solidcolor color="0.725 0.659 0.455 0 0" />
+     <solidcolor color="0.682 0.549 0.42 0 0" />
+     <solidcolor color="0.557 0.451 0.322 0 0" />
+     <solidcolor color="0.725 0.659 0.455 0 0" />
+     <solidcolor color="0.682 0.549 0.42 0 0" />
+     <solidcolor color="0.482 0.392 0.278 0 0" />
+     <solidcolor color="0.725 0.659 0.455 0 0" />
+    </colormap>
+    <scale value="0.2 0.2 1" />
+    <scale value="2 2 2" />
+   </pigment>
+  </texture>
+  <texture name="" >
+   <comment>Sandalwood layer 2</comment>
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.8 0.8 0.8" depth="0" agateturbulence="0.5" patterntype="bozo" />
+    <colormap map_values="0 0.087 0.226 0.348 0.496 0.565 0.661 0.835 1" name="" >
+     <solidcolor color="0.682 0.604 0.38 1 0" />
+     <solidcolor color="0.761 0.694 0.6 0.02 0" />
+     <solidcolor color="0.635 0.553 0.325 1 0" />
+     <solidcolor color="0.761 0.694 0.6 0.02 0" />
+     <solidcolor color="0.682 0.604 0.38 1 0" />
+     <solidcolor color="0.761 0.694 0.6 0.02 0" />
+     <solidcolor color="0.682 0.604 0.38 1 0" />
+     <solidcolor color="0.761 0.694 0.6 0.02 0" />
+     <solidcolor color="0.682 0.604 0.38 1 0" />
+    </colormap>
+    <scale value="0.4 0.4 0.4" />
+   </pigment>
+  </texture>
+ </declare>
+ <comment>*****************************************************************************
+                          GLASS TEXTURES
+*****************************************************************************</comment>
+ <comment>Note: New in POV-Ray 3.1, the &quot;ior&quot; keyword is supposed to be 
+specified in the new &quot;interior{...}&quot; statement.  
+
+Under POV-Ray 3.0x and prior, the &quot;refraction&quot; keyword served
+two puropses.  
+1) Turn on refraction: this is no longer necessary.  Any use
+of the &quot;ior&quot; keyword with a value other than 1.0 will
+turn on refraction.
+2) Attenuate transparency: Values of &quot;refraction&quot; that are
+between 0.0 and 1.0 would attenuate or darken the amount
+of light passing through.  The same effect can be obtained
+by adjusting the filter value.  A more realistic effect
+can be obtained using the new &quot;fade_power&quot; and &quot;fade_distance&quot;
+keywords in the &quot;interior&quot; statement.
+These textures and finishes should still work under POV-Ray 3.1
+but any new textures you create should make use of the new syntax.
+</comment>
+ <comment>Removed because of the 3.0x ior syntax.
+Use the glass textures in glass.inc</comment>
+ <comment>*****************************************************************************
+                          METAL FINISHES
+*****************************************************************************</comment>
+ <declare id="Metal" >
+  <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+ </declare>
+ <comment>*****************************************************************************
+                          METAL TEXTURES
+*****************************************************************************</comment>
+ <comment>Good looking &quot;metal&quot; textures</comment>
+ <declare id="Chrome_Texture" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.658824 0.658824 0.658824 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="8" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.1" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.3 0.3 0.3 0.3 0.3" reflection="0.15 0.15 0.15 0.15 0.15" diffuse="0.7" name="" specular="0.8" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>A series of metallic textures using the Metal finish:</comment>
+ <declare id="Brass_Texture" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.71 0.65 0.26 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Gold_Texture" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.85 0.85 0.1 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Bronze_Texture" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.55 0.47 0.14 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Copper_Texture" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.72 0.45 0.2 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Silver_Texture" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.9 0.91 0.98 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Chrome_Metal" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.658824 0.658824 0.658824 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="8" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.1" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.3 0.3 0.3 0.3 0.3" reflection="0.15 0.15 0.15 0.15 0.15" diffuse="0.7" name="" specular="0.8" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Brass_Metal" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.71 0.65 0.26 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Gold_Metal" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.85 0.85 0.1 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Bronze_Metal" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.55 0.47 0.14 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Copper_Metal" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.72 0.45 0.2 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Silver_Metal" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.9 0.91 0.98 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.25 0.25 0.25 0.25 0.25" diffuse="0.7" name="" specular="0" phongsize="80" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>A couple highly reflective metal textures.</comment>
+ <declare id="Polished_Chrome" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.2 0.2 0.2 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.8" ambient="0.1 0.1 0.1 0.1 0.1" reflection="0.6 0.6 0.6 0.6 0.6" diffuse="0.7" name="" specular="0" phongsize="120" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Polished_Brass" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.578 0.422 0.195 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.8" ambient="0.1 0.1 0.1 0.1 0.1" reflection="0.4 0.4 0.4 0.4 0.4" diffuse="0.8" name="" specular="0" phongsize="120" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>Beautiful military brass texture!</comment>
+ <declare id="New_Brass" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.7 0.56 0.37 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="15" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.41" ambient="0.35 0.35 0.35 0.35 0.35" reflection="0 0 0 0 0" diffuse="1" name="" specular="0" phongsize="5" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>Spun Brass texture for cymbals &amp; such</comment>
+ <declare id="Spun_Brass" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.7 0.56 0.37 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="15" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="0.41" ambient="0.35 0.35 0.35 0.35 0.35" reflection="0 0 0 0 0" diffuse="1" name="" specular="0" phongsize="5" enable_crand="0" />
+   <normal enable_bump_size="0" bump_size="0" name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0.35" agateturbulence="0.5" patterntype="waves" />
+    <blendmapmodifiers frequency="2" wave_exponent="1" enable_wave="0" phase="0" enable_phase="0" waveform_type="ramp" enable_frequency="1" />
+    <scale value="0.01 0.01 0.01" />
+   </normal>
+  </texture>
+ </declare>
+ <comment>Brushed aluminum (brushed along X axis)</comment>
+ <declare id="Brushed_Aluminum" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.658824 0.658824 0.658824 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="8" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.1" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.3 0.3 0.3 0.3 0.3" reflection="0.15 0.15 0.15 0.15 0.15" diffuse="0.7" name="" specular="0.8" phongsize="40" enable_crand="0" />
+   <normal enable_bump_size="0" bump_size="0" name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="-0.5" agateturbulence="0.5" patterntype="bumps" />
+    <scale value="1 0.001 0.001" />
+   </normal>
+  </texture>
+ </declare>
+ <declare id="SilverFinish" >
+  <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="1" ambient="0.25 0.25 0.25 0.25 0.25" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.65" name="" specular="0" phongsize="100" enable_crand="0" />
+ </declare>
+ <comment>Each of these looks good.  Slightly,r as you go down</comment>
+ <declare id="Silver1" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.94 0.93 0.83 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="1" ambient="0.25 0.25 0.25 0.25 0.25" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.65" name="" specular="0" phongsize="100" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Silver2" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.94 0.93 0.86 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="1" ambient="0.25 0.25 0.25 0.25 0.25" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.65" name="" specular="0" phongsize="100" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Silver3" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.94 0.93 0.9 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="1" enable_phong="1" irid_thickness="0" phong="1" ambient="0.25 0.25 0.25 0.25 0.25" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.65" name="" specular="0" phongsize="100" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>Interesting texture -- Give it a try.
+Sort of a &quot;rgb &lt;0.0, 0.0, 0.0> Hills Gold&quot;, black, white, and orange specks or splotches.</comment>
+ <declare id="Brass_Valley" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="granite" />
+    <colormap map_values="0.3 0.3 0.6 0.6 1" name="" >
+     <solidcolor color="0.82 0.57 0.46 0 0" />
+     <solidcolor color="0 0 0 0 0" />
+     <solidcolor color="0.85 0.85 0.95 0 0" />
+     <solidcolor color="0.82 0.57 0.46 0 0" />
+     <solidcolor color="0.85 0.85 0.95 0 0" />
+    </colormap>
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="0" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="6" enable_roughness="0" enable_specular="0" enable_ambient="0" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="1" irid_thickness="0" phong="0.75" ambient="0 0 0 0 0" reflection="0.75 0.75 0.75 0.75 0.75" diffuse="0.6" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Rust" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="granite" />
+    <colormap map_values="0 0.4 0.5 0.6 1" name="" >
+     <solidcolor color="0.89 0.51 0.28 0 0" />
+     <solidcolor color="0.7 0.13 0 0 0" />
+     <solidcolor color="0.69 0.41 0.08 0 0" />
+     <solidcolor color="0.49 0.31 0.28 0 0" />
+     <solidcolor color="0.89 0.51 0.28 0 0" />
+    </colormap>
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0 0 0 0 0" diffuse="0.4" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Rusty_Iron" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="granite" />
+    <colormap map_values="0 0.5 0.6 0.6" name="" >
+     <solidcolor color="0.42 0.2 0.2 0 0" />
+     <solidcolor color="0.5 0.5 0.02 0 0" />
+     <solidcolor color="0.6 0.2 0.2 0 0" />
+     <solidcolor color="0.3 0.2 0.2 0 0" />
+    </colormap>
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0 0 0 0 0" diffuse="0.6" name="" specular="0" phongsize="40" enable_crand="0" />
+   <normal enable_bump_size="0" bump_size="0" name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="1" agateturbulence="0.5" patterntype="wrinkles" />
+    <scale value="0.1 0.1 0.1" />
+   </normal>
+  </texture>
+ </declare>
+ <declare id="Soft_Silver" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.94 0.93 0.83 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="1.5" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.01" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.2 0.2 0.2 0.2 0.2" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.35" name="" specular="0.85" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Metallic_Finish" >
+  <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="1.5" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.01" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.1 0.1 0.1 0.1 0.1" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.65" name="" specular="0.85" phongsize="40" enable_crand="0" />
+ </declare>
+ <declare id="New_Penny" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.6 0.45 0.4 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="1.5" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.01" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.1 0.1 0.1 0.1 0.1" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.65" name="" specular="0.85" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Tinny_Brass" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.7 0.56 0.37 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="1.5" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.01" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.1 0.1 0.1 0.1 0.1" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.65" name="" specular="0.85" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Gold_Nugget" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.5 0.35 0.25 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="1.5" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.01" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.1 0.1 0.1 0.1 0.1" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.65" name="" specular="0.85" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Aluminum" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.55 0.5 0.45 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="1.5" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.01" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.1 0.1 0.1 0.1 0.1" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.65" name="" specular="0.85" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Bright_Bronze" >
+  <texture name="" >
+   <pigment name="" >
+    <solidcolor color="0.36 0.28 0.2 0 0" />
+   </pigment>
+   <finish enable_brilliance="1" enable_metallic="1" enable_exponent="0" enable_diffuse="1" metallic="1" enable_reflection="1" irid_turbulence="0" irid="0" crand="0" brilliance="1.5" enable_roughness="1" enable_specular="1" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.01" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0.1 0.1 0.1 0.1 0.1" reflection="0.45 0.45 0.45 0.45 0.45" diffuse="0.65" name="" specular="0.85" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>*****************************************************************************
+                   SPECIAL EFFECTS
+*****************************************************************************</comment>
+ <comment>Red &amp; white stripes - Looks best on a y axis Cylinder
+It &quot;spirals&quot; because it's gradient on two axis</comment>
+ <declare id="Candy_Cane" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 0" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="gradient" />
+   <colormap map_values="0.25 0.25 0.75 0.75" name="" >
+    <solidcolor color="1 0 0 0 0" />
+    <solidcolor color="1 1 1 0 0" />
+    <solidcolor color="1 1 1 0 0" />
+    <solidcolor color="1 0 0 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <comment>Orange and Clear stripes spiral around the texture
+to make an object look like it was &quot;Peeled&quot;
+Now, you too can be M.C. Escher </comment>
+ <declare id="Peel" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 0" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="gradient" />
+   <colormap map_values="0.25 0.25 0.75 0.75" name="" >
+    <solidcolor color="1 0.5 0 0 0" />
+    <solidcolor color="1 1 1 1 0" />
+    <solidcolor color="1 1 1 1 0" />
+    <solidcolor color="1 0.5 0 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="Y_Gradient" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="0 1 0" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="gradient" />
+   <colormap map_values="0 0.33 0.66 1" name="" >
+    <solidcolor color="1 0 0 0 0" />
+    <solidcolor color="0 0 1 0 0" />
+    <solidcolor color="0 1 0 0 0" />
+    <solidcolor color="1 0 0 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="X_Gradient" >
+  <pigment name="" >
+   <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 0 0" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="gradient" />
+   <colormap map_values="0 0.33 0.66" name="" >
+    <solidcolor color="1 0 0 0 0" />
+    <solidcolor color="0 0 1 0 0" />
+    <solidcolor color="1 1 1 0 0" />
+   </colormap>
+  </pigment>
+ </declare>
+ <declare id="Cork" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="granite" />
+    <colormap map_values="0 0.6 0.6 0.65 0.65 1" name="" >
+     <solidcolor color="0.93 0.71 0.532 0 0" />
+     <solidcolor color="0.98 0.81 0.6 0 0" />
+     <solidcolor color="0.5 0.3 0.2 0 0" />
+     <solidcolor color="0.5 0.3 0.2 0 0" />
+     <solidcolor color="0.8 0.53 0.46 0 0" />
+     <solidcolor color="0.85 0.75 0.35 0 0" />
+    </colormap>
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="0" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="1" enable_specular="1" enable_ambient="0" irid_amount="0" reflection_exponent="1" roughness="0.5" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="0 0 0 0 0" reflection="0 0 0 0 0" diffuse="0.6" name="" specular="0.1" phongsize="40" enable_crand="0" />
+   <scale value="0.25 0.25 0.25" />
+   <comment>Generally looks best scaled longer on one axis</comment>
+  </texture>
+ </declare>
+ <declare id="Lightening_CMap1" >
+  <colormap map_values="0 0.15 0.25 0.3 0.4 0.45" name="" >
+   <solidcolor color="1 1 1 0 0" />
+   <solidcolor color="0.94 0.81 0.99 0.65 0" />
+   <solidcolor color="0.94 0.81 0.99 0.65 0" />
+   <solidcolor color="0.87 0.58 0.98 0.85 0" />
+   <solidcolor color="0.87 0.58 0.98 0.85 0" />
+   <solidcolor color="0.73 0.16 0.96 0.95 0" />
+  </colormap>
+ </declare>
+ <declare id="Lightening1" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.5 0.5 0.5" depth="0" agateturbulence="0.5" patterntype="marble" />
+    <colormap map_values="0 0.15 0.25 0.3 0.4 0.45" name="" >
+     <solidcolor color="1 1 1 0 0" />
+     <solidcolor color="0.94 0.81 0.99 0.65 0" />
+     <solidcolor color="0.94 0.81 0.99 0.65 0" />
+     <solidcolor color="0.87 0.58 0.98 0.85 0" />
+     <solidcolor color="0.87 0.58 0.98 0.85 0" />
+     <solidcolor color="0.73 0.16 0.96 0.95 0" />
+    </colormap>
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="0" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="1 1 1 1 1" reflection="0 0 0 0 0" diffuse="0.6" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <declare id="Lightening_CMap2" >
+  <colormap map_values="0 0.1 0.2 0.3 0.45 0.65" name="" >
+   <solidcolor color="1 1 1 0 0" />
+   <solidcolor color="0.94 0.81 0.99 0.65 0" />
+   <solidcolor color="0.94 0.81 0.99 0.65 0" />
+   <solidcolor color="0.87 0.58 0.98 0.85 0" />
+   <solidcolor color="0.87 0.58 0.98 0.85 0" />
+   <solidcolor color="0.73 0.16 0.96 0.95 0" />
+  </colormap>
+ </declare>
+ <declare id="Lightening2" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="1" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0.5 0.5 0.5" depth="0" agateturbulence="0.5" patterntype="granite" />
+    <colormap map_values="0 0.1 0.2 0.3 0.45 0.65" name="" >
+     <solidcolor color="1 1 1 0 0" />
+     <solidcolor color="0.94 0.81 0.99 0.65 0" />
+     <solidcolor color="0.94 0.81 0.99 0.65 0" />
+     <solidcolor color="0.87 0.58 0.98 0.85 0" />
+     <solidcolor color="0.87 0.58 0.98 0.85 0" />
+     <solidcolor color="0.73 0.16 0.96 0.95 0" />
+    </colormap>
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="0" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="1 1 1 1 1" reflection="0 0 0 0 0" diffuse="0.6" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+ <comment>Starfield, by Jeff Burton</comment>
+ <declare id="Starfield" >
+  <texture name="" >
+   <pigment name="" >
+    <pattern densityfile="" octaves="6" enable_turbulence="0" quiltcontrol0="1" gradient="1 1 1" quiltcontrol1="1" maxiterations="10" spiralnumberarms="0" densityinterpolate="0" lambda="2" omega="0.5" turbulence="0 0 0" depth="0" agateturbulence="0.5" patterntype="granite" />
+    <colormap map_values="0.72 0.72 0.75 0.78 0.81 0.85 0.91 0.91" name="" >
+     <solidcolor color="0 0 0 0 0" />
+     <solidcolor color="0.2 0.2 0.2 0 0" />
+     <solidcolor color="0.4 0.4 0.4 0 0" />
+     <solidcolor color="0.6 0.6 0.6 0 0" />
+     <solidcolor color="0.8 0.8 0.8 0 0" />
+     <solidcolor color="0.95 0.95 0.95 0 0" />
+     <solidcolor color="1 1 1 0 0" />
+     <solidcolor color="0 0 0 0 0" />
+    </colormap>
+    <comment>No Stars in this area</comment>
+    <comment>Very Very Faint Stars</comment>
+    <comment>Very Very Faint Stars</comment>
+    <comment>Very Faint Stars</comment>
+    <comment>Faint Stars</comment>
+    <comment>Medium White Stars</comment>
+    <comment>White Stars </comment>
+    <comment>No Stars in this area</comment>
+    <scale value="0.015 0.015 0.015" />
+   </pigment>
+   <finish enable_brilliance="0" enable_metallic="0" enable_exponent="0" enable_diffuse="0" metallic="1" enable_reflection="0" irid_turbulence="0" irid="0" crand="0" brilliance="1" enable_roughness="0" enable_specular="0" enable_ambient="1" irid_amount="0" reflection_exponent="1" roughness="0.05" enable_phong_size="0" enable_phong="0" irid_thickness="0" phong="0" ambient="1 1 1 1 1" reflection="0 0 0 0 0" diffuse="0.6" name="" specular="0" phongsize="40" enable_crand="0" />
+  </texture>
+ </declare>
+</objects>

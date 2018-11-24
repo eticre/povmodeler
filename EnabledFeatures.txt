@@ -1,0 +1,1 @@
+   * libfreetype - FreeType lib is needed to build the kpovmodeler project

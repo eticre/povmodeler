@@ -1,0 +1,6 @@
+<!DOCTYPE KPOVLIBINDEX>
+<library description="povray woods" readonly="true" sublibrary="false" author="eticre" name="povray-woods">
+ <object_list>
+  <object_entry name="povray-woods" file="objectdata.kpm"/>
+ </object_list>
+</library>

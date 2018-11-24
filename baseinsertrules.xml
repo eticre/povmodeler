@@ -1,0 +1,1066 @@
+<!DOCTYPE insertrules SYSTEM "pminsertrules.dtd">
+<insertrules format="1.0">
+
+  <definegroup name="Transformations">
+    <class name="Translate"/>
+    <class name="Scale"/>
+    <class name="Rotate"/>
+    <class name="PovrayMatrix"/>
+  </definegroup>
+
+  <definegroup name="Textures">
+    <class name="Pigment"/>
+    <class name="Normal"/>
+    <class name="Finish"/>
+    <class name="Texture"/>
+    <class name="InteriorTexture"/>
+    <class name="Interior"/>
+    <class name="Material"/>
+  </definegroup>
+
+  <definegroup name="ObjectModifier">
+    <group name="Transformations"/>
+    <group name="Textures"/>
+    <class name="BoundedBy"/>
+    <class name="ClippedBy"/>
+    <class name="Photons"/>
+  </definegroup>
+
+  <targetclass name="Blob">
+    <definegroup name="ObjectModifier">
+      <group name="Transformations"/>
+      <group name="Textures"/>
+    </definegroup>
+    <definegroup name="BlobComponents">
+      <class name="BlobCylinder"/>
+      <class name="BlobSphere"/>
+    </definegroup>
+
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <group name="ObjectModifier"/>
+      <not><before><group name="BlobComponents"/></before></not>
+    </rule>
+    <rule>
+      <group name="BlobComponents"/>
+      <not><after><group name="ObjectModifier"/></after></not>
+    </rule>
+  </targetclass>
+
+  <targetclass name="BlobCylinder">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+      <group name="Transformations"/>
+      <class name="Texture"/>
+      <class name="InteriorTexture"/>
+      <class name="Pigment"/>
+      <class name="Normal"/>
+      <class name="Finish"/>
+    </rule>
+  </targetclass>
+  <targetclass name="BlobSphere">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+      <group name="Transformations"/>
+      <class name="Texture"/>
+      <class name="InteriorTexture"/>
+      <class name="Pigment"/>
+      <class name="Normal"/>
+      <class name="Finish"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="BoundedBy">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+      <class name="SolidObject"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Camera">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+      <group name="Transformations"/>
+      <class name="Normal"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="ClippedBy">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+      <class name="SolidObject"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="CSG">
+    <definegroup name="CSGObjects">
+      <class name="GraphicalObject"/>
+      <class name="Light"/>
+    </definegroup>
+
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <group name="ObjectModifier"/>
+      <not><before><group name="CSGObjects"/></before></not>
+    </rule>
+    <rule>
+      <group name="CSGObjects"/>
+      <not><after><group name="ObjectModifier"/></after></not>
+    </rule>
+  </targetclass>
+
+  <targetclass name="LightGroup">
+    <definegroup name="LightGroupObjects">
+      <class name="GraphicalObject"/>
+      <class name="Light"/>
+    </definegroup>
+
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <group name="ObjectModifier"/>
+      <not><before><group name="LightGroupObjects"/></before></not>
+    </rule>
+    <rule>
+      <group name="LightGroupObjects"/>
+      <not><after><group name="ObjectModifier"/></after></not>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Mesh">
+    <definegroup name="MeshObjects">
+      <class name="Triangle"/>
+    </definegroup>
+
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <group name="ObjectModifier"/>
+      <not><before><group name="MeshObjects"/></before></not>
+    </rule>
+    <rule>
+      <group name="MeshObjects"/>
+      <not><after><group name="ObjectModifier"/></after></not>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Triangle">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <group name="ObjectModifier"/>
+      <not><parent><class name="Mesh"/></parent></not>
+    </rule>
+  </targetclass>
+  
+  <targetclass name="Declib">
+    <rule>
+      <class name="GraphicalObject"/>
+      <class name="Light"/>
+      <class name="TextureBase"/>
+      <equal>
+        <property name="numberOfChildren"/>
+        <const value="0"/>
+      </equal>
+    </rule>
+    <rule>
+      <class name="Texture"/>
+      <contains><class name="Texture"/></contains>
+    </rule>
+    <rule>
+      <class name="InteriorTexture"/>
+      <contains><class name="InteriorTexture"/></contains>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Not_in_tree">
+  </targetclass >
+
+  <targetclass name="Declare">
+    <rule>
+      <class name="GraphicalObject"/>
+      <class name="Light"/>
+      <class name="TextureBase"/>
+      <equal>
+        <property name="numberOfChildren"/>
+        <const value="0"/>
+      </equal>
+    </rule>
+    <rule>
+      <class name="Texture"/>
+      <contains><class name="Texture"/></contains>
+    </rule>
+    <rule>
+      <class name="InteriorTexture"/>
+      <contains><class name="InteriorTexture"/></contains>
+    </rule>
+    <rule>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Density">
+    <definegroup name="ListPattern">
+      <class name="ColorList"/>
+      <class name="DensityList"/>
+    </definegroup>
+    <definegroup name="Map">
+      <class name="ColorMap"/>
+      <class name="DensityMap"/>
+    </definegroup>
+    <definegroup name="Sum">
+      <class name="Pattern"/>
+      <group name="Map"/>
+      <class name="Warp"/>
+      <class name="SolidColor"/>
+      <group name="ListPattern"/>
+    </definegroup>
+
+    <rule>
+      <class name="SolidColor"/>
+      <class name="ColorList"/>
+      <class name="DensityList"/>
+      <not><contains><group name="Sum"/></contains></not>
+    </rule>
+    <rule>
+      <class name="Pattern"/>
+      <and>
+        <not>
+          <contains>
+            <class name="Pattern"/>
+            <group name="ListPattern"/>
+          </contains>
+        </not>
+        <not><after><group name="Map"/></after></not>
+        <not><after><class name="Warp"/></after></not>
+        <not><after><class name="BlendMapModifiers"/></after></not>
+        <not><after><group name="Transformations"/></after></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="Warp"/>
+      <after><class name="Pattern"/></after>
+    </rule>
+    <rule>
+      <group name="Map"/>
+      <and>
+        <not>
+          <contains>
+            <group name="Map"/>
+            <group name="ListPattern"/>
+            <class name="SolidColor"/>
+          </contains>
+        </not>
+        <not><before><class name="Pattern"/></before></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="QuickColor"/>
+      <group name="Transformations"/>
+      <not><before><class name="Pattern"/></before></not>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Finish">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Fog">
+    <rule>
+      <group name="Transformations"/>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="GraphicalObject">
+    <exception class="CSG"/>
+    <exception class="Mesh"/>
+    <rule>
+      <group name="ObjectModifier"/>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Interior">
+    <rule>
+      <class name="Media"/>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Light">
+    <rule>
+      <group name="Transformations"/>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <class name="LooksLike"/>
+      <not><contains><class name="LooksLike"/></contains></not>
+    </rule>
+    <rule>
+      <class name="ProjectedThrough"/>
+      <not><contains><class name="ProjectedThrough"/></contains></not>
+    </rule>
+    <rule>
+      <class name="Photons"/>
+      <not><contains><class name="Photons"/></contains></not>
+    </rule>
+  </targetclass>
+
+  <targetclass name="ColorList">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <class name="SolidColor"/>
+      <or>
+        <and>
+          <equal><property name="listType"/><const value="Hexagon"/></equal>
+          <less><count><class name="SolidColor"/></count><const value="3"/></less>
+        </and>
+        <and>
+          <not><equal><property name="listType"/><const value="Hexagon"/></equal></not>
+          <less><count><class name="SolidColor"/></count><const value="2"/></less>
+        </and>
+      </or>
+    </rule>
+  </targetclass>
+
+  <targetclass name="DensityList">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <class name="Density"/>
+      <or>
+        <and>
+          <equal><property name="listType"/><const value="Hexagon"/></equal>
+          <less><count><class name="Density"/></count><const value="3"/></less>
+        </and>
+        <and>
+          <not><equal><property name="listType"/><const value="Hexagon"/></equal></not>
+          <less><count><class name="Density"/></count><const value="2"/></less>
+        </and>
+      </or>
+    </rule>
+  </targetclass>
+
+  <targetclass name="NormalList">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <class name="Normal"/>
+      <and>
+        <equal><property name="depth"/><const value="0.0"/></equal>
+        <or>
+          <and>
+            <equal><property name="listType"/><const value="Hexagon"/></equal>
+            <less><count><class name="Normal"/></count><const value="3"/></less>
+          </and>
+          <and>
+            <not><equal><property name="listType"/><const value="Hexagon"/></equal></not>
+            <less><count><class name="Normal"/></count><const value="2"/></less>
+          </and>
+        </or>
+      </and>
+    </rule>
+  </targetclass>
+
+  <targetclass name="PigmentList">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <class name="Pigment"/>
+      <or>
+        <and>
+          <equal><property name="listType"/><const value="Hexagon"/></equal>
+          <less><count><class name="Pigment"/></count><const value="3"/></less>
+        </and>
+        <and>
+          <not><equal><property name="listType"/><const value="Hexagon"/></equal></not>
+          <less><count><class name="Pigment"/></count><const value="2"/></less>
+        </and>
+      </or>
+    </rule>
+  </targetclass>
+
+  <targetclass name="TextureList">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <class name="Texture"/>
+      <or>
+        <and>
+          <equal><property name="listType"/><const value="Hexagon"/></equal>
+          <less><count><class name="Texture"/></count><const value="3"/></less>
+        </and>
+        <and>
+          <not><equal><property name="listType"/><const value="Hexagon"/></equal></not>
+          <less><count><class name="Texture"/></count><const value="2"/></less>
+        </and>
+      </or>
+    </rule>
+  </targetclass>
+
+  <targetclass name="LooksLike">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <class name="GraphicalObject"/>
+      <not>
+        <contains>
+          <class name="GraphicalObject"/>
+        </contains>
+      </not>
+    </rule>
+  </targetclass>
+
+  <targetclass name="ProjectedThrough">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <class name="GraphicalObject"/>
+      <not>
+        <contains>
+          <class name="GraphicalObject"/>
+        </contains>
+      </not>
+    </rule>
+  </targetclass>
+
+  <targetclass name="ProjectedThrough">
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+    <rule>
+      <class name="GraphicalObject"/>
+      <not>
+        <contains>
+          <class name="GraphicalObject"/>
+        </contains>
+      </not>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Material">
+    <rule>
+      <group name="Textures"/>
+      <group name="Transformations"/>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="MaterialMap">
+    <rule>
+      <class name="Comment"/>
+      <class name="Texture"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Media">
+    <rule>
+      <class name="Density"/>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Normal">
+    <rule>
+      <class name="BumpMap"/>
+      <not>
+        <contains>
+          <class name="BumpMap"/>
+          <class name="NormalList"/>
+          <class name="Pattern"/>
+          <class name="NormalMap"/>
+          <class name="SlopeMap"/>
+          <class name="Warp"/>
+          <class name="BlendMapModifiers"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="NormalList"/>
+      <not>
+        <contains>
+          <class name="BumpMap"/>
+          <class name="NormalList"/>
+          <class name="Pattern"/>
+          <class name="NormalMap"/>
+          <class name="SlopeMap"/>
+          <class name="Warp"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Pattern"/>
+      <and>
+        <not>
+          <contains>
+            <class name="BumpMap"/>
+            <class name="NormalList"/>
+            <class name="Pattern"/>
+          </contains>
+        </not>
+        <not><after><class name="NormalMap"/></after></not>
+        <not><after><class name="SlopeMap"/></after></not>
+        <not><after><class name="Warp"/></after></not>
+        <not><after><class name="BlendMapModifiers"/></after></not>
+        <not><after><group name="Transformations"/></after></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="Warp"/>
+      <after><class name="Pattern"/></after>
+    </rule>
+    <rule>
+      <class name="NormalMap"/>
+      <and>
+        <not>
+          <contains>
+            <class name="BumpMap"/>
+            <class name="NormalMap"/>
+            <class name="NormalList"/>
+          </contains>
+        </not>
+        <not><after><class name="SlopeMap"/></after></not>
+        <not><after><class name="BlendMapModifiers"/></after></not>
+        <not><before><class name="Pattern"/></before></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="SlopeMap"/>
+      <and>
+        <not>
+          <contains>
+            <class name="BumpMap"/>
+            <class name="SlopeMap"/>
+            <class name="NormalList"/>
+          </contains>
+        </not>
+        <not><after><class name="BlendMapModifiers"/></after></not>
+        <not><after><group name="Transformations"/></after></not>
+        <not><before><class name="Pattern"/></before></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="BlendMapModifiers"/>
+      <and>
+        <not><contains><class name="BlendMapModifiers"/></contains></not>
+        <or>
+          <not>
+            <contains>
+              <class name="BumpMap"/>
+              <class name="NormalMap"/>
+              <class name="SlopeMap"/>
+            </contains>
+          </not>
+          <after><class name="NormalMap"/></after>
+          <after><class name="SlopeMap"/></after>
+        </or>
+        <not><before><class name="Pattern"/></before></not>
+        <not><after><group name="Transformations"/></after></not>
+      </and>
+    </rule>
+    <rule>
+      <group name="Transformations"/>
+      <not><before><class name="Pattern"/></before></not>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Pigment">
+    <definegroup name="Color">
+      <class name="SolidColor"/>
+      <class name="ImageMap"/>
+    </definegroup>
+    <definegroup name="ListPattern">
+      <class name="ColorList"/>
+      <class name="PigmentList"/>
+    </definegroup>
+    <definegroup name="Map">
+      <class name="ColorMap"/>
+      <class name="PigmentMap"/>
+    </definegroup>
+    <definegroup name="Sum">
+      <class name="Pattern"/>
+      <group name="Map"/>
+      <class name="Warp"/>
+      <group name="Color"/>
+      <group name="ListPattern"/>
+    </definegroup>
+
+    <rule>
+      <group name="Color"/>
+      <group name="ListPattern"/>
+      <not><contains><group name="Sum"/></contains></not>
+    </rule>
+    <rule>
+      <class name="Pattern"/>
+      <and>
+        <not>
+          <contains>
+            <group name="Color"/>
+            <class name="Pattern"/>
+            <group name="ListPattern"/>
+          </contains>
+        </not>
+        <not><after><group name="Map"/></after></not>
+        <not><after><class name="Warp"/></after></not>
+        <not><after><class name="BlendMapModifiers"/></after></not>
+        <not><after><group name="Transformations"/></after></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="Warp"/>
+      <after><class name="Pattern"/></after>
+    </rule>
+    <rule>
+      <group name="Map"/>
+      <and>
+        <not>
+          <contains>
+            <group name="Map"/>
+            <group name="ListPattern"/>
+            <group name="Color"/>
+          </contains>
+        </not>
+        <not><before><class name="Pattern"/></before></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="BlendMapModifiers"/>
+      <and>
+        <not>
+          <contains>
+            <class name="BlendMapModifiers"/>
+            <group name="Color"/>
+          </contains>
+        </not>
+        <not><before><group name="Map"/></before></not>
+        <not><before><class name="Pattern"/></before></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="QuickColor"/>
+      <group name="Transformations"/>
+      <not><before><class name="Pattern"/></before></not>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Rainbow">
+    <rule>
+      <class name="ColorMap"/>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Scene">
+    <rule>
+      <class name="GraphicalObject"/>
+      <class name="Comment"/>
+      <class name="Raw"/>
+      <class name="Declare"/>
+      <class name="Declib"/>
+      <class name="Camera"/>
+      <class name="Light"/>
+      <class name="SkySphere"/>
+      <class name="Rainbow"/>
+      <class name="Fog"/>
+      <class name="Media"/>
+      </rule>
+    <rule>
+      <class name="GlobalSettings"/>
+      <not><contains><class name="GlobalSettings"/></contains></not>
+    </rule>
+  </targetclass>
+
+  <targetclass name="GlobalSettings">
+    <rule>
+      <class name="Radiosity"/>
+      <not><contains><class name="Radiosity"/></contains></not>
+    </rule>
+    <rule>
+      <class name="GlobalPhotons"/>
+      <not><contains><class name="GlobalPhotons"/></contains></not>
+    </rule>
+  </targetclass>
+
+  <targetclass name="SkySphere">
+    <rule>
+      <class name="Pigment"/>
+      <group name="Transformations"/>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="Texture">
+    <definegroup name="SumMap">
+      <class name="Pattern"/>
+      <class name="TextureMap"/>
+      <class name="Warp"/>
+    </definegroup>
+    <definegroup name="SumPigment">
+      <class name="Pigment"/>
+      <class name="Normal"/>
+      <class name="Finish"/>
+    </definegroup>
+
+    <rule>
+      <class name="MaterialMap"/>
+      <not>
+        <contains>
+          <class name="TextureList"/>
+          <group name="SumMap"/>
+          <group name="SumPigment"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Pigment"/>
+      <not>
+        <contains>
+          <class name="TextureList"/>
+          <group name="SumMap"/>
+          <class name="Pigment"/>
+          <class name="MaterialMap"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Normal"/>
+      <not>
+        <contains>
+          <class name="TextureList"/>
+          <group name="SumMap"/>
+          <class name="Normal"/>
+          <class name="MaterialMap"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Finish"/>
+      <not>
+        <contains>
+          <class name="TextureList"/>
+          <group name="SumMap"/>
+          <class name="Finish"/>
+          <class name="MaterialMap"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Pattern"/>
+      <and>
+        <not>
+          <contains>
+            <class name="Pattern"/>
+            <class name="TextureList"/>
+            <group name="SumPigment"/>
+            <class name="MaterialMap"/>
+          </contains>
+        </not>
+        <not><after><class name="TextureMap"/></after></not>
+        <not><after><class name="Warp"/></after></not>
+        <not><after><class name="BlendMapModifiers"/></after></not>
+        <not><after><group name="Transformations"/></after></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="TextureMap"/>
+      <and>
+        <not>
+          <contains>
+            <class name="TextureMap"/>
+            <class name="TextureList"/>
+            <group name="SumPigment"/>
+            <class name="MaterialMap"/>
+          </contains>
+        </not>
+        <not><before><class name="Pattern"/></before></not>
+        <not><after><class name="BlendMapModifiers"/></after></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="TextureList"/>
+      <not>
+        <contains>
+          <class name="TextureList"/>
+          <group name="SumMap"/>
+          <group name="SumPigment"/>
+          <class name="MaterialMap"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Warp"/>
+      <after><class name="Pattern"/></after>
+    </rule>
+    <rule>
+      <group name="Transformations"/>
+      <not><before><class name="Pattern"/></before></not>
+    </rule>
+    <rule>
+      <class name="BlendMapModifiers"/>
+      <and>
+        <not>
+          <contains>
+            <class name="MaterialMap"/>
+            <class name="BlendMapModifiers"/>
+          </contains>
+        </not>
+        <not><before><class name="TextureMap"/></before></not>
+        <not><before><class name="Pattern"/></before></not>
+        <not><after><group name="Transformations"/></after></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="InteriorTexture">
+    <definegroup name="SumMap">
+      <class name="Pattern"/>
+      <class name="TextureMap"/>
+      <class name="Warp"/>
+    </definegroup>
+    <definegroup name="SumPigment">
+      <class name="Pigment"/>
+      <class name="Normal"/>
+      <class name="Finish"/>
+    </definegroup>
+
+    <rule>
+      <class name="MaterialMap"/>
+      <not>
+        <contains>
+          <class name="TextureList"/>
+          <group name="SumMap"/>
+          <group name="SumPigment"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Pigment"/>
+      <not>
+        <contains>
+          <class name="TextureList"/>
+          <group name="SumMap"/>
+          <class name="Pigment"/>
+          <class name="MaterialMap"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Normal"/>
+      <not>
+        <contains>
+          <class name="TextureList"/>
+          <group name="SumMap"/>
+          <class name="Normal"/>
+          <class name="MaterialMap"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Finish"/>
+      <not>
+        <contains>
+          <class name="TextureList"/>
+          <group name="SumMap"/>
+          <class name="Finish"/>
+          <class name="MaterialMap"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Pattern"/>
+      <and>
+        <not>
+          <contains>
+            <class name="Pattern"/>
+            <class name="TextureList"/>
+            <group name="SumPigment"/>
+            <class name="MaterialMap"/>
+          </contains>
+        </not>
+        <not><after><class name="TextureMap"/></after></not>
+        <not><after><class name="Warp"/></after></not>
+        <not><after><class name="BlendMapModifiers"/></after></not>
+        <not><after><group name="Transformations"/></after></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="TextureMap"/>
+      <and>
+        <not>
+          <contains>
+            <class name="TextureMap"/>
+            <class name="TextureList"/>
+            <group name="SumPigment"/>
+            <class name="MaterialMap"/>
+          </contains>
+        </not>
+        <not><before><class name="Pattern"/></before></not>
+        <not><after><class name="BlendMapModifiers"/></after></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="TextureList"/>
+      <not>
+        <contains>
+          <class name="TextureList"/>
+          <group name="SumMap"/>
+          <group name="SumPigment"/>
+          <class name="MaterialMap"/>
+        </contains>
+      </not>
+    </rule>
+    <rule>
+      <class name="Warp"/>
+      <after><class name="Pattern"/></after>
+    </rule>
+    <rule>
+      <group name="Transformations"/>
+      <not><before><class name="Pattern"/></before></not>
+    </rule>
+    <rule>
+      <class name="BlendMapModifiers"/>
+      <and>
+        <not>
+          <contains>
+            <class name="MaterialMap"/>
+            <class name="BlendMapModifiers"/>
+          </contains>
+        </not>
+        <not><before><class name="TextureMap"/></before></not>
+        <not><before><class name="Pattern"/></before></not>
+        <not><after><group name="Transformations"/></after></not>
+      </and>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="TextureMap">
+    <rule>
+      <class name="Texture"/>
+      <equal><property name="hasLinkedObject"/><const value="false"/></equal>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="PigmentMap">
+    <rule>
+      <class name="Pigment"/>
+      <equal><property name="hasLinkedObject"/><const value="false"/></equal>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="ColorMap">
+    <rule>
+      <class name="SolidColor"/>
+      <equal><property name="hasLinkedObject"/><const value="false"/></equal>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="NormalMap">
+    <rule>
+      <class name="Normal"/>
+      <equal><property name="hasLinkedObject"/><const value="false"/></equal>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="SlopeMap">
+    <rule>
+      <class name="Slope"/>
+      <equal><property name="hasLinkedObject"/><const value="false"/></equal>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+
+  <targetclass name="DensityMap">
+    <rule>
+      <class name="Density"/>
+      <equal><property name="hasLinkedObject"/><const value="false"/></equal>
+    </rule>
+    <rule>
+      <class name="Comment"/>
+      <class name="Raw"/>
+    </rule>
+  </targetclass>
+</insertrules>

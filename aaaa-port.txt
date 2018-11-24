@@ -1,0 +1,3 @@
+14-05-2016
+installato in sviluppo kde-dev-script
+portato kcmdlineargs in main.cpp

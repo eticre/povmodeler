@@ -1,0 +1,52 @@
+TODO/Wishlist for kpovmodeler
+-----------------------------
+
+Tree View
+---------
+- Leave insert errors at their original position
+- Add an option to the configuration whether transformations and maybe
+  a simple pigment should be added to new graphical objects
+
+Object Properties View
+----------------------
+
+Graphical View
+--------------
+- Zoom to object short cut
+- Invert mouse wheel option
+- Remove GLUT dependency
+- Do hidden views use CPU time?
+- Heightfield wire frame
+
+Povray Render Window
+--------------------
+
+Includes
+--------
+- Finish the library
+   * Maintain the object index in PMLibraryHandle and library_index.html
+   * Eliminate crashes when modifying a library object
+   * Implement delete in the library object preview tree
+- Build an example objects library
+
+Povray Export
+-------------
+
+General
+-------
+- All not implemented objects
+- New POV-Ray 3.5 objects and textures
+- BREP modeling with the patch object (triangles and polygons, extrusion etc.)
+- Umlauts in the truetype text object
+- Scene templates
+- Add some basic render modes to a new scenes
+- Sync the recent files list between multiple windows
+- Multiplication of objects with simple transformations
+
+Long Term
+---------
+- Support for animations
+- Shaded views, csg results
+- The whole povray syntax (macros, includes, ...)
+- Support for povray variants (megapov, pvmpov)
+- Support for more renderers

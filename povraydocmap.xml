@@ -1,0 +1,174 @@
+<!DOCTYPE DOCMAP>
+<map>
+  <version number="3.1" index="povuser.htm">
+    <item className="Comment" target="pov159.htm"/>
+    <item className="Declare" target="pov190.htm"/>
+
+    <item className="Translate" target="pov217.htm"/>
+    <item className="Scale" target="pov218.htm"/>
+    <item className="Rotate" target="pov219.htm"/>
+    <item className="PovrayMatrix" target="pov220.htm"/>
+
+    <item className="Camera" target="pov224.htm"/>
+
+    <item className="ObjectLink" target="pov236.htm"/>
+    <item className="Blob" target="pov238.htm"/>
+    <item className="BlobSphere" target="pov238.htm"/>
+    <item className="BlobCylinder" target="pov238.htm"/>
+    <item className="Box" target="pov239.htm"/>
+    <item className="Cone" target="pov240.htm"/>
+    <item className="Cylinder" target="pov241.htm"/>
+    <item className="HeightField" target="pov242.htm"/>
+    <item className="JuliaFractal" target="pov243.htm"/>
+    <item className="Lathe" target="pov244.htm"/>
+    <item className="Prism" target="pov245.htm"/>
+    <item className="Sphere" target="pov246.htm"/>
+    <item className="SuperquadricEllipsoid" target="pov247.htm"/>
+    <item className="SurfaceOfRevolution" target="pov248.htm"/>
+    <item className="Text" target="pov249.htm"/>
+    <item className="Torus" target="pov250.htm"/>
+
+    <item className="BicubicPatch" target="pov252.htm"/>
+    <item className="Disc" target="pov253.htm"/>
+    <item className="Mesh" target="pov254.htm"/>
+    <item className="Polygon" target="pov255.htm"/>
+    <item className="Triangle" target="pov256.htm"/>
+
+    <item className="Plane" target="pov258.htm"/>
+    <item className="Polynom" target="pov259.htm"/>
+
+    <item className="Csg" target="pov261.htm"/>
+
+    <item className="Light" target="pov267.htm"/>
+
+    <item className="ClippedBy" target="pov278.htm"/>
+    <item className="BoundedBy" target="pov279.htm"/>
+    <item className="Material" target="pov280.htm"/>
+
+    <item className="Interior" target="pov285.htm"/>
+
+    <item className="Texture" target="pov292.htm"/>
+    <item className="Pigment" target="pov293.htm"/>
+    <item className="SolidColor" target="pov294.htm"/>
+    <item className="ColorList" target="pov295.htm"/>
+    <item className="ColorMap" target="pov296.htm"/>
+    <item className="PigmentMap" target="pov297.htm"/>
+    <item className="PigmentList" target="pov297.htm"/>
+    <item className="ImageMap" target="pov298.htm"/>
+    <item className="QuickColor" target="pov299.htm"/>
+
+    <item className="Normal" target="pov300.htm"/>
+    <item className="SlopeMap" target="pov301.htm"/>
+    <item className="Slope" target="pov301.htm"/>
+    <item className="NormalMap" target="pov302.htm"/>
+    <item className="NormalList" target="pov302.htm"/>
+    <item className="BumpMap" target="pov303.htm"/>
+
+    <item className="Finish" target="pov304.htm"/>
+
+    <item className="TextureMap" target="pov312.htm"/>
+    <item className="TextureList" target="pov312.htm"/>
+    <item className="MaterialMap" target="pov314.htm"/>
+    <item className="Pattern" target="pov316.htm"/>
+    <item className="BlendMapModifiers" target="pov348.htm"/>
+    <item className="Warp" target="pov354.htm"/>
+
+    <item className="Media" target="pov356.htm"/>
+    <item className="Density" target="pov362.htm"/>
+    <item className="DensityList" target="pov365.htm"/>
+    <item className="DensityMap" target="pov365.htm"/>
+
+    <item className="Background" target="pov369.htm"/>
+    <item className="Fog" target="pov370.htm"/>
+    <item className="SkySphere" target="pov371.htm"/>
+    <item className="Rainbow" target="pov372.htm"/>
+
+    <item className="GlobalSettings" target="pov373.htm"/>
+  </version>
+
+  <version number="3.5" index="index.html">
+    <item className="Comment" target="povdoc_157.html#target_530"/>
+    <item className="Declare" target="povdoc_167.html#target_662"/>
+
+    <item className="Translate" target="povdoc_175.html#target_702"/>
+    <item className="Scale" target="povdoc_175.html#target_703"/>
+    <item className="Rotate" target="povdoc_175.html#target_704"/>
+    <item className="PovrayMatrix" target="povdoc_175.html#target_705"/>
+
+    <item className="Camera" target="povdoc_180.html#target_713"/>
+
+    <item className="ObjectLink" target="pov236.htm"/>
+    <item className="Blob" target="povdoc_187.html#target_752"/>
+    <item className="BlobSphere" target="pov238.htm"/>
+    <item className="BlobCylinder" target="pov238.htm"/>
+    <item className="Box" target="povdoc_187.html#target_765"/>
+    <item className="Cone" target="povdoc_187.html#target_766"/>
+    <item className="Cylinder" target="povdoc_187.html#target_767"/>
+    <item className="HeightField" target="povdoc_187.html#target_768"/>
+    <item className="JuliaFractal" target="povdoc_187.html#target_775"/>
+    <item className="Lathe" target="povdoc_187.html#target_800"/>
+    <item className="Prism" target="povdoc_187.html#target_807"/>
+    <item className="Sphere" target="povdoc_187.html#target_812"/>
+    <item className="SuperquadricEllipsoid" target="povdoc_187.html#target_816"/>
+    <item className="SurfaceOfRevolution" target="povdoc_187.html#target_818"/>
+    <item className="Text" target="povdoc_187.html#target_822"/>
+    <item className="Torus" target="povdoc_187.html#target_824"/>
+
+    <item className="BicubicPatch" target="povdoc_188.html#target_828"/>
+    <item className="Disc" target="povdoc_188.html#target_835"/>
+    <item className="Mesh" target="povdoc_188.html#target_837"/>
+    <item className="Polygon" target="povdoc_188.html#target_848"/>
+    <item className="Triangle" target="povdoc_188.html#target_849"/>
+
+    <item className="Plane" target="povdoc_189.html#target_852"/>
+    <item className="Polynom" target="povdoc_189.html#target_853"/>
+
+    <item className="Csg" target="povdoc_192.html#target_905"/>
+
+    <item className="Light" target="povdoc_193.html#target_914"/>
+
+    <item className="ClippedBy" target="povdoc_195.html#target_970"/>
+    <item className="BoundedBy" target="povdoc_195.html#target_971"/>
+    <item className="Material" target="povdoc_195.html#target_972"/>
+
+    <item className="Interior" target="povdoc_196.html#target_980"/>
+
+    <item className="Texture" target="povdoc_205.html#target_1000"/>
+    <item className="Pigment" target="povdoc_206.html#target_1002"/>
+    <item className="SolidColor" target="povdoc_206.html#target_1003"/>
+    <item className="ColorList" target="povdoc_206.html#target_1004"/>
+    <item className="ColorMap" target="povdoc_206.html#target_1005"/>
+    <item className="PigmentMap" target="povdoc_206.html#target_1007"/>
+    <item className="PigmentList" target="povdoc_206.html#target_1007"/>
+    <item className="ImageMap" target="povdoc_206.html#target_1009"/>
+    <item className="QuickColor" target="povdoc_206.html#target_1019"/>
+
+    <item className="Normal" target="povdoc_207.html#target_1021"/>
+    <item className="SlopeMap" target="povdoc_207.html#target_1022"/>
+    <item className="Slope" target="povdoc_207.html#target_1022"/>
+    <item className="NormalMap" target="povdoc_207.html#target_1025"/>
+    <item className="NormalList" target="povdoc_207.html#target_1025"/>
+    <item className="BumpMap" target="povdoc_207.html#target_1027"/>
+
+    <item className="Finish" target="povdoc_208.html#target_1035"/>
+
+    <item className="TextureMap" target="povdoc_210.html#target_1071"/>
+    <item className="TextureList" target="povdoc_210.html#target_1071"/>
+    <item className="MaterialMap" target="povdoc_210.html#target_1077"/>
+    <item className="Pattern" target="povdoc_216.html#target_1089"/>
+    <item className="BlendMapModifiers" target="povdoc_217.html#target_1143"/>
+    <item className="Warp" target="povdoc_217.html#target_1155"/>
+
+    <item className="Media" target="povdoc_218.html#target_1185"/>
+    <item className="Density" target="povdoc_221.html#target_1202"/>
+    <item className="DensityList" target="povdoc_221.html#target_1206"/>
+    <item className="DensityMap" target="povdoc_221.html#target_1206"/>
+
+    <item className="Background" target="povdoc_224.html#target_1211"/>
+    <item className="Fog" target="povdoc_225.html#target_1212"/>
+    <item className="SkySphere" target="povdoc_226.html#target_1220"/>
+    <item className="Rainbow" target="povdoc_227.html#target_1222"/>
+
+    <item className="GlobalSettings" target="povdoc_234.html#target_1265"/>
+  </version>
+</map>

@@ -1,0 +1,84 @@
+Version 0.0.1:
+  - Development release
+  - Framework is finished
+  - Some basic objects and textures
+
+Version 0.1
+  - First release for the public
+  - Most textures are supported
+  - All simple objects are supported
+  - Rendering the scene with povray inside the program
+  - Textures can be previewed inside the dialog view
+  - The camera supports now focal blur and all complex projections
+  - The camera view can render all projections except the omnimax projection
+
+Version 0.1.1
+  - Bugfix release
+  - Fixed bugs:
+    - A bug that causes the program to crash during rendering
+    - A bug that causes the program to hang during auto scroll
+    - "Revert file" now works
+
+Version 0.2
+  - Ported to Qt 3.0 / KDE 3.0, moved to the kdegraphics package
+  - Dock widgets
+  - Qt OpenGL extension removed
+  - Key navigation in the tree view
+  - Compressed document format
+  - Fixed bugs:
+    - Validation check for the depth edit in the pattern edit
+    - Texture preview didn't serialize all needed declares
+    - "File close" follows the style guide
+
+Version 1.0
+  - View layouts
+  - User documentation
+
+Version 1.1
+  - Plugin framework  (work in progress)
+  - Object and texture library  (work in progress)
+  - new --no-dri command line option and configuration dialog to
+    disable direct rendering
+  - First characters of comments are used as description in the tree view
+  - The user is asked if pending changes should be saved before rendering
+  - Nicer render speed values
+  - Empty line before comments in povray output
+  - Control point selection in the properties view for bicubic patch,
+    sor, lathe and prism
+  - Export flag for graphical objects and the camera
+  - Removed the glut dependency
+  - Added Heightfield Viewstructure
+  - Light object gained, parallel, circular and orient options
+  - Dispersion options added to interior
+  - Added Noise generator options to global settings and patterns
+  - New warp types added
+  - Added accuracy setting to normals
+  - Added new finish options
+  - New objects:
+    - Isosurface
+    - Sphere sweep
+    - Projected through
+    - Radiosity
+    - Global photons
+    - Photons
+    - Light groups
+    - Interior textures
+    - Mesh
+
+Version 1.1.1
+  - Added graphical editing to Mesh object
+  - Updated Media too handle new methods and options
+  - Added new patterns cells, additional crackle options, julia,
+    additional mandel options, and slope
+  - Added keywords no_image, no_reflection, and double_illuminate to
+    graphical objects
+  - Added uv mapping and uv vectors
+
+Version 1.1.2
+  - Added local and global detail levels too:
+    Sphere, Cylinder, Cone, Torus, Disc, Blob Sphere, Blob Cylinder, Lathe,
+    SOR, Prism, SQE, Sphere sweep and Heightfield.
+
+Version 1.1.3
+  - The user is asked if pending changes should be saved before saving or exporting
+  - Porting fixes for KDE 4.1

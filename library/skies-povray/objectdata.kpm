@@ -1,0 +1,282 @@
+<!DOCTYPE KPOVMODELER>
+<objects minorFormat="0" visibility_level="10" majorFormat="1">
+ <comment>   Persistence of Vision Ray Tracer version 3.5 Include File
+   File: skies.inc
+   Last updated: 2001.7.24
+   Description: Sky textures, sky_spheres, and sky objects.</comment>
+ <comment>
+
+Persistence of Vision Raytracer Version 3.1
+
+Contents:
+Pigments:    (building blocks for the stuff below)
+P_Cloud1     pigment layer, contains clear regions.  Use with background.
+P_Cloud2     pigment layer, contains clear regions.  Use with background.
+P_Cloud3     pigment layer, contains clear regions.  Use with background.
+
+SkySpheres:
+S_Cloud1     sky_sphere, uses P_Cloud2.
+S_Cloud2     sky_sphere  uses P_Cloud2.
+S_Cloud3     sky_sphere  uses P_Cloud3.
+S_Cloud4     sky_sphere  uses P_Cloud3.
+S_Cloud5     sky_sphere.  Opaque.
+
+Textures:
+T_Cloud1     2-layer texture using P_Cloud1 pigment, contains clear regions.
+T_Cloud2     1-layer texture, contains clear regions.
+T_Cloud3     2-layer texture, contains clear regions.
+
+Objects:
+O_Cloud1     sphere, radius 10000 with T_Cloud1 texture.
+O_Cloud2     union of 2 planes, with T_Cloud2 and T_Cloud3.
+
+</comment>
+ <declare id="P_Cloud1">
+  <pigment uv_mapping="0" name="">
+   <pattern patterntype="bozo" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,7" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0.65 0.65 0.65" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+   <colormap name="" map_values="0 0.1 0.5 1.001">
+    <solidcolor color="0.85 0.85 0.85 0 0"/>
+    <solidcolor color="0.75 0.75 0.75 0 0"/>
+    <solidcolor color="0 0 0 0 0"/>
+    <solidcolor color="0 0 0 0 0"/>
+   </colormap>
+   <scale value="6 1 6"/>
+  </pigment>
+ </declare>
+ <declare id="P_Cloud2">
+  <pigment uv_mapping="0" name="">
+   <pattern patterntype="wrinkles" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,7" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0.65 0.65 0.65" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+   <colormap name="" map_values="0 0.1 0.5 1.001">
+    <solidcolor color="0.85 0.85 0.85 0 0"/>
+    <solidcolor color="0.75 0.75 0.75 0 0"/>
+    <solidcolor color="0.258 0.258 0.435 0 0"/>
+    <solidcolor color="0.258 0.258 0.435 0 0"/>
+   </colormap>
+   <scale value="6 1 6"/>
+  </pigment>
+ </declare>
+ <declare id="P_Cloud3">
+  <pigment uv_mapping="0" name="">
+   <pattern patterntype="bozo" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,707" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0.65 0.65 0.65" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+   <colormap name="" map_values="0 0.1 0.5 1.001">
+    <solidcolor color="0.85 0.85 0.85 0 0"/>
+    <solidcolor color="0.55 0.6 0.65 0 0"/>
+    <solidcolor color="0.184 0.184 0.309 0 0"/>
+    <solidcolor color="0.1 0.1 0.2 0 0"/>
+   </colormap>
+   <scale value="6 4 6"/>
+  </pigment>
+ </declare>
+ <declare id="P_Cloud4">
+  <pigment uv_mapping="0" name="">
+   <pattern patterntype="wrinkles" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2,2" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,707" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0.1 0.1 0.1" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+   <colormap name="" map_values="0.2 0.5 1">
+    <solidcolor color="0 0 0 0 0"/>
+    <solidcolor color="0 0 0 0 0"/>
+    <solidcolor color="0 0 0 0 0"/>
+   </colormap>
+   <scale value="0.5 0.15 1"/>
+  </pigment>
+ </declare>
+ <declare id="S_Cloud1">
+  <skysphere name="">
+   <pigment uv_mapping="0" name="">
+    <pattern patterntype="gradient" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="0" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="0 1 0" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0 0 0" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    <pigmentmap name="" map_values="0.01 0.25 0.6">
+     <pigment uv_mapping="0" name="">
+      <solidcolor color="0.847 0.749 0.847 0 0"/>
+     </pigment>
+     <pigment prototype="P_Cloud2" uv_mapping="0" name="">
+      <comment>horizon</comment>
+      <scale value="0.25 0.25 0.25"/>
+      <rotate value="0 0 5"/>
+     </pigment>
+     <pigment prototype="P_Cloud3" uv_mapping="0" name="">
+      <scale value="0.25 0.15 0.25"/>
+      <rotate value="0 0 10"/>
+     </pigment>
+    </pigmentmap>
+   </pigment>
+  </skysphere>
+ </declare>
+ <declare id="S_Cloud2">
+  <skysphere name="">
+   <pigment uv_mapping="0" name="">
+    <pattern patterntype="gradient" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="0" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="0 1 0" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0 0 0" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    <pigmentmap name="" map_values="0 0.1 0.2">
+     <pigment uv_mapping="0" name="">
+      <solidcolor color="0.847 0.749 0.847 0 0"/>
+     </pigment>
+     <pigment uv_mapping="0" name="">
+      <comment>horizon</comment>
+     </pigment>
+     <pigment prototype="P_Cloud4" uv_mapping="0" name="">
+      <comment>horizon</comment>
+     </pigment>
+    </pigmentmap>
+   </pigment>
+  </skysphere>
+ </declare>
+ <declare id="S_Cloud3">
+  <skysphere name="">
+   <pigment uv_mapping="0" name="">
+    <pattern patterntype="gradient" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="0" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="0 1 0" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0 0 0" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    <pigmentmap name="" map_values="0.1 0.25">
+     <pigment uv_mapping="0" name="">
+      <solidcolor color="0.258 0.258 0.435 0 0"/>
+     </pigment>
+     <pigment prototype="P_Cloud2" uv_mapping="0" name="">
+      <scale value="0.15 0.15 0.15"/>
+     </pigment>
+    </pigmentmap>
+   </pigment>
+  </skysphere>
+ </declare>
+ <declare id="S_Cloud4">
+  <skysphere name="">
+   <pigment uv_mapping="0" name="">
+    <pattern patterntype="gradient" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="0" octaves="6" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="0 1 0" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0 0 0" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    <pigmentmap name="" map_values="0 0.15 0.45">
+     <pigment uv_mapping="0" name="">
+      <solidcolor color="0.184 0.184 0.309 0 0"/>
+     </pigment>
+     <pigment prototype="P_Cloud3" uv_mapping="0" name="">
+      <scale value="0.05 0.4 0.05"/>
+      <rotate value="0 0 30"/>
+     </pigment>
+     <pigment prototype="P_Cloud3" uv_mapping="0" name="">
+      <scale value="0.25 0.15 0.5"/>
+     </pigment>
+    </pigmentmap>
+   </pigment>
+  </skysphere>
+ </declare>
+ <declare id="S_Cloud5">
+  <skysphere name="">
+   <pigment uv_mapping="0" name="">
+    <solidcolor color="0.258 0.258 0.435 0 0"/>
+   </pigment>
+   <pigment uv_mapping="0" name="">
+    <pattern patterntype="bozo" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="10" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2,5" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="1.5 1.5 1.5" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    <colormap name="" map_values="0 0.5 0.7 1">
+     <solidcolor color="0.75 0.75 0.75 0 0"/>
+     <solidcolor color="0.9 0.9 0.9 0 0.9"/>
+     <solidcolor color="1 1 1 0 1"/>
+     <solidcolor color="1 1 1 0 1"/>
+    </colormap>
+    <scale value="1 0.3 10"/>
+   </pigment>
+   <pigment uv_mapping="0" name="">
+    <pattern patterntype="bozo" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="10" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2,5" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0.6 0.6 0.6" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    <colormap name="" map_values="0 0.4 0.7 1">
+     <solidcolor color="0.75 0.75 0.75 0 0"/>
+     <solidcolor color="0.9 0.9 0.9 0 0.9"/>
+     <solidcolor color="1 1 1 0 1"/>
+     <solidcolor color="1 1 1 0 1"/>
+    </colormap>
+    <scale value="1 0.3 10"/>
+   </pigment>
+   <pigment uv_mapping="0" name="">
+    <pattern patterntype="bozo" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="10" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2,5" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0.8 0.8 0.8" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    <colormap name="" map_values="0 0.4 0.6 1">
+     <solidcolor color="0.75 0.75 0.75 0 0"/>
+     <solidcolor color="0.9 0.9 0.9 0 0.9"/>
+     <solidcolor color="1 1 1 0 1"/>
+     <solidcolor color="1 1 1 0 1"/>
+    </colormap>
+    <scale value="1 0.3 10"/>
+   </pigment>
+  </skysphere>
+ </declare>
+ <comment>***********************************
+ Bill Pulver's FBM Clouds
+A three-layer cloud texture.
+***********************************</comment>
+ <declare id="T_Cloud1">
+  <texture uv_mapping="0" name="">
+   <comment>The upper part of the clouds</comment>
+   <pigment prototype="P_Cloud1" uv_mapping="0" name=""/>
+   <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="1 1 1 1 1" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0" specular="0" roughness="0,05" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="0" reflection_min="0 0 0 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+  </texture>
+  <texture uv_mapping="0" name="">
+   <comment>The darker underside of the clouds</comment>
+   <pigment prototype="P_Cloud1" uv_mapping="0" name="">
+    <translate value="0 -0.15 0"/>
+   </pigment>
+   <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="0.6 0.6 0.6 0.6 0.6" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0" specular="0" roughness="0,05" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="0" reflection_min="0 0 0 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+  </texture>
+ </declare>
+ <comment>T_Cloud1 mapped onto a sphere</comment>
+ <declare id="O_Cloud1">
+  <sphere visibility_level="0" inverse="0" radius="10000" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" centre="0 0 0" name="" no_shadow="0">
+   <texture prototype="T_Cloud1" uv_mapping="0" name="">
+    <scale value="1000 1000 1000"/>
+   </texture>
+  </sphere>
+ </declare>
+ <comment>***********************************
+ Darin Dugger's "Kite" clouds
+***********************************</comment>
+ <declare id="T_Cloud2">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <pattern patterntype="bozo" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="10" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2,5" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="1.5 1.5 1.5" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    <colormap name="" map_values="0 0.5 0.7 1">
+     <solidcolor color="0.75 0.75 0.75 0 0"/>
+     <solidcolor color="0.9 0.9 0.9 0 0.9"/>
+     <solidcolor color="1 1 1 0 1"/>
+     <solidcolor color="1 1 1 0 1"/>
+    </colormap>
+   </pigment>
+   <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="0.9 0.9 0.9 0.9 0.9" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0,1" specular="0" roughness="0,05" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="0" reflection_min="0 0 0 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+  </texture>
+ </declare>
+ <declare id="T_Cloud3">
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <pattern patterntype="bozo" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="10" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2,5" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0.8 0.8 0.8" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    <comment>0.6</comment>
+    <colormap name="" map_values="0 0.4 0.7 1">
+     <solidcolor color="0.75 0.75 0.75 0 0"/>
+     <solidcolor color="0.9 0.9 0.9 0 0.9"/>
+     <solidcolor color="1 1 1 0 1"/>
+     <solidcolor color="1 1 1 0 1"/>
+    </colormap>
+   </pigment>
+   <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="1 1 1 1 1" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0" specular="0" roughness="0,05" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="0" reflection_min="0 0 0 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+  </texture>
+  <texture uv_mapping="0" name="">
+   <pigment uv_mapping="0" name="">
+    <pattern patterntype="bozo" cracklesolid="0" fractalmagnet="0" depth="0" slopehislope="1" slopealtflag="0" crackleform="-1 1 0" enable_turbulence="1" octaves="10" maxiterations="10" fractalinttype="0" slopeloalt="0" agateturbulence="0,5" lambda="2,5" slopedirection="0 -1 0" noise_generator="global_setting" fractalexttype="1" omega="0,5" juliacomplex="0.353 0.288" quiltcontrol0="1" gradient="1 1 1" cracklemetric="2" quiltcontrol1="1" densityinterpolate="0" fractalextfactor="1" spiralnumberarms="0" densityfile="" slopeloslope="0" fractalmagnettype="1" turbulence="0.8 0.8 0.8" slopehialt="1" crackleoffset="0" fractalexponent="2" fractalintfactor="1" slopealtitude="0 1 0"/>
+    <comment>0.6</comment>
+    <colormap name="" map_values="0 0.4 0.6 1">
+     <solidcolor color="0.75 0.75 0.75 0 0"/>
+     <solidcolor color="0.9 0.9 0.9 0 0.9"/>
+     <solidcolor color="1 1 1 0 1"/>
+     <solidcolor color="1 1 1 0 1"/>
+    </colormap>
+   </pigment>
+   <finish enable_reflection_exponent="0" enable_phong_size="0" enable_reflection_min="0" enable_phong="0" enable_reflection_metallic="0" irid_turbulence="0" enable_brilliance="0" enable_ambient="1" reflection_fresnel="0" reflection_exponent="1" metallic="1" enable_crand="0" reflection="0 0 0 0 0" enable_specular="0" name="" irid_thickness="0" reflection_metallic="1" ambient="0.95 0.95 0.95 0.95 0.95" irid_amount="0" emission="0 0 0 0 0" phongsize="40" diffuse="0" specular="0" roughness="0,05" enable_metallic="0" brilliance="1" enable_emission="0" reflection_falloff="0" crand="0" enable_diffuse="1" conserve_energy="0" irid="0" phong="0" enable_reflection="0" reflection_min="0 0 0 0 0" enable_roughness="0" enable_reflection_falloff="0"/>
+   <scale value="0.9 0.9 0.9"/>
+   <translate value="0 -0.15 0"/>
+  </texture>
+ </declare>
+ <comment>Darin Dugger's DD_Cloud_Sky texture mapped onto a pair of planes
+NOTE: Lowest plane is at y=500</comment>
+ <declare id="O_Cloud2">
+  <csg visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" no_reflection="0" relative_visibility="1" local_detail_level="1" global_detail="1" name="" csgtype="union" no_shadow="0">
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 1 0" no_reflection="0" relative_visibility="1" distance="500" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <texture prototype="T_Cloud3" uv_mapping="0" name="">
+     <scale value="600 600 600"/>
+    </texture>
+   </plane>
+   <plane visibility_level="0" inverse="0" no_image="0" export="1" double_illuminate="0" normal="0 1 0" no_reflection="0" relative_visibility="1" distance="3000" local_detail_level="1" global_detail="1" name="" no_shadow="0">
+    <texture prototype="T_Cloud2" uv_mapping="0" name="">
+     <scale value="900 1 6000"/>
+     <translate value="3000 0 0"/>
+     <rotate value="0 -30 0"/>
+    </texture>
+   </plane>
+  </csg>
+ </declare>
+</objects>

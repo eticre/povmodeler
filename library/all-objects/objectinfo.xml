@@ -1,0 +1,9 @@
+<!DOCTYPE KPOVOBJINDEX>
+<objinfo name="all-objects">
+  <description>all kpov objects</description>
+  <keywords>keyw.</keywords>
+  <file_entries>
+    <file name="allobjects.kpm">
+    </file>
+  </file_entries>
+</objinfo>

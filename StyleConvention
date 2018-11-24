@@ -1,0 +1,225 @@
+        Coding Style Convention
+       -------------------------
+
+This document describes the coding style convention
+used in KPovModeler.
+
+Author: Andreas Zehender <zehender@kde.org>
+Date: 16 June 2001
+
+If you edit existing files or create new ones, please follow this convention.
+This ensures that the code is consistent and clear.
+
+1) Indentation
+--------------
+
+- Use 3 spaces as basic offset. Do not use tabs for indentation.
+- Do not indent access keywords (public, protected, private) as
+  well as signal/slot keywords.
+- Do not indent braces.
+- Put braces in separate lines.
+- Indent case statements.
+
+Example:
+class abcd
+{
+public:
+   void someMethod( );
+};
+
+void abcd::someMethod( )
+{
+   if( 1 == 2 )
+   {
+   }
+   else
+   {
+      switch( x )
+      {
+         case 1:
+            y = 2;
+            break;
+         default:
+            y = -2;
+      }
+   }
+}
+
+
+2) Spacing
+----------
+
+Use many spaces.
+Use it
+- before and after brackets
+- before and after operators
+- after commas
+
+Examples:
+
+a = someMethod( ); // Notice the space between the brackets!
+b = anotherMethod( ( a + b ) / 2, 3 ) || 23456;
+if( ( a == 2 ) && !b )
+
+
+3) Type Modifiers (Pointers and References)
+-------------------------------------------
+
+Put type modifiers behind the type, not before the variable name.
+
+Example:
+
+const QString& type;
+PMObject* obj;
+
+
+4) Names
+--------
+
+Variables:
+----------
+Member variables begin with "m_".
+Static variables begin with "s_".
+Member pointers begin with "m_p".
+
+All variables begin with a lower case (member variables after the "m_").
+Use upper case character to separate different words.
+
+Examples:
+
+class abcd
+{
+   int m_firstMember;
+   char* m_pFirstMember;
+   static const char* s_pAStaticPointerToConstCharThatMeansItIsAString;
+};
+
+void abcd::efgh( )
+{
+   int aLocalVariable;
+}
+
+Classes:
+--------
+All classes start with "PM" and a upper case character.
+
+Methods:
+--------
+All methods start with a lower case character.
+
+Set methods begin with "set".
+Get methods do NOT begin with "get".
+
+Examples:
+
+int PMSPhere::centre( ) const;
+void PMSphere::setCentre( );
+
+5) KDoc Comments
+----------------
+
+Use KDoc comments to document classes.
+
+Don't add a description if you just overload a virtual function
+that doesn't add some functionality.
+
+Example:
+
+/** Returns the internal object name (not i18n'ed) */
+virtual PMObject::className( ) const;
+
+/** */
+virtual PMSphere::className( ) const;
+
+KDoc will then generate the following output:
+
+<documentation>
+PMObject*  newObject ( ) 
+
+[const virtual]
+
+Reimplemented from PMObject.
+</documentation>
+
+
+6) Long Lines
+--------------
+Try to use only 80 characters per line.
+
+
+7) Sample .emacs File
+---------------------
+
+Here is a sample .emacs file. It is a mix of several files, so some
+things are set multiple times. But it works :-)
+
+<.emacs>
+(defconst my-c-style
+  '((c-tab-always-indent           . t)
+    (c-comment-only-line-offset    . 0)
+    (c-hanging-braces-alist        . ((substatement-open after)
+                                      (brace-list-open)))
+    (c-hanging-colons-alist        . ((member-init-intro before)
+                                      (inher-intro)
+                                      (case-label after)
+                                      (label after)
+                                      (access-label after)))
+    (c-cleanup-list                . (scope-operator
+                                      empty-defun-braces
+                                      defun-close-semi))
+    (c-offsets-alist               . ((arglist-close     . c-lineup-arglist)
+                                      (substatement-open . 0)
+                                      (case-label        . +)
+                                      (block-open        . 0)
+                                      (knr-argdecl-intro . -)
+				      (inline-open       . 0)))
+    (c-echo-syntactic-information-p . t)
+    )
+  "My C Programming Style")
+  
+;; Customizations for all of c-mode, c++-mode, and objc-mode
+(defun my-c-mode-common-hook ()
+  ;; add my personal style and set it for the current buffer
+  (c-add-style "PERSONAL" my-c-style t)
+  ;; offset customizations not in my-c-style
+  (c-set-offset 'member-init-intro '++)
+  ;; other customizations
+  (setq tab-width 8
+        ;; this will make sure spaces are used instead of tabs
+        indent-tabs-mode nil)
+  (setq c-basic-offset 3)
+  ;; we like auto-newline and hungry-delete
+  (c-toggle-hungry-state 1)
+  ;; keybindings for C, C++, and Objective-C.  We can put these in
+  ;; c-mode-map because c++-mode-map and objc-mode-map inherit it
+  (define-key c-mode-map [f9] 'compile)
+  (define-key c-mode-map [return] 'newline-and-indent)
+  (define-key c++-mode-map [f9] 'compile)
+  (define-key c++-mode-map [return] 'newline-and-indent)
+  (define-key java-mode-map [f9] 'compile)
+  (define-key java-mode-map [return] 'newline-and-indent)
+  (load-library "vc")
+  
+  ;;for QT
+  (setq c-C++-access-key "\\<\\(signals\\|public\\|protected\\|private
+  \\|public slots\\|protected slots\\|private slots\\)\\>[ \t]*:")
+  ;; modify the colour of slots to match public, private, etc ...
+  (font-lock-add-keywords 'c++-mode
+  '(("\\<\\(slots\\|signals\\)\\>" . font-lock-type-face)))
+  ;; make new font for rest of qt keywords
+  (make-face 'qt-keywords-face)
+  (set-face-foreground 'qt-keywords-face "green")
+  ;; qt keywords
+  (font-lock-add-keywords 'c++-mode
+  '(("\\<Q_OBJECT\\>" . 'qt-keywords-face)))
+  (font-lock-add-keywords 'c++-mode
+  '(("\\<SIGNAL\\|SLOT\\>" . 'qt-keywords-face)))
+  (font-lock-add-keywords 'c++-mode
+  '(("\\<Q[A-Z][A-Za-z]*" . 'qt-keywords-face)))
+  )
+   
+(setq auto-mode-alist
+         (append '(("\\.h$"    . c++-mode)) auto-mode-alist))
+
+</.emacs>
+
