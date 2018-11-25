@@ -27,7 +27,7 @@
 #include <QPushButton>
 #include <QSettings>
 
-QSize PMErrorDialog::s_size = QSize( 150, 200 );
+QSize PMErrorDialog::s_size = QSize( 350, 400 );
 
 PMErrorDialog::PMErrorDialog( const PMMessageList& messages, int errorFlags,
                               QWidget* parent )
@@ -41,7 +41,6 @@ PMErrorDialog::PMErrorDialog( const PMMessageList& messages, int errorFlags,
     QPushButton *cancelButton = new QPushButton( "Cancel" );
     hLayout->addWidget( okButton );
     hLayout->addWidget( cancelButton );
-    vLayout->addLayout( hLayout );
     okButton->setDefault( true );
     okButton->setShortcut( Qt::CTRL | Qt::Key_Return );
     connect( okButton, SIGNAL( clicked() ), this, SLOT( accept() ) );
@@ -71,13 +70,16 @@ PMErrorDialog::PMErrorDialog( const PMMessageList& messages, int errorFlags,
    }
 
    if( errorFlags & PMEFatal )
-   { okButton->setVisible( false ); }
+   {
+       okButton->setVisible(false);
+   }
    else
    {
       QLabel* l = new QLabel( "Still try to proceed?" );
       vLayout->addWidget( l );
    }
 
+   vLayout->addLayout( hLayout );
    resize( s_size );
 }
 
@@ -105,8 +107,8 @@ void PMErrorDialog::saveConfig()
 void PMErrorDialog::restoreConfig()
 {
    QSettings qset;
-   s_size.setHeight( 150 );
-   s_size.setWidth( 200 );
+   s_size.setHeight( 350 );
+   s_size.setWidth( 400 );
    qset.value( "Appearance/ErrorDialogSize", s_size ).value<QSize>();
 }
 

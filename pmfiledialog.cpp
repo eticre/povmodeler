@@ -19,10 +19,6 @@
 #include "pmfiledialog.h"
 #include "pmpart.h"
 
-//#include <kfilefiltercombo.h>
-
-//Added by qt3to4:
-
 
 PMFileDialog::PMFileDialog( QWidget* parent, const QString& caption, const QString& startDir, const QString& filter)
       : QFileDialog( parent, "File", startDir, filter  )
@@ -51,9 +47,12 @@ QString PMFileDialog::getImportFileName( QWidget* parent, PMPart* part, PMIOForm
    Q_ASSERT( formats.count() );
 
    //PMFileDialog dlg( parent, "File Import", QString(), filter);
+   format = formats.at( 0 );
+   filter.replace(",", "");
 
    return PMFileDialog::getOpenFileName( parent, tr( "File Import" ), "/home/", filter );
 
+   //PMFileDialog dlg( QString(), filter, parent, true );
    //dlg.setObjectName("import file dialog");
    //dlg.setOperationMode( Opening );
    //dlg.setMode( KFile::File | KFile::LocalOnly );

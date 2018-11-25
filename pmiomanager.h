@@ -82,7 +82,7 @@ public:
     */
    virtual PMParser* newParser( PMPart*, QIODevice* ) const
    {
-      return 0;
+      return nullptr;
    }
    /**
     * Returns a parser to parse the byte array.
