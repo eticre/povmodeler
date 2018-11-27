@@ -87,6 +87,7 @@
 #include <QSpinBox>
 #include <QAction>
 #include <QWidgetAction>
+#include <QtGui/private/qzipreader_p.h>
 
 #ifdef PMEnableSimpleProfiling
 QTime PMDebugTime;
@@ -373,12 +374,10 @@ void PMPart::initActions()
    m_pRenderAction->setIcon( QIcon::fromTheme( "pmrender" ) );
    connect(m_pRenderAction, SIGNAL( triggered( bool) ), this, SLOT( slotRender() ));
 
-
    m_pRenderSettingsAction = viewMenu->addAction( "view_render_settings" );
    m_pRenderSettingsAction->setText( tr( "Render Modes..." ) );
    m_pRenderSettingsAction->setIcon( QIcon::fromTheme( "pmrendersettings" ) );
    connect( m_pRenderSettingsAction, SIGNAL(triggered(bool)), SLOT( slotRenderSettings() ));
-
 
    m_pViewRenderWindowAction = viewMenu->addAction( "view_render_window" );
    m_pViewRenderWindowAction->setText( tr( "Render Window" ) );

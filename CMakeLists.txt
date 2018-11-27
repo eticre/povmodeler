@@ -34,6 +34,7 @@ configure_file(config-kpovmodeler.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kpo
 
 include_directories(${FREETYPE_INCLUDE_DIR})
 include_directories("/usr/include/freetype2")
+include_directories( ${Qt5Gui_PRIVATE_INCLUDE_DIRS} )
 add_definitions (-O0 )
 
 ########### next target ###############

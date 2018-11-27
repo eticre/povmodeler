@@ -131,30 +131,16 @@ void PMShell::setSize()
 
 void PMShell::setupActions()
 {
-//   m_helpMenu = new KHelpMenu( this, PMFactory::aboutData(), true,
-//                               actionCollection() );
-    // file menu from standard .rc file merged with custom .rc file
-   //KStandardAction::openNew( this, SLOT( slotFileNew() ), actionCollection() );
-    //QMainWindow::menuBar()->clear();
-    //QMenu *fileMenu = menuBar()->addMenu(tr("&File"));
-    //openNewFile = QAction( "openNewFile" );
-    //openNewFile = new QAction;
-    //openNewFile->setText("New File");
     QAction* newFile = new QAction( "New" );
     fileMenu->addAction(newFile);
     connect( newFile, &QAction::triggered, this, &PMShell::slotFileNew );
 
-    //actionCollection( "File", openNew );
-
-
-   //KStandardAction::open( this, SLOT( slotFileOpen() ), actionCollection() );
    QAction* open = new QAction( "Open" );
    connect( open, &QAction::triggered, this, &PMShell::slotFileOpen );
    fileMenu->addAction(open);
 
    //m_pRecent = KStandardAction::openRecent( this, SLOT( slotOpenRecent( const QUrl& ) ),
     //                                   actionCollection() );
-
    QAction* save = new QAction( "Save" );
    connect( save, &QAction::triggered, this, &PMShell::slotFileSave );
    fileMenu->addAction(save);
@@ -168,8 +154,6 @@ void PMShell::setupActions()
    fileMenu->addAction(revert);
 
    fileMenu->addSeparator();
-
-
 
    QAction* print = new QAction( "Print" );
    connect( print, &QAction::triggered, this, &PMShell::slotFilePrint );
