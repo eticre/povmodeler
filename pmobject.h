@@ -365,7 +365,7 @@ public:
                                     const PMVector& ) { }
 
    /**
-    * Saves the object as kpovmodeler xml code.
+    * Saves the object as povmodeler xml code.
     */
    QDomElement serialize( QDomDocument& doc ) const;
    /**

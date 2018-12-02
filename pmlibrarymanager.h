@@ -26,14 +26,14 @@
 
 
 /**
- * Class that maintains the list of available libraries for kpovmodeler
+ * Class that maintains the list of available libraries for povmodeler
  *
  * This class is a singleton, which means all libraries will be known to
  * all instances of the application.
  *
  * When the class is initialized, the following steps are taken:
- *    1. The global kpovmodeler library path is scanned for libraries
- *    2. The users' kpovmodeler library path is also scanned for libraries
+ *    1. The global povmodeler library path is scanned for libraries
+ *    2. The users' povmodeler library path is also scanned for libraries
  *
  * If more than one library has the same name, only the last one will be
  * accessible.

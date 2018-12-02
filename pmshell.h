@@ -27,7 +27,7 @@
 #include "version.h"
 
 #include <QMenu>
-#include <libkpovmodeler_export.h>
+#include <libpovmodeler_export.h>
 #include <QToolBar>
 //class KHelpMenu;
 class QStatusBar;
@@ -35,9 +35,9 @@ class PMViewOptions;
 class PMPart;
 
 /**
- * Main view for KPovModeler
+ * Main view for PovModeler
  */
-class LKPOVMODELER_EXPORT PMShell : public PMDockMainWindow
+class LPOVMODELER_EXPORT PMShell : public PMDockMainWindow
 {
    Q_OBJECT
 

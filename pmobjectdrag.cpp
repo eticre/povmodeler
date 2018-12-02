@@ -30,7 +30,7 @@
 #include <QList>
 #include <QTextStream>
 
-const char* const c_kpmDocumentMimeFormat = "application/x-kpovmodeler";
+const char* const c_kpmDocumentMimeFormat = "application/x-povmodeler";
 
 PMObjectDrag::PMObjectDrag( PMPart* part, PMObject* object )
       : QMimeData()
@@ -38,7 +38,7 @@ PMObjectDrag::PMObjectDrag( PMPart* part, PMObject* object )
    QByteArray modelerData;
 
    QTextStream s2( &modelerData, QIODevice::WriteOnly );
-   QDomDocument doc( "KPOVMODELER" );
+   QDomDocument doc( "POVMODELER" );
    QDomElement top = doc.createElement( "objects" );
    doc.appendChild( top );
    top.setAttribute( "majorFormat", c_majorDocumentFormat );
@@ -102,7 +102,7 @@ PMObjectDrag::PMObjectDrag( PMPart* part, const PMObjectList& objList )
    QByteArray modelerData;
 
    QTextStream s2( &modelerData, QIODevice::WriteOnly );
-   QDomDocument doc( "KPOVMODELER" );
+   QDomDocument doc( "POVMODELER" );
    QDomElement top = doc.createElement( "objects" );
    doc.appendChild( top );
    top.setAttribute( "majorFormat", c_majorDocumentFormat );

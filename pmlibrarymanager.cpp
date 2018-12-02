@@ -78,7 +78,7 @@ void PMLibraryManager::scanLibraries()//eticre debug error 2
    QStringList libraryDirectories;
    
    // Search for sub directories in /.local/share/povmodeler/library
-   //libraryDirectories = KGlobal::dirs()->findDirs( "data", "kpovmodeler/library" );
+   //libraryDirectories = KGlobal::dirs()->findDirs( "data", "povmodeler/library" );
    QString lib_path;
    lib_path = QDir::homePath() + "/.local/share/povmodeler/library";
    QDir lib_dir( lib_path );

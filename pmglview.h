@@ -35,7 +35,7 @@
 #include <QMouseEvent>
 #include <QList>
 #include <QLabel>
-#include "libkpovmodeler_export.h"
+#include "libpovmodeler_export.h"
 #include "pmviewbase.h"
 #include "pmviewfactory.h"
 #include "pmcontrolpoint.h"
@@ -54,7 +54,7 @@ class QAction;
 /**
  * Widget for rendering the scene with OpenGL
  */
-class LKPOVMODELER_EXPORT PMGLView : public PMViewBase
+class LPOVMODELER_EXPORT PMGLView : public PMViewBase
 {
    Q_OBJECT
 public:

@@ -34,7 +34,7 @@ PMOpenGLSettings::PMOpenGLSettings( QWidget* parent )
    vlayout->setMargin( 0 );
 
    m_pDirect = new QCheckBox( tr( "Direct rendering" ), this );
-   vlayout->addWidget( new QLabel( tr( "KPovModeler must be restarted for the changes to take effect" ), this ) );
+   vlayout->addWidget( new QLabel( tr( "PovModeler must be restarted for the changes to take effect" ), this ) );
    vlayout->addWidget( m_pDirect );
    vlayout->addStretch( 1 );
 }

@@ -47,7 +47,7 @@ PMShell::PMShell( const QUrl &url )
    /***eticre view-hide Declare with name have "_" at first char***/
    show_list = false;
 
-   QString ruleFile = QStandardPaths::locate( QStandardPaths::GenericDataLocation, QString( "povmodeler/kpovmodelershell.rc" ) );
+   QString ruleFile = QStandardPaths::locate( QStandardPaths::GenericDataLocation, QString( "povmodeler/povmodelershell.rc" ) );
    //setXMLFile( ruleFile, false, false );
 
    //this->createGUI(m_pPart);  // init shell gui + part

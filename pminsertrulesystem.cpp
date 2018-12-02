@@ -834,7 +834,7 @@ void PMInsertRuleSystem::loadRules( const QString& fileName )
       ruleFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString( "./" + fileName ) );
       if( ruleFile.isEmpty() )
       {
-         qCritical(  ) << "Rule file 'kpovmodeler/" << fileName
+         qCritical(  ) << "Rule file 'povmodeler/" << fileName
                            << "' not found." << endl;
          return;
       }
@@ -843,7 +843,7 @@ void PMInsertRuleSystem::loadRules( const QString& fileName )
    QFile file( ruleFile );
    if( !file.open( QIODevice::ReadOnly ) )
    {
-      qCritical(  ) << "Could not open rule file 'kpovmodeler/" << fileName
+      qCritical(  ) << "Could not open rule file 'povmodeler/" << fileName
                         << "'" << endl;
       return;
    }

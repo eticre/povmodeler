@@ -24,7 +24,7 @@
 #include "pmparser.h"
 
 /**
- * Parser that parses kpovmodeler xml code
+ * Parser that parses povmodeler xml code
  */
 class PMXMLParser : public PMParser
 {

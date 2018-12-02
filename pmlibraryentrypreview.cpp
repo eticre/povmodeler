@@ -372,7 +372,7 @@ bool PMLibraryEntryPreview::saveIfNeeded( bool forceSave )
 
             // Add them to the object to save.
             PMObjectDrag drag( m_pPart, sortedList );
-            objToSave.setObjects( drag.data( "application/x-kpovmodeler" ) );//eticre encodedData
+            objToSave.setObjects( drag.data( "application/x-povmodeler" ) );//eticre encodedData
 
             // Add the preview image
             objToSave.setPreview( m_image.copy() );

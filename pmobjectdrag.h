@@ -29,7 +29,7 @@ class PMParser;
 class PMPart;
 
 /**
- * Supports drag/drop and copy/paste of kpovmodeler objects
+ * Supports drag/drop and copy/paste of povmodeler objects
  */
 
 class PMObjectDrag : public QMimeData

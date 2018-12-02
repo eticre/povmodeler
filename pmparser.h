@@ -44,7 +44,7 @@ enum PMPMessage { PMMClockDefault = 1, PMMClockDeltaDefault = 2,
                   PMMSpecialRawComment = 4 };
 
 /**
- * Base class for kpovmodeler parsers.
+ * Base class for povmodeler parsers.
  */
 class PMParser
 {

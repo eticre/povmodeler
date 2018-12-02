@@ -87,7 +87,7 @@ public:
 
 
 /**
- * Factory class for KPovModeler views.
+ * Factory class for PovModeler views.
  *
  * Plugins can add new view types by adding new
  * @ref PMViewTypeFactory objects.

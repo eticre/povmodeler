@@ -520,7 +520,7 @@ private:
     */
    QList<PMComment*> m_skippedComments;
    /**
-    * The last skipped comment text with special kpovmodeler tags*/
+    * The last skipped comment text with special povmodeler tags*/
    QString m_lastPMComment;
    /**
     * true if m_lastPMComment is empty

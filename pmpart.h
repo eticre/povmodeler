@@ -48,7 +48,7 @@ class QWidgetAction;
 class QSpinBox;
 
 /**
- * The part for kpovmodeler (povray document)
+ * The part for povmodeler (povray document)
  */
 class PMPart : public QObject
 {

@@ -58,7 +58,7 @@ bool PMXMLParser::initDocument()
 {
    if( !m_pDoc )
    {
-      m_pDoc = new QDomDocument( "KPOVMODELER" );
+      m_pDoc = new QDomDocument( "POVMODELER" );
       if( m_pDoc->setContent( m_pDevice ) ) //load new openfile
          return true;
       else
@@ -101,7 +101,7 @@ void PMXMLParser::topParse()
             )
           )
       {
-          printWarning( ( "This document was created with a newer version of KPovModeler. "
+          printWarning( ( "This document was created with a newer version of PovModeler. "
                              "The whole document may not be loaded correctly." ) );
       }
       if( e.tagName() == "objects" ) //start parsing new openfile

@@ -127,7 +127,7 @@ void PMDocumentationMap::loadMap()
    {
       m_mapLoaded = true;
       
-      QString fileName = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kpovmodeler/povraydocmap.xml" );
+      QString fileName = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "povmodeler/povraydocmap.xml" );
       if( fileName.isEmpty() )
       {
          qCritical(  ) << "Povray documentation map not found" << endl;

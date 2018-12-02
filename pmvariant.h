@@ -28,7 +28,7 @@
 class PMObject;
 
 /**
- * Variant class for KPovModeler.
+ * Variant class for PovModeler.
  *
  * Can store and convert: int, unsigned int, double, bool,
  * PMThreeState, QString, PMVector, PMColor, PMObject*.

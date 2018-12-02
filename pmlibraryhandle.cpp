@@ -238,7 +238,7 @@ PMLibraryHandle::PMResult PMLibraryHandle::createNewObject()
    /*
    PMLibraryObject aux;
    QCString s = m_path.toLatin1();
-   QString unknownIcon = locate( "data" , "kpovmodeler/questionmark.png" );
+   QString unknownIcon = locate( "data" , "povmodeler/questionmark.png" );
    QImage img;
    int fh;
 

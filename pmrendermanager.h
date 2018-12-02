@@ -33,7 +33,7 @@
 #include <QTimerEvent>
 #include <QOpenGLWidget>
 #include <QOpenGLContext>
-#include <libkpovmodeler_export.h>
+#include <libpovmodeler_export.h>
 #include <QOpenGLFunctions>
 
 class PMGLView;
@@ -89,7 +89,7 @@ private:
 /**
  * Class that controls the background rendering
  */
-class LKPOVMODELER_EXPORT PMRenderManager : public QOpenGLWidget
+class LPOVMODELER_EXPORT PMRenderManager : public QOpenGLWidget
 {
    Q_OBJECT
 public:

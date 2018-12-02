@@ -603,7 +603,7 @@ void PMViewLayout::recursiveExtractOneColumn(
          }
          else
          {
-            // a kpovmodeler view???
+            // a povmodeler view???
             if( w->inherits( "PMViewBase" ) )
             {
                PMViewBase* v = ( PMViewBase* ) w;

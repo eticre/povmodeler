@@ -67,7 +67,7 @@
 //#include "kstandardaction.h"
 //#include "kactioncollection.h"
 //#include "ktoolbarlabelaction.h"
-#include "kpovmodeleradaptator.h"
+#include "povmodeleradaptator.h"
 #include <QApplication>
 #include <QtGui>
 #include <QDir>
@@ -146,7 +146,7 @@ PMPart::PMPart( QWidget* parentWidget,
    connect( &m_commandManager, SIGNAL( idChanged( PMObject*, const QString& ) ),
             SLOT( slotIDChanged( PMObject*, const QString& ) ) );
 
-   new KpovmodelerAdaptor( this );
+   new povmodelerAdaptor( this );
    QDBusConnection::sessionBus().registerObject("/PMPart", this);
    // eticre no plugin PMPluginManager::theManager()->registerPart( this );
 
@@ -209,7 +209,7 @@ PMPart::PMPart( QWidget* parentWidget,
    connect( &m_commandManager, SIGNAL( objectChanged( PMObject*, const int, QObject* ) ),
             SLOT( slotObjectChanged( PMObject*, const int, QObject* ) ) );
 
-   new KpovmodelerAdaptor(this);
+   new povmodelerAdaptor(this);
    QDBusConnection::sessionBus().registerObject("/LibraryBrowser", this);
    emit refresh();
 }
@@ -1262,7 +1262,7 @@ bool PMPart::saveFile()
    QIODevice* dev = new QFile( localFilePath() );
    if( dev && dev->open( QIODevice::WriteOnly ) )
    {
-      QDomDocument doc( "KPOVMODELER" );
+      QDomDocument doc( "POVMODELER" );
       QDomElement e = static_cast<PMObject*>(m_pScene)->serialize( doc );
       doc.appendChild( e );
 
@@ -1287,7 +1287,7 @@ bool PMPart::saveFileQt( QUrl ur )
    QIODevice* dev = new QFile( ur.path() );
    if( dev && dev->open( QIODevice::WriteOnly ) )
    {
-      QDomDocument doc( "KPOVMODELER" );
+      QDomDocument doc( "POVMODELER" );
       QDomElement e = static_cast<PMObject*>(m_pScene)->serialize( doc );
       doc.appendChild( e );
 
