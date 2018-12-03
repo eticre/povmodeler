@@ -87,7 +87,7 @@
 #include <QSpinBox>
 #include <QAction>
 #include <QWidgetAction>
-#include <QtGui/private/qzipreader_p.h>
+//#include <QtGui/private/qzipreader_p.h>
 
 #ifdef PMEnableSimpleProfiling
 QTime PMDebugTime;
@@ -1192,7 +1192,6 @@ void PMPart::restoreConfig()
 
 bool PMPart::openFileQt( QUrl url )
 {
-   //QIODevice* dev = KFilterDev::deviceForFile( localFilePath(), "application/x-gzip" );
    this->setUrl( url );
    QIODevice* dev = new QFile( url.path() );
    bool success = true;
@@ -1205,7 +1204,6 @@ bool PMPart::openFileQt( QUrl url )
    if( dev && dev->open( QIODevice::ReadOnly ) )
    {
       PMXMLParser parser( this, dev );
-
       parser.parse( &list, nullptr, nullptr );//step1
 
       if( parser.errors() || parser.warnings() )
