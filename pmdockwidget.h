@@ -946,7 +946,7 @@ private slots:
 	 *
 	 * @param id the popupmenu id of the selected menuitem
 	 */
-	void slotMenuActivated( int id);
+    void slotMenuActivated( QAction *act );
 
 private:
 

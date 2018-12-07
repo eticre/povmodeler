@@ -1285,10 +1285,10 @@ PMDockManager::PMDockManager( QWidget* mainWindow  )
 
 	undockProcess = false;
 
-	menu = new QMenu();
+    menu = new QMenu();
 
-	connect( menu, SIGNAL(aboutToShow()), SLOT(slotMenuPopup()) );
-	connect( menu, SIGNAL(activated(int)), SLOT(slotMenuActivated(int)) );
+    connect( menu, SIGNAL( aboutToShow() ), SLOT( slotMenuPopup() ) );
+    connect( menu, &QMenu::triggered, this, &PMDockManager::slotMenuActivated );
 
 	childDock = new QList<QObject*>();
 }
@@ -1709,9 +1709,9 @@ void PMDockManager::slotMenuPopup()
 	}
 }
 
-void PMDockManager::slotMenuActivated( int id )
+void PMDockManager::slotMenuActivated( QAction* act )
 {
-	MenuDockData data = menuData.at( id );
+    MenuDockData data = menuData.at( 1 );
 	data.dock->changeHideShowState();
 }
 

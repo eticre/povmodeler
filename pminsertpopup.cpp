@@ -43,7 +43,7 @@ PMInsertPopup::PMInsertPopup( QWidget* parent, bool multipleObjects,
          itemText = "Last Children";
 
          if( !canInsertAllAsLastChildren )
-            itemText += " (some)";
+            itemText.append( " (some)" );
 
          addAction( QIcon( ":/smallicon/icons/povicons/small/pminsertlastchild" ), itemText );
       }
@@ -52,7 +52,7 @@ PMInsertPopup::PMInsertPopup( QWidget* parent, bool multipleObjects,
          itemText = tr( "Siblings" );
 
          if( !canInsertAllAsSiblings )
-            itemText += " (" "some" + ')';
+            itemText.append( " ( some ) " );
 
          addAction( QIcon( ":/smallicon/icons/povicons/small/pminsertsibling" ), itemText );
       }
