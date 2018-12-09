@@ -119,7 +119,7 @@ PMPart::PMPart( QWidget* parentWidget,
    m_readWrite = false;
    m_pwidget = parentWidget;
    m_pparent = parent;
-
+   m_hash_readWriteActions = new QHash<QString, QAction*>;
    // call inits to invoke all other construction parts
    setReadWrite( readwrite );
 
@@ -190,6 +190,7 @@ PMPart::PMPart( QWidget* parentWidget,
    ismodified = false;
    m_pwidget = parentWidget;
    m_pparent = parent;
+   m_hash_readWriteActions = new QHash<QString, QAction*>;
 
    // call inits to invoke all other construction parts
    setReadWrite( readwrite );
@@ -222,6 +223,7 @@ PMPart::~PMPart()
    for (int i = 0; i < m_readWriteActions.size(); ++i) {
         delete m_readWriteActions.at(i);
    }
+   delete m_hash_readWriteActions;
    delete m_pparent;
    delete m_pwidget;
    delete m_pView;
@@ -275,16 +277,34 @@ PMPart::~PMPart()
        delete m_pPovrayWidget;
 }
 
+QMenu* PMPart::getMenu( QString name )
+{
+    if( name == "menuRenderModes" ) return  menuRenderModes;
+    if( name == "menu_gdl" ) return  menu_gdl;
+    if( name == "menuSolidPri" ) return  menuSolidPri;
+    if( name == "menuFinitePatch" ) return  menuFinitePatch;
+    if( name == "menuInfiniteSolid" ) return  menuInfiniteSolid;
+    if( name == "menuCsg" ) return  menuCsg;
+    if( name == "menuMaterial" ) return  menuMaterial;
+    if( name == "menuInterior" ) return  menuInterior;
+    if( name == "menuTexture" ) return  menuTexture;
+    if( name == "menuPhotons" ) return  menuPhotons;
+    if( name == "menuAthmo" ) return  menuAthmo;
+    if( name == "menuTrans" ) return  menuTrans;
+    return nullptr;
+}
+
 QAction* PMPart::actionCollection( QString name, QMenu* menu=nullptr )
 {
   QAction* a;
   QString s;
-  s = name.remove(0,4);
+  s = name;
+  s.remove(0,4);
   s.prepend(":/smallicon/icons/povicons/small/pm");
   if(!menu) menu = insertMenu;
   a = menu->addAction(name);
   a->setIcon( QIcon( s ) );
-  m_hash_readWriteActions[name] = a;
+  m_hash_readWriteActions->insert(name,a);
   return a;
 }
 
@@ -396,7 +416,7 @@ void PMPart::initActions()
    m_pVisibilityLevelAction->setDefaultWidget(spbx);
    mn->addAction(m_pVisibilityLevelAction);
    mn->setTitle( tr( "Visibility Level" ) );
-   connect(m_pVisibilityLevelAction, SIGNAL(valueChanged(int) ), SLOT( slotVisibilityLevelChanged(int) ) );
+   connect( spbx, SIGNAL( valueChanged(int) ), this, SLOT( slotVisibilityLevelChanged(int) ) );
    viewMenu->addMenu( mn );
 
    detail = new QActionGroup( this );
@@ -536,7 +556,7 @@ void PMPart::initActions()
       m_pNewTorusAction->setText( tr( "Torus" ) );
       connect(m_pNewTorusAction, SIGNAL(triggered(bool)), SLOT( slotNewTorus() ));
       m_readWriteActions.append( m_pNewTorusAction );
-      m_pNewSuperquadricEllipsoidAction = actionCollection( "new_superquadricellipsoid", menuSolidPri );
+      m_pNewSuperquadricEllipsoidAction = actionCollection( "new_sqe", menuSolidPri );
       //m_pNewSuperquadricEllipsoidAction->setIcon( QIcon::fromTheme("pmsqe") );
       m_pNewSuperquadricEllipsoidAction->setText( tr( "Superquadric Ellipsoid" ) );
       connect(m_pNewSuperquadricEllipsoidAction, SIGNAL(triggered(bool)), SLOT( slotNewSuperquadricEllipsoid() ));
@@ -588,7 +608,7 @@ void PMPart::initActions()
       m_pNewPrismAction->setText( tr( "Prism" ) );
       connect(m_pNewPrismAction, SIGNAL(triggered(bool)), SLOT( slotNewPrism() ));
       m_readWriteActions.append( m_pNewPrismAction );
-      m_pNewSurfaceOfRevolutionAction = actionCollection( "new_surfaceofrevolution", menuSolidPri );
+      m_pNewSurfaceOfRevolutionAction = actionCollection( "new_sor", menuSolidPri );
       //m_pNewSurfaceOfRevolutionAction->setIcon( QIcon::fromTheme("pmsor") );
       m_pNewSurfaceOfRevolutionAction->setText( tr( "Surface of Revolution" ) );
       connect(m_pNewSurfaceOfRevolutionAction, SIGNAL(triggered(bool)), SLOT( slotNewSurfaceOfRevolution() ));
@@ -1022,10 +1042,8 @@ void PMPart::updateNewObjectActions()
          // get the action object for that type of PMObject
          // action names are "new_" + povray name
          // (like new_box, new_sphere ...)
-
          QString actionName = "new_" + (*it)->className().toLower();
-         action = m_hash_readWriteActions[actionName];
-         //action = actionCollection()->action( actionName );
+         action = m_hash_readWriteActions->value(actionName);
          if( action )
          {
             if( m_pActiveObject )

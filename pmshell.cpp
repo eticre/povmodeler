@@ -56,7 +56,9 @@ PMShell::PMShell( const QUrl &url )
        // This does not delete the tool bar.
        this->removeToolBar(tb);
    }
-   toolBar = new QToolBar;
+   m_pToolBar = new QToolBar;
+   m_pToolbar_sp = new QToolBar;
+   m_pToolbar_fp = new QToolBar;
    menu_Bar = new QMenuBar;
    //QMenu* file_Menu = new QMenu;
    //fileMenu = menu_Bar->addMenu("File");
@@ -75,12 +77,17 @@ PMShell::PMShell( const QUrl &url )
    menu_Bar->addMenu(insertMenu);
    menu_Bar->addMenu(&settingsMenu);
    setMenuBar(menu_Bar);
-   this->addToolBar( toolBar );
+
 
    setupActions();
 
 
    m_pPart = new PMPart( this, this, true, this );
+   m_pToolbar_sp->addActions( m_pPart->getMenu( "menuSolidPri" )->actions() );
+   m_pToolbar_fp->addActions( m_pPart->getMenu( "menuFinitePatch" )->actions() );
+   addToolBar( m_pToolbar_sp );
+   addToolBar( m_pToolbar_fp );
+   restoreOptions();
    //m_pPart->setReadWrite(); // read-write mode
    //file_Menu = new QMenu;
    setSize();
@@ -88,7 +95,7 @@ PMShell::PMShell( const QUrl &url )
    //guiFactory()->addClient( m_pPart );
    m_pStatusBar = statusBar();
    m_pStatusBar->addWidget ( statusBarLabel, 1 );
-   statusBarLabel->setText(" ");
+   statusBarLabel->setText(" Status Bar ");
    //m_pStatusBar->showMessage( " ", c_statusBarInfo, 1 );
    //m_pStatusBar->showMessage( "" , c_statusBarControlPoints );
 
@@ -111,6 +118,9 @@ PMShell::~PMShell()
     QSettings qset;
     qset.setValue( "mainwindow/size", this->size() );
     qset.setValue( "mainwindow/fullscreen", this->isFullScreen() );
+    delete m_pToolBar;
+    delete m_pToolbarAction_fp;
+    delete m_pToolbarAction_sp;
     qDebug() << "pmshell desctructor";
     //delete m_pPart;
     qDebug() << "pmshell01";
@@ -190,6 +200,14 @@ void PMShell::setupActions()
    m_pStatusbarAction = settingsMenu.addAction("showStatusbar");
    m_pStatusbarAction->setCheckable( true );
    connect( m_pStatusbarAction, SIGNAL( triggered() ), this, SLOT( saveOptions() ) );
+
+   m_pToolbarAction_sp = settingsMenu.addAction( "Solid Primitives" );
+   m_pToolbarAction_sp->setCheckable( true );
+   connect( m_pToolbarAction_sp, SIGNAL( triggered() ), this, SLOT( slot_show_toolbars() ) );
+
+   m_pToolbarAction_fp = settingsMenu.addAction( "Finite Patch" );
+   m_pToolbarAction_fp->setCheckable( true );
+   connect( m_pToolbarAction_fp, SIGNAL( triggered() ), this, SLOT( slot_show_toolbars() ) );
 
    m_pSaveOptions = settingsMenu.addAction("Save Option");
    connect( m_pSaveOptions, SIGNAL( triggered() ), this, SLOT( saveOptions() ) );
@@ -314,6 +332,15 @@ PMDockWidget* PMShell::createView( const QString& t, PMViewOptions* o,
                         mapToGlobal( QPoint( 50, 50 ) ) );
    }
    return dock;
+}
+
+void PMShell::slot_show_toolbars()
+{
+    QSettings qset;
+    qset.setValue( "Appearance/ShowToolbar_sp", m_pToolbarAction_sp->isChecked() );
+    m_pToolbar_sp->setVisible( m_pToolbarAction_sp->isChecked() );
+    qset.setValue( "Appearance/ShowToolbar_fp", m_pToolbarAction_sp->isChecked() );
+    m_pToolbar_fp->setVisible( m_pToolbarAction_fp->isChecked() );
 }
 
 void PMShell::slotNewGraphicalView( PMGLView::PMViewType t )
@@ -528,7 +555,7 @@ void PMShell::slotFileClose()
    }
 }
 
-void PMShell::slotShowToolbar()
+void PMShell::slotShowToolbar( QToolBar* toolBar )
 {
 
    if( toolBar->isVisible () )
@@ -537,9 +564,9 @@ void PMShell::slotShowToolbar()
       toolBar->show();
 }
 
-void PMShell::slotShowStatusbar()
+void PMShell::slotShowStatusbar( bool b )
 {
-   if( statusBar()->isVisible () )
+   if( !b )
       statusBar()->hide();
    else
       statusBar()->show();
@@ -608,6 +635,7 @@ void PMShell::saveOptions()
 {
    QSettings qset;
    qset.setValue( "Appearance/ShowStatusbar", m_pStatusbarAction->isChecked() );
+   slotShowStatusbar( m_pStatusbarAction->isChecked() );
    // eticre save recent file m_pRecent->saveEntries( "RecentFile" );
 
    if( m_pPart )
@@ -619,16 +647,25 @@ void PMShell::saveOptions()
 void PMShell::restoreOptions()
 {
    QSettings qset;
-   bool showStatusbar = qset.value( "ShowStatusbar", true ).value<bool>();
+   bool show;
 
+   show = qset.value( "Appearance/ShowStatusbar", true ).value<bool>();
    m_pStatusbarAction->blockSignals( true );
-   m_pStatusbarAction->setChecked( showStatusbar );
+   m_pStatusbarAction->setChecked( show );
    m_pStatusbarAction->blockSignals( false );
+   statusBar()->setVisible(show);
 
-   if( showStatusbar )
-      statusBar()->show();
-   else
-      statusBar()->hide();
+   show = qset.value( "Appearance/ShowToolbar_sp", false ).value<bool>();
+   m_pToolbarAction_sp->blockSignals( true );
+   m_pToolbarAction_sp->setChecked( show );
+   m_pToolbarAction_sp->blockSignals( false );
+   m_pToolbar_sp->setVisible(show);
+
+   show = qset.value( "Appearance/ShowToolbar_fp", false ).value<bool>();
+   m_pToolbarAction_fp->blockSignals( true );
+   m_pToolbarAction_fp->setChecked( show );
+   m_pToolbarAction_fp->blockSignals( false );
+   m_pToolbar_fp->setVisible(show);
 
    // eticre save recent filem_pRecent->loadEntries( "RecentFile" );
 }

@@ -92,6 +92,8 @@ public:
 
    QMenu* getEditMenu(){ return editMenu;  }
 
+   QMenu* getMenu( QString name );
+
    void setWidget( QWidget* qw ){ m_pwidget = qw; }
    QWidget* widget(){ return m_pwidget; }
    //void setModified(){ m_bModified = true; }
@@ -1070,7 +1072,7 @@ private:
    //KToolBarLabelAction* m_pGlobalDetailLabelAction;
 
    QList< QAction* > m_readWriteActions;
-   QHash<QString, QAction*> m_hash_readWriteActions;
+   QHash<QString, QAction*> *m_hash_readWriteActions;
 
    PMPrototypeManager* m_pPrototypeManager;
    PMInsertRuleSystem* m_pInsertRuleSystem;
