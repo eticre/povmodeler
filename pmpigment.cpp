@@ -25,7 +25,7 @@
 
 PMDefinePropertyClass( PMPigment, PMPigmentProperty );
 
-PMMetaObject* PMPigment::s_pMetaObject = 0;
+PMMetaObject* PMPigment::s_pMetaObject = nullptr;
 PMObject* createNewPigment( PMPart* part )
 {
    return new PMPigment( part );

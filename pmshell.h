@@ -86,7 +86,7 @@ public:
    //using KMainWindow::setWindowTitle;
 
 public slots:
-   void slot_show_toolbars();
+   void slot_show_toolbars(bool b=true);
    void openUrl( const QUrl& );
    void slotOpenRecent( const QUrl& );
    void slotOpenRecentTimer();
@@ -159,6 +159,16 @@ private:
    //KRecentFilesAction* m_pRecent;
    QAction* m_pToolbarAction_sp;
    QAction* m_pToolbarAction_fp;
+   QAction* m_pToolbarAction_csg;
+   QAction* m_pToolbarAction_ip;
+   QAction* m_pToolbarAction_gdl;
+   QAction* m_pToolbarAction_material;
+   QAction* m_pToolbarAction_interior;
+   QAction* m_pToolbarAction_texture;
+   QAction* m_pToolbarAction_photons;
+   QAction* m_pToolbarAction_athmo;
+   QAction* m_pToolbarAction_transform;
+
    QAction* m_pStatusbarAction;
 
    QAction* m_pPathAction;
@@ -198,6 +208,15 @@ private:
    QToolBar* m_pToolBar;
    QToolBar* m_pToolbar_sp;
    QToolBar* m_pToolbar_fp;
+   QToolBar* m_pToolbar_csg;
+   QToolBar* m_pToolbar_gdl;
+   QToolBar* m_pToolbar_ip;
+   QToolBar* m_pToolbar_material;
+   QToolBar* m_pToolbar_interior;
+   QToolBar* m_pToolbar_texture;
+   QToolBar* m_pToolbar_photons;
+   QToolBar* m_pToolbar_athmo;
+   QToolBar* m_pToolbar_transform;
 
 };
 

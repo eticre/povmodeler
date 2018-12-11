@@ -59,6 +59,16 @@ PMShell::PMShell( const QUrl &url )
    m_pToolBar = new QToolBar;
    m_pToolbar_sp = new QToolBar;//solid primitives toolbar
    m_pToolbar_fp = new QToolBar;//finite patch toolbar
+   m_pToolbar_csg = new QToolBar;//construct soid geom. toolbar
+   m_pToolbar_gdl = new QToolBar;
+   m_pToolbar_ip = new QToolBar;
+   m_pToolbar_material = new QToolBar;
+   m_pToolbar_interior = new QToolBar;
+   m_pToolbar_texture = new QToolBar;
+   m_pToolbar_photons = new QToolBar;
+   m_pToolbar_athmo = new QToolBar;
+   m_pToolbar_transform = new QToolBar;
+
    menu_Bar = new QMenuBar;
    //QMenu* file_Menu = new QMenu;
    //fileMenu = menu_Bar->addMenu("File");
@@ -78,15 +88,32 @@ PMShell::PMShell( const QUrl &url )
    menu_Bar->addMenu(&settingsMenu);
    setMenuBar(menu_Bar);
 
-
    setupActions();
-
 
    m_pPart = new PMPart( this, this, true, this );
    m_pToolbar_sp->addActions( m_pPart->getMenu( "menuSolidPri" )->actions() );
    m_pToolbar_fp->addActions( m_pPart->getMenu( "menuFinitePatch" )->actions() );
+   m_pToolbar_ip->addActions( m_pPart->getMenu( "menuInfiniteSolid" )->actions() );
+   m_pToolbar_csg->addActions( m_pPart->getMenu( "menuCsg" )->actions() );
+   m_pToolbar_gdl->addActions( m_pPart->getMenu( "menu_gdl" )->actions() );
+   m_pToolbar_material->addActions( m_pPart->getMenu( "menuMaterial" )->actions() );
+   m_pToolbar_interior->addActions( m_pPart->getMenu( "menuInterior" )->actions() );
+   m_pToolbar_texture->addActions( m_pPart->getMenu( "menuTexture" )->actions() );
+   m_pToolbar_photons->addActions( m_pPart->getMenu( "menuPhotons" )->actions() );
+   m_pToolbar_athmo->addActions( m_pPart->getMenu( "menuAthmo" )->actions() );
+   m_pToolbar_transform->addActions( m_pPart->getMenu( "menuTrans" )->actions() );
+
    addToolBar( m_pToolbar_sp );
    addToolBar( m_pToolbar_fp );
+   addToolBar( m_pToolbar_ip );
+   addToolBar( m_pToolbar_csg );
+   addToolBar( m_pToolbar_gdl );
+   addToolBar( m_pToolbar_material );
+   addToolBar( m_pToolbar_interior );
+   addToolBar( m_pToolbar_texture );
+   addToolBar( m_pToolbar_photons );
+   addToolBar( m_pToolbar_athmo );
+   addToolBar( m_pToolbar_transform );
    restoreOptions();
    //m_pPart->setReadWrite(); // read-write mode
    //file_Menu = new QMenu;
@@ -203,14 +230,61 @@ void PMShell::setupActions()
    settingsMenu.addAction("");
    settingsMenu.addSection("Toolbars");
 
-   m_pToolbarAction_sp = settingsMenu.addAction( "Solid Primitives" );
-   m_pToolbarAction_sp->setCheckable( true );
-   connect( m_pToolbarAction_sp, SIGNAL( triggered() ), this, SLOT( slot_show_toolbars() ) );
-   connect( m_pToolbar_sp, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars() ) );
+   m_pToolbarAction_sp = m_pToolbar_sp->toggleViewAction();
+   m_pToolbarAction_sp->setText("Solid Primitives");
+   settingsMenu.addAction( m_pToolbarAction_sp );
+   connect( m_pToolbar_sp, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
 
-   m_pToolbarAction_fp = settingsMenu.addAction( "Finite Patch" );
-   m_pToolbarAction_fp->setCheckable( true );
-   connect( m_pToolbarAction_fp, SIGNAL( triggered() ), this, SLOT( slot_show_toolbars() ) );
+   m_pToolbarAction_fp = m_pToolbar_fp->toggleViewAction();
+   m_pToolbarAction_fp->setText( "Finite Patch" );
+   settingsMenu.addAction( m_pToolbarAction_fp );
+   connect( m_pToolbar_fp, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
+
+   m_pToolbarAction_ip = m_pToolbar_ip->toggleViewAction();
+   m_pToolbarAction_ip->setText( "Infinite Solid" );
+   settingsMenu.addAction( m_pToolbarAction_ip );
+   connect( m_pToolbar_ip, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
+
+   m_pToolbarAction_csg = m_pToolbar_csg->toggleViewAction();
+   m_pToolbarAction_csg->setText( "CSG" );
+   settingsMenu.addAction( m_pToolbarAction_csg );
+   connect( m_pToolbar_csg, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
+
+   m_pToolbarAction_material = m_pToolbar_material->toggleViewAction();
+   m_pToolbarAction_material->setText( "Material" );
+   settingsMenu.addAction( m_pToolbarAction_material );
+   connect( m_pToolbar_material, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
+
+   m_pToolbarAction_interior = m_pToolbar_interior->toggleViewAction();
+   m_pToolbarAction_interior->setText( "Interior" );
+   settingsMenu.addAction( m_pToolbarAction_interior );
+   connect( m_pToolbar_interior, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
+
+   m_pToolbarAction_texture = m_pToolbar_texture->toggleViewAction();
+   m_pToolbarAction_texture->setText( "Texture" );
+   settingsMenu.addAction( m_pToolbarAction_texture );
+   connect( m_pToolbar_texture, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
+
+   m_pToolbarAction_photons = m_pToolbar_photons->toggleViewAction();
+   m_pToolbarAction_photons->setText( "Photons" );
+   settingsMenu.addAction( m_pToolbarAction_photons );
+   connect( m_pToolbar_photons, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
+
+   m_pToolbarAction_athmo = m_pToolbar_athmo->toggleViewAction();
+   m_pToolbarAction_athmo->setText( "Athmospheric" );
+   settingsMenu.addAction( m_pToolbarAction_athmo );
+   connect( m_pToolbar_athmo, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
+
+   m_pToolbarAction_transform = m_pToolbar_transform->toggleViewAction();
+   m_pToolbarAction_transform->setText( "Transformation" );
+   settingsMenu.addAction( m_pToolbarAction_transform );
+   connect( m_pToolbar_transform, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
+
+   m_pToolbarAction_gdl = m_pToolbar_gdl->toggleViewAction();
+   m_pToolbarAction_gdl->setText("Global Detail Level");
+   settingsMenu.addAction(m_pToolbarAction_gdl);
+   connect( m_pToolbar_gdl, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars(bool) ) );
+
    settingsMenu.addAction("");
    settingsMenu.addSection("App. Layout");
    m_pPreferAaction = settingsMenu.addAction("Preferences");
@@ -335,13 +409,31 @@ PMDockWidget* PMShell::createView( const QString& t, PMViewOptions* o,
    return dock;
 }
 
-void PMShell::slot_show_toolbars()
+void PMShell::slot_show_toolbars(bool b)
 {
     QSettings qset;
     qset.setValue( "Appearance/ShowToolbar_sp", m_pToolbarAction_sp->isChecked() );
     m_pToolbar_sp->setVisible( m_pToolbarAction_sp->isChecked() );
     qset.setValue( "Appearance/ShowToolbar_fp", m_pToolbarAction_sp->isChecked() );
     m_pToolbar_fp->setVisible( m_pToolbarAction_fp->isChecked() );
+    qset.setValue( "Appearance/ShowToolbar_ip", m_pToolbarAction_ip->isChecked() );
+    m_pToolbar_ip->setVisible( m_pToolbarAction_ip->isChecked() );
+    qset.setValue( "Appearance/ShowToolbar_csg", m_pToolbarAction_csg->isChecked() );
+    m_pToolbar_csg->setVisible( m_pToolbarAction_csg->isChecked() );
+    qset.setValue( "Appearance/ShowToolbar_gdl", m_pToolbarAction_gdl->isChecked() );
+    m_pToolbar_gdl->setVisible( m_pToolbarAction_gdl->isChecked() );
+    qset.setValue( "Appearance/ShowToolbar_material", m_pToolbarAction_material->isChecked() );
+    m_pToolbar_material->setVisible( m_pToolbarAction_material->isChecked() );
+    qset.setValue( "Appearance/ShowToolbar_interior", m_pToolbarAction_interior->isChecked() );
+    m_pToolbar_interior->setVisible( m_pToolbarAction_interior->isChecked() );
+    qset.setValue( "Appearance/ShowToolbar_texture", m_pToolbarAction_texture->isChecked() );
+    m_pToolbar_texture->setVisible( m_pToolbarAction_texture->isChecked() );
+    qset.setValue( "Appearance/ShowToolbar_photons", m_pToolbarAction_photons->isChecked() );
+    m_pToolbar_photons->setVisible( m_pToolbarAction_photons->isChecked() );
+    qset.setValue( "Appearance/ShowToolbar_athmo", m_pToolbarAction_athmo->isChecked() );
+    m_pToolbar_athmo->setVisible( m_pToolbarAction_athmo->isChecked() );
+    qset.setValue( "Appearance/ShowToolbar_transform", m_pToolbarAction_transform->isChecked() );
+    m_pToolbar_transform->setVisible( m_pToolbarAction_transform->isChecked() );
 }
 
 void PMShell::slotNewGraphicalView( PMGLView::PMViewType t )
@@ -662,12 +754,29 @@ void PMShell::restoreOptions()
    m_pToolbarAction_sp->blockSignals( false );
    m_pToolbar_sp->setVisible(show);
 
+   show = qset.value( "Appearance/ShowToolbar_ip", false ).value<bool>();
+   m_pToolbarAction_ip->blockSignals( true );
+   m_pToolbarAction_ip->setChecked( show );
+   m_pToolbarAction_ip->blockSignals( false );
+   m_pToolbar_ip->setVisible(show);
+
    show = qset.value( "Appearance/ShowToolbar_fp", false ).value<bool>();
    m_pToolbarAction_fp->blockSignals( true );
    m_pToolbarAction_fp->setChecked( show );
    m_pToolbarAction_fp->blockSignals( false );
    m_pToolbar_fp->setVisible(show);
 
+   show = qset.value( "Appearance/ShowToolbar_csg", false ).value<bool>();
+   m_pToolbarAction_csg->blockSignals( true );
+   m_pToolbarAction_csg->setChecked( show );
+   m_pToolbarAction_csg->blockSignals( false );
+   m_pToolbar_csg->setVisible( show );
+
+   show = qset.value( "Appearance/ShowToolbar_gdl", false ).value<bool>();
+   m_pToolbarAction_gdl->blockSignals( true );
+   m_pToolbarAction_gdl->setChecked( show );
+   m_pToolbarAction_gdl->blockSignals( false );
+   m_pToolbar_gdl->setVisible(show);
    // eticre save recent filem_pRecent->loadEntries( "RecentFile" );
 }
 
