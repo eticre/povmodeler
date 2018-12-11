@@ -57,8 +57,8 @@ PMShell::PMShell( const QUrl &url )
        this->removeToolBar(tb);
    }
    m_pToolBar = new QToolBar;
-   m_pToolbar_sp = new QToolBar;
-   m_pToolbar_fp = new QToolBar;
+   m_pToolbar_sp = new QToolBar;//solid primitives toolbar
+   m_pToolbar_fp = new QToolBar;//finite patch toolbar
    menu_Bar = new QMenuBar;
    //QMenu* file_Menu = new QMenu;
    //fileMenu = menu_Bar->addMenu("File");
@@ -200,23 +200,24 @@ void PMShell::setupActions()
    m_pStatusbarAction = settingsMenu.addAction("showStatusbar");
    m_pStatusbarAction->setCheckable( true );
    connect( m_pStatusbarAction, SIGNAL( triggered() ), this, SLOT( saveOptions() ) );
+   settingsMenu.addAction("");
+   settingsMenu.addSection("Toolbars");
 
    m_pToolbarAction_sp = settingsMenu.addAction( "Solid Primitives" );
    m_pToolbarAction_sp->setCheckable( true );
    connect( m_pToolbarAction_sp, SIGNAL( triggered() ), this, SLOT( slot_show_toolbars() ) );
+   connect( m_pToolbar_sp, SIGNAL( visibilityChanged(bool) ), this, SLOT( slot_show_toolbars() ) );
 
    m_pToolbarAction_fp = settingsMenu.addAction( "Finite Patch" );
    m_pToolbarAction_fp->setCheckable( true );
    connect( m_pToolbarAction_fp, SIGNAL( triggered() ), this, SLOT( slot_show_toolbars() ) );
+   settingsMenu.addAction("");
+   settingsMenu.addSection("App. Layout");
+   m_pPreferAaction = settingsMenu.addAction("Preferences");
+   connect( m_pPreferAaction, SIGNAL( triggered() ), this, SLOT( slotSettings() ) );
 
    m_pSaveOptions = settingsMenu.addAction("Save Option");
    connect( m_pSaveOptions, SIGNAL( triggered() ), this, SLOT( saveOptions() ) );
-
-   m_pConfigToolbar = settingsMenu.addAction("Toolbar Config");
-   connect( m_pConfigToolbar, SIGNAL( triggered() ), this, SLOT( slotConfigureToolbars() ) );
-
-   m_pPreferAaction = settingsMenu.addAction("Preferences");
-   connect( m_pPreferAaction, SIGNAL( triggered() ), this, SLOT( slotSettings() ) );
 
    m_pNewTreeViewAction = viewMenu->addAction("view_new_treeview");
    m_pNewTreeViewAction->setText( tr( "New Object Tree" ) );
