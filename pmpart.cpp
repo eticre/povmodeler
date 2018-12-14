@@ -28,7 +28,6 @@
 #include "pmpovrayrenderwidget.h"
 #include "pmactions.h"
 #include "pmallobjects.h"
-#include "pmcommandmanager.h"
 #include "pmobjectdrag.h"
 #include "pmxmlparser.h"
 #include "pmpovrayparser.h"
@@ -41,7 +40,6 @@
 #include "pmdefaults.h"
 #include "pmsymboltable.h"
 #include "pmrendermodesdialog.h"
-#include "pmrendermode.h"
 #include "pmpovrayoutputwidget.h"
 #include "pmrendermanager.h"
 #include "pmdialogeditbase.h"
@@ -75,7 +73,6 @@
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
-#include <QLabel>
 #include <QDateTime>
 #include <QStack>
 #include <QStandardPaths>

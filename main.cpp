@@ -39,9 +39,6 @@ int main( int argc, char* argv[] )
     QCoreApplication::setOrganizationName( "povmodeler" );
     QCoreApplication::setApplicationName( "povmodeler" );
 
-   if( !parser.isSet( "-dri" ) )
-      PMGLView::enableDirectRendering( false );
-
    if( parser.positionalArguments().count() > 0 )
    {
       for( int i = 0 ; i < parser.positionalArguments().count() ; i++ )
