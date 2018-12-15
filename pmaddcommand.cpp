@@ -110,7 +110,7 @@ void PMAddCommand::execute( PMCommandManager* theManager )
                // the object, that couldn't be inserted was a declare,
                // remove all links
 					const PMObjectList& links =
-                        ( static_cast<PMDeclare*>(current) )->linkedObjects();
+                        ( dynamic_cast<PMDeclare*>(current) )->linkedObjects();
                foreach( PMObject* l, links )
                {
                   if( l->parent() )

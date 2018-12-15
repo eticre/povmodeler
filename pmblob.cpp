@@ -30,7 +30,7 @@ bool c_defaultHierarchy = false;
 
 PMDefinePropertyClass( PMBlob, PMBlobProperty );
 
-PMMetaObject* PMBlob::s_pMetaObject = 0;
+PMMetaObject* PMBlob::s_pMetaObject = nullptr;
 PMObject* createNewBlob( PMPart* part )
 {
    return new PMBlob( part );

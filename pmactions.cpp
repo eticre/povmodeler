@@ -30,8 +30,7 @@ public:
 	}
 
 	~PMSpinBoxActionPrivate()
-	{
-	}
+	= default;
 
 	QList<QSpinBox*> m_spinBoxes;
 	int m_value;

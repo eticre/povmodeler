@@ -86,10 +86,8 @@ public:
    //using KMainWindow::setWindowTitle;
 
 public slots:
-   void slot_show_toolbars(bool b=true);
    void openUrl( const QUrl& );
-   void slotOpenRecent( const QUrl& );
-   void slotOpenRecentTimer();
+   void slotOpenRecent( QAction* action );
 
    void slotFileNew();
    void slotFileOpen();
@@ -100,16 +98,11 @@ public slots:
    void slotFileNewWindow();
    void slotFileClose();
 
-   void slotShowToolbar( QToolBar *toolBar );
    void slotShowStatusbar( bool b );
    void slotShowPath();
    /***eticre show lib***/
    void slotShowList();
-   //void slotConfigureKeys();
-   void slotConfigureToolbars();
    void slotSettings();
-   void slotNewToolbarConfig();
-
    void slotNewGraphicalView( PMGLView::PMViewType );
    void slotNewTopView();
    void slotNewBottomView();
@@ -155,6 +148,10 @@ private:
 
    void closeEvent( QCloseEvent *event );
    void shellClose();
+
+   void restoreRecent();
+   QList<QAction*>recentFileAction;
+   QList<QVariant>recent_urls;
 
    //KRecentFilesAction* m_pRecent;
    QAction* m_pToolbarAction_sp;
@@ -204,6 +201,7 @@ private:
    QMenu* insertMenu;
    QMenu settingsMenu;
    QMenu* layout_viewMenu_submenu;
+   QMenu* menu_open_recent;
    QMenuBar* menu_Bar;
    QToolBar* m_pToolBar;
    QToolBar* m_pToolbar_sp;

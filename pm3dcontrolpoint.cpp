@@ -17,7 +17,7 @@
 
 #include "pm3dcontrolpoint.h"
 #include "pmmath.h"
-#include <math.h>
+#include <cmath>
 
 PM3DControlPoint::PM3DControlPoint( const PMVector& point, int id,
                                     const QString& description )
