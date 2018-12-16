@@ -39,13 +39,13 @@ const PMVector defaultEnd2 = PMVector ( 0, -defaultHalfConeSize, 0 );
 const bool defaultOpen = false;
 
 /** default cone structure */
-PMViewStructure* PMCone::s_pDefaultViewStructure = 0;
+PMViewStructure* PMCone::s_pDefaultViewStructure = nullptr;
 int PMCone::s_numSteps = c_defaultConeSteps;
 int PMCone::s_parameterKey = 0;
 
 PMDefinePropertyClass( PMCone, PMConeProperty );
 
-PMMetaObject* PMCone::s_pMetaObject = 0;
+PMMetaObject* PMCone::s_pMetaObject = nullptr;
 PMObject* createNewCone( PMPart* part )
 {
    return new PMCone( part );

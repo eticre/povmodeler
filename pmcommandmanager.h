@@ -23,7 +23,6 @@
 
 
 #include "pmcommand.h"
-#include <QObject>
 
 class PMPart;
 

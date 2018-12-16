@@ -48,9 +48,6 @@ PMShell::PMShell( const QUrl &url )
    show_list = false;
 
    QString ruleFile = QStandardPaths::locate( QStandardPaths::GenericDataLocation, QString( "povmodeler/povmodelershell.rc" ) );
-   //setXMLFile( ruleFile, false, false );
-
-   //this->createGUI(m_pPart);  // init shell gui + part
    QList<QToolBar *> allToolBars = this->findChildren<QToolBar *>();
    foreach(QToolBar *tb, allToolBars) {
        // This does not delete the tool bar.
@@ -70,8 +67,6 @@ PMShell::PMShell( const QUrl &url )
    m_pToolbar_transform = new QToolBar;
 
    menu_Bar = new QMenuBar;
-   //QMenu* file_Menu = new QMenu;
-   //fileMenu = menu_Bar->addMenu("File");
    editMenu = new QMenu;
    viewMenu = new QMenu;
    fileMenu = new QMenu;
@@ -83,6 +78,7 @@ PMShell::PMShell( const QUrl &url )
    insertMenu->setTitle(tr("Insert"));
    settingsMenu.setTitle(tr("Settings"));
    menu_open_recent->setTitle("Recent File");
+   menu_open_recent->setToolTipsVisible(true);
    menu_Bar->addMenu(fileMenu);
    menu_Bar->addMenu(editMenu);
    menu_Bar->addMenu(viewMenu);
@@ -118,12 +114,9 @@ PMShell::PMShell( const QUrl &url )
    addToolBar( m_pToolbar_transform );
    restoreRecent();
    //restoreOptions();
-
-   //m_pPart->setReadWrite(); // read-write mode
-   //file_Menu = new QMenu;
    setSize();
    setupView();
-   //guiFactory()->addClient( m_pPart );
+
    m_pStatusBar = statusBar();
    m_pStatusBar->addWidget ( statusBarLabel, 1 );
    statusBarLabel->setText(" Status Bar ");
@@ -480,8 +473,6 @@ void PMShell::slotDeleteClosedObjects()
 
 void PMShell::openUrl( const QUrl &url )
 {
-   //m_pRecent->addUrl( url );
-
    if( !m_pPart->ismodified && m_pPart->url().isEmpty() )
    {
       m_pPart->openFileQt( url );
@@ -516,19 +507,22 @@ void PMShell::slotFileOpen()
      "Povray Modeler Files ( *.kpm )" +
      "\n*|" + "All Files" );
 
+   if( !url.isEmpty() && !recent_urls.contains( url ))
+   {
+      int i = recentFileAction.length();
+      if( i >= 9 )
+      {
+          recentFileAction.removeFirst();
+          recent_urls.removeFirst();
+      }
+
+      recent_urls.append( url );
+      QSettings qset;
+      qset.setValue( "recent/recenturls", recent_urls );
+      restoreRecent();
+   }
    if( !url.isEmpty() )
       openUrl( url );
-
-   int i = recentFileAction.length();
-   if( i >= 9 )
-   {
-       recentFileAction.removeFirst();
-       recent_urls.removeFirst();
-   }
-   recent_urls.append( url );
-   QSettings qset;
-   qset.setValue( "recent/recenturls", recent_urls );
-   restoreRecent();
 }
 
 void PMShell::restoreRecent()
@@ -539,9 +533,10 @@ void PMShell::restoreRecent()
     if ( recent_urls.length()>0 )
         for ( int i = 0; i < recent_urls.size(); ++i )
         {
-           QAction* a = new QAction;
+           QAction* a = new QAction(this);
            a->setText( recent_urls.at(i).toUrl().fileName() );
            a->setData( recent_urls.at(i).toUrl() );
+           a->setToolTip( recent_urls.at(i).toString() );
            recentFileAction.insert( 0, a );
         }
     menu_open_recent->clear();

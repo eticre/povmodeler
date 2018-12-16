@@ -30,7 +30,7 @@
 PMSolidColorEdit::PMSolidColorEdit( QWidget* parent )
       : Base( parent )
 {
-   m_pDisplayedObject = 0;
+   m_pDisplayedObject = nullptr;
 }
 
 void PMSolidColorEdit::createTopWidgets()
@@ -54,11 +54,9 @@ void PMSolidColorEdit::displayObject( PMObject* o )
 {
    if( o->isA( "SolidColor" ) )
    {
-      m_pDisplayedObject = ( PMSolidColor* ) o;
+      m_pDisplayedObject = dynamic_cast<PMSolidColor*>(o);
       m_pColorEdit->setColor( m_pDisplayedObject->color() );
-
-      m_pColorEdit->setReadOnly( m_pDisplayedObject->isReadOnly() );
-      
+      m_pColorEdit->setReadOnly( m_pDisplayedObject->isReadOnly() );      
       Base::displayObject( o );
    }
    else

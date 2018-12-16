@@ -28,13 +28,7 @@
 #include <QStyle>
 #include <QStyleOption>
 #include <QPixmap>
-#include <QPaintEvent>
 #include <QChildEvent>
-#include <QEvent>
-#include <QFrame>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QResizeEvent>
 #include <QMouseEvent>
 
 #include <QMessageBox>

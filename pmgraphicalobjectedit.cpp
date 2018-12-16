@@ -34,7 +34,7 @@ const int c_maxValue = 1000;
 PMGraphicalObjectEdit::PMGraphicalObjectEdit( QWidget* parent )
       : Base( parent )
 {
-   m_pDisplayedObject = 0;
+   m_pDisplayedObject = nullptr;
 }
 
 void PMGraphicalObjectEdit::createBottomWidgets()
@@ -88,7 +88,7 @@ void PMGraphicalObjectEdit::displayObject( PMObject* o )
    {
       bool readOnly = o->isReadOnly();
 
-      m_pDisplayedObject = ( PMGraphicalObject* ) o;
+      m_pDisplayedObject = dynamic_cast<PMGraphicalObject*>(o);
       m_pNoShadowButton->setChecked( m_pDisplayedObject->noShadow() );
       m_pNoShadowButton->setEnabled( !readOnly );
       m_pNoImageButton->setChecked( m_pDisplayedObject->noImage() );
@@ -153,7 +153,7 @@ void PMGraphicalObjectEdit::slotLevelChanged( int )
 void PMGraphicalObjectEdit::recalculateResultingVisibility()
 {
    PMObject* o = m_pDisplayedObject->parent();
-   PMGraphicalObject* go = 0;
+   PMGraphicalObject* go = nullptr;
    int level = 0;
    bool absoluteFound = false;
 
@@ -165,7 +165,7 @@ void PMGraphicalObjectEdit::recalculateResultingVisibility()
    {
       if( o->isA( "GraphicalObject" ) )
       {
-         go = ( PMGraphicalObject* ) o;
+         go = dynamic_cast<PMGraphicalObject*>(o);
          level += go->visibilityLevel();
          if( !go->isVisibilityLevelRelative() )
             absoluteFound = true;
