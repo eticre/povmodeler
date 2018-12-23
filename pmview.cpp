@@ -15,19 +15,6 @@
 *                                                                        *
 **************************************************************************/
 
-
-#include <QtPrintSupport/QPrinter>
-#include <QPainter>
-#include <QSplitter>
-#include <QLayout>
-#include <QLabel>
-//Added by qt3to4:
-#include <QVBoxLayout>
-#include <QGridLayout>
-#include <QDialog>
-#include <QSettings>
-
-
 #include <stdio.h>
 
 // application specific includes
@@ -36,6 +23,16 @@
 #include "pmtreeview.h"
 #include "pmdialogview.h"
 #include "pmglview.h"
+
+#include <QtPrintSupport/QPrinter>
+#include <QPainter>
+#include <QSplitter>
+#include <QLayout>
+//Added by qt3to4:
+#include <QVBoxLayout>
+#include <QGridLayout>
+#include <QSettings>
+
 
 PMView::PMView( PMPart* part, QWidget* parent )
       : QWidget( parent )

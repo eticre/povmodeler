@@ -21,7 +21,7 @@
 #include "pmlinkedit.h"
 
 #include <QLayout>
-#include <QLabel>
+
 
 
 
