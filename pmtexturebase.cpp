@@ -30,18 +30,18 @@
 
 PMDefinePropertyClass( PMTextureBase, PMTextureBaseProperty );
 
-PMMetaObject* PMTextureBase::s_pMetaObject = 0;
+PMMetaObject* PMTextureBase::s_pMetaObject = nullptr;
 
 PMTextureBase::PMTextureBase( PMPart* part )
       : Base( part )
 {
-   m_pLinkedObject = 0;
+   m_pLinkedObject = nullptr;
 }
 
 PMTextureBase::PMTextureBase( const PMTextureBase& b )
       : Base( b )
 {
-   m_pLinkedObject = 0;
+   m_pLinkedObject = nullptr;
    setLinkedObject( b.m_pLinkedObject );
 }
 
@@ -68,7 +68,7 @@ void PMTextureBase::cleanUp() const
    if( s_pMetaObject )
    {
       delete s_pMetaObject;
-      s_pMetaObject = 0;
+      s_pMetaObject = nullptr;
    }
    Base::cleanUp();
 }
@@ -104,7 +104,7 @@ bool PMTextureBase::setLinkedObject( PMDeclare* obj )
    }
    else
    {
-      if( m_pLinkedObject != 0 )
+      if( m_pLinkedObject != nullptr )
       {
          if( m_pMemento )
          {
@@ -113,7 +113,7 @@ bool PMTextureBase::setLinkedObject( PMDeclare* obj )
             m_pMemento->addChangedObject( m_pLinkedObject, PMCData );
          }
          m_pLinkedObject->removeLinkedObject( this );
-         m_pLinkedObject = 0;
+         m_pLinkedObject = nullptr;
       }
       return true;
    }
@@ -122,10 +122,10 @@ bool PMTextureBase::setLinkedObject( PMDeclare* obj )
 
 void PMTextureBase::setLinkedObjectProperty( PMObject* o )
 {
-   if( o == 0 )
-      setLinkedObject( 0 );
+   if( o == nullptr )
+      setLinkedObject( nullptr );
    else if( o->isA( "Declare" ) )
-      setLinkedObject( ( PMDeclare* ) o );
+      setLinkedObject( dynamic_cast<PMDeclare*>(o) );
 }
 
 void PMTextureBase::serialize( QDomElement& e, QDomDocument& doc ) const
@@ -168,7 +168,7 @@ void PMTextureBase::restoreMemento( PMMemento* s )
          switch( data->valueID() )
          {
             case PMLinkedObjectID:
-               setLinkedObject( ( PMDeclare* ) data->objectData() );
+               setLinkedObject( dynamic_cast<PMDeclare*>(data->objectData()) );
                break;
             default:
                qCritical(  ) << "Wrong ID in PMTextureBase::restoreMemento\n";

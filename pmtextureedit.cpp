@@ -28,7 +28,7 @@
 PMTextureEdit::PMTextureEdit( QWidget* parent )
       : Base( parent )
 {
-   m_pDisplayedObject = 0;
+   m_pDisplayedObject = nullptr;
 }
 
 void PMTextureEdit::createTopWidgets()
@@ -44,7 +44,7 @@ void PMTextureEdit::displayObject( PMObject* o )
 {
    if( o->isA( "Texture" ) )
    {
-      m_pDisplayedObject = ( PMTexture* ) o;
+      m_pDisplayedObject = dynamic_cast<PMTexture*>(o);
       bool readOnly = m_pDisplayedObject->isReadOnly();
       m_pUVMapping->setChecked( m_pDisplayedObject->uvMapping() );
       m_pUVMapping->setEnabled( !readOnly );
