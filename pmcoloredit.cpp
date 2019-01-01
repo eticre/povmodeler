@@ -47,12 +47,8 @@ QColor PMColorEdit::getStyleColor( QString str )
 {
     str.remove( 0, 12 );
     str.remove( " " );
-<<<<<<< HEAD
     str.truncate(7);
     return QColor ( str );
-=======
-    return QColor ( str.left(7) );
->>>>>>> 017e873b166b295367db1c3ed517c78e2c5f992c
 }
 
 PMColorEdit::PMColorEdit( bool filterAndTransmit, QWidget* parent )

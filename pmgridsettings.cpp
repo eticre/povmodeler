@@ -168,6 +168,7 @@ void PMGridSettings::applySettings()
    str = m_pGridColor->styleSheet();
    str.remove( 0, 12 );
    str.remove( " " );
+   str.truncate(7);
    if( rm->gridColor() != QColor(str) )
    {
       rm->setGridColor( QColor(str) );
