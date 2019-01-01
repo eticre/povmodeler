@@ -47,6 +47,7 @@ QColor PMColorEdit::getStyleColor( QString str )
 {
     str.remove( 0, 12 );
     str.remove( " " );
+    str.truncate(7);
     return QColor ( str );
 }
 
