@@ -30,8 +30,8 @@ PMSorControlPoint::PMSorControlPoint( PMSorControlPoint* prev,
    m_pPrev = prev;
    if( m_pPrev )
       m_pPrev->m_pNext = this;
-   m_pNext = 0;
-   m_pSorLink = 0;
+   m_pNext = nullptr;
+   m_pSorLink = nullptr;
 }
 
 void PMSorControlPoint::graphicalChangeStarted()
@@ -100,8 +100,8 @@ void PMSorControlPoint::snapToGrid()
    double d = moveGrid();
    bool diff = false;
    PMVector change( 2 );
-   PMSorControlPoint* basePoint = 0;
-   PMSorControlPoint* linkedPoint = 0;
+   PMSorControlPoint* basePoint = nullptr;
+   PMSorControlPoint* linkedPoint = nullptr;
    if( !m_pPrev )
       basePoint = m_pNext;
    if( !m_pNext )

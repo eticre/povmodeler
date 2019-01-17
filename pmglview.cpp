@@ -1267,7 +1267,7 @@ void PMGLView::contextMenu()
    m->addAction( ( "Back View" ), this, SLOT( slotSetTypeNegZ() ) );
    int menuid = 0;
 
-   QMenu* cm = m->addMenu( QIcon::fromTheme( "pmcamera" ), ( "Camera" ) );
+   QMenu* cm = m->addMenu( QIcon( ":/smallicon/icons/povicons/small/pmcamera" ), ( "Camera" ) );
    const QList< PMCamera* > cameras = m_pPart->cameras();
    QList< PMCamera* >::ConstIterator it = cameras.begin();
    QString name;

@@ -46,7 +46,7 @@ const bool defaultOpen = false;
 int PMSurfaceOfRevolution::s_rSteps = c_defaultSurfaceOfRevolutionRSteps;
 int PMSurfaceOfRevolution::s_sSteps = c_defaultSurfaceOfRevolutionSSteps;
 int PMSurfaceOfRevolution::s_parameterKey = 0;
-PMMetaObject* PMSurfaceOfRevolution::s_pMetaObject = 0;
+PMMetaObject* PMSurfaceOfRevolution::s_pMetaObject = nullptr;
 PMObject* createNewSurfaceOfRevolution( PMPart* part )
 {
    return new PMSurfaceOfRevolution( part );
@@ -69,12 +69,12 @@ public:
    }
    virtual int size( PMObject* object, int /*dimension*/ ) const
    {
-      return ( ( PMSurfaceOfRevolution* ) object )->numberOfPoints();
+      return ( dynamic_cast<PMSurfaceOfRevolution*>(object) )->numberOfPoints();
    }
 protected:
    virtual bool setProtected( PMObject* obj, const PMVariant& var )
    {
-      PMSurfaceOfRevolution* p = ( PMSurfaceOfRevolution* ) obj;
+      PMSurfaceOfRevolution* p = dynamic_cast<PMSurfaceOfRevolution*>(obj);
       QList<PMVector> list = p->points();
       QList<PMVector>::Iterator it = list.begin();
       int i;
@@ -216,7 +216,7 @@ void PMSurfaceOfRevolution::cleanUp() const
    if( s_pMetaObject )
    {
       delete s_pMetaObject;
-      s_pMetaObject = 0;
+      s_pMetaObject = nullptr;
    }
    Base::cleanUp();
 }

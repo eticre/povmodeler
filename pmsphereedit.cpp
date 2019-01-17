@@ -31,7 +31,7 @@
 PMSphereEdit::PMSphereEdit( QWidget* parent )
       : Base( parent )
 {
-   m_pDisplayedObject = 0;
+   m_pDisplayedObject = nullptr;
 }
 
 void PMSphereEdit::createTopWidgets()
