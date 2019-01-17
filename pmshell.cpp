@@ -473,6 +473,8 @@ void PMShell::slotDeleteClosedObjects()
 
 void PMShell::openUrl( const QUrl &url )
 {
+    add_recentFiles( url );
+
    if( !m_pPart->ismodified && m_pPart->url().isEmpty() )
    {
       m_pPart->openFileQt( url );
@@ -502,27 +504,32 @@ void PMShell::slotFileNew()
 
 void PMShell::slotFileOpen()
 {
-   QUrl url = QFileDialog::getOpenFileUrl( this, "File",
-      QUrl(), QString( "*.kpm|" ) +
+   QUrl url = QFileDialog::getOpenFileUrl( this, "File", QUrl(), QString( "*.kpm|" ) +
      "Povray Modeler Files ( *.kpm )" +
      "\n*|" + "All Files" );
 
-   if( !url.isEmpty() && !recent_urls.contains( url ))
-   {
-      int i = recentFileAction.length();
-      if( i >= 9 )
-      {
-          recentFileAction.removeFirst();
-          recent_urls.removeFirst();
-      }
+   // add_recentFiles( url );
 
-      recent_urls.append( url );
-      QSettings qset;
-      qset.setValue( "recent/recenturls", recent_urls );
-      restoreRecent();
-   }
    if( !url.isEmpty() )
       openUrl( url );
+}
+
+void PMShell::add_recentFiles( QUrl url )
+{
+    if( !url.isEmpty() && !recent_urls.contains( url ))
+    {
+       int i = recentFileAction.length();
+       if( i >= 9 )
+       {
+           recentFileAction.removeFirst();
+           recent_urls.removeFirst();
+       }
+
+       recent_urls.append( url );
+       QSettings qset;
+       qset.setValue( "recent/recenturls", recent_urls );
+       restoreRecent();
+    }
 }
 
 void PMShell::restoreRecent()

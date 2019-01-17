@@ -152,6 +152,7 @@ private:
    void restoreRecent();
    QList<QAction*>recentFileAction;
    QList<QVariant>recent_urls;
+   void add_recentFiles( QUrl url );
 
    //KRecentFilesAction* m_pRecent;
    QAction* m_pToolbarAction_sp;
