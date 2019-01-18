@@ -18,9 +18,9 @@
 #include "pmvectorlistedit.h"
 #include "pmdebug.h"
 
-#include <qapplication.h>
-#include <qpalette.h>
-#include <qpainter.h>
+#include <QApplication>
+#include <QPalette>
+#include <QPainter>
 #include <QMouseEvent>
 #include <QList>
 #include <QEvent>
@@ -275,7 +275,7 @@ bool PMVectorListEdit::isSelected( int i ) const
 
 void PMVectorListEdit::select( int i )
 {
-   selectRow( i );
+   //selectRow( i );
 }
 
 void PMVectorListEdit::select( int start_row, int end_row )

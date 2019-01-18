@@ -19,14 +19,13 @@
 #ifndef PMVECTORLISTEDIT_H
 #define PMVECTORLISTEDIT_H
 
-
+#include "pmvector.h"
 #include <QTableView>
 #include <QStandardItemModel>
 #include <QHeaderView>
 #include <QList>
 #include <QVector>
 #include <QEvent>
-#include "pmvector.h"
 #include <QItemSelectionRange>
 #include <QItemSelection>
 #include <QItemSelectionModel>

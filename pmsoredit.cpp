@@ -37,7 +37,7 @@
 PMSurfaceOfRevolutionEdit::PMSurfaceOfRevolutionEdit( QWidget* parent )
       : Base( parent )
 {
-   m_pDisplayedObject = 0;
+   m_pDisplayedObject = nullptr;
 }
 
 void PMSurfaceOfRevolutionEdit::createBottomWidgets()
@@ -113,14 +113,16 @@ void PMSurfaceOfRevolutionEdit::updateControlPointSelection()
       m_pPoints->blockSelectionUpdates( true );
       bool sb = m_pPoints->signalsBlocked();
       m_pPoints->blockSignals( true );
-      
-      m_pPoints->clearSelection();
+
       for( i = 0; i < np; i++, ++it )
          if( ( *it )->selected() )
+         {
             m_pPoints->select( i );
+         }
+      /*
       for( i = 0; i < np; i++, ++it )
          if( ( *it )->selected() )
-            m_pPoints->select( i );
+            m_pPoints->select( i );*/
       
       m_pPoints->blockSignals( sb );
       m_pPoints->blockSelectionUpdates( false );
@@ -242,7 +244,7 @@ void PMSurfaceOfRevolutionEdit::slotRemovePoint()
 void PMSurfaceOfRevolutionEdit::slotSelectionChanged()
 {
    PMControlPointList cp = part()->activeControlPoints();
-	PMControlPointList::iterator it = cp.begin();
+   PMControlPointList::iterator it = cp.begin();
    int np = cp.count() / 2;
    int i;
    
