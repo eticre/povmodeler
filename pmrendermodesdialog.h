@@ -136,7 +136,7 @@ protected:
 
 
 protected slots:
-   virtual void slotOk( QAbstractButton *button );
+   virtual void slotOk();
    void slotChanged();
    void slotTextChanged( const QString& );
    void slotActivated( int );

@@ -18,26 +18,25 @@
 
 #include "pmsoredit.h"
 #include "pmsor.h"
-#include "pmvectorlistedit.h"
 #include "pmpart.h"
 
-#include <qlayout.h>
-#include <qlabel.h>
-
-#include <qcombobox.h>
-#include <qcheckbox.h>
-#include <qpushbutton.h>
-#include <QVBoxLayout>
-#include <QList>
-#include <QHBoxLayout>
-#include <QMessageBox>
-//#include <QDialog>
+#include "qcombobox.h"
+#include "qcheckbox.h"
+#include "qmessagebox.h"
 
 
 PMSurfaceOfRevolutionEdit::PMSurfaceOfRevolutionEdit( QWidget* parent )
       : Base( parent )
 {
    m_pDisplayedObject = nullptr;
+   m_pPoints = new PMVectorListEdit( "u", "v", this );
+}
+
+PMSurfaceOfRevolutionEdit::~PMSurfaceOfRevolutionEdit()
+{
+    m_pPoints->close();
+    delete m_pPoints;
+    m_pPoints = nullptr;
 }
 
 void PMSurfaceOfRevolutionEdit::createBottomWidgets()
@@ -45,20 +44,19 @@ void PMSurfaceOfRevolutionEdit::createBottomWidgets()
    QBoxLayout* tl = topLayout();
    tl->addWidget( new QLabel( tr( "Spline points:" ), this ) );
    
-   m_pPoints = new PMVectorListEdit( "u", "v", this );
-   connect( m_pPoints, SIGNAL( dataChanged() ), SIGNAL( dataChanged() ) );
-   connect( m_pPoints, SIGNAL( selectionChanged() ),
-            SLOT( slotSelectionChanged() ) );
+
+   //connect( m_pPoints, SIGNAL( dataChanged() ), SIGNAL( dataChanged() ) );
+   connect( m_pPoints, SIGNAL( selectionChanged() ), SLOT( slotSelectionChanged() ) );
    QHBoxLayout* hl = new QHBoxLayout();
    tl->addLayout( hl );
    hl->addWidget( m_pPoints, 2 );
 
    m_pAddAbove = new QPushButton( this );
-   m_pAddAbove->setIcon( QIcon::fromTheme( "pmaddpointabove" ) );
+   m_pAddAbove->setIcon( QIcon( ":/smallicon/icons/povicons/small/pmaddpointabove" )  );
    m_pAddBelow = new QPushButton( this );
-   m_pAddBelow->setIcon( QIcon::fromTheme( "pmaddpoint" ) );
+   m_pAddBelow->setIcon( QIcon( ":/smallicon/icons/povicons/small/pmaddpoint" )  );
    m_pRemove = new QPushButton( this );
-   m_pRemove->setIcon( QIcon::fromTheme( "pmremovepoint" ) );
+   m_pRemove->setIcon( QIcon( ":/smallicon/icons/povicons/small/pmremovepoint" )  );
    connect( m_pAddAbove, SIGNAL( clicked() ), SLOT( slotAddPointAbove() ) );
    connect( m_pAddBelow, SIGNAL( clicked() ), SLOT( slotAddPointBelow() ) );
    connect( m_pRemove, SIGNAL( clicked() ), SLOT( slotRemovePoint() ) );
@@ -104,7 +102,7 @@ void PMSurfaceOfRevolutionEdit::displayObject( PMObject* o )
 void PMSurfaceOfRevolutionEdit::updateControlPointSelection()
 {
    PMControlPointList cp = part()->activeControlPoints();
-	PMControlPointList::iterator it = cp.begin();
+   PMControlPointList::iterator it = cp.begin();
    int i;
    int np = cp.count() / 2;
 
@@ -119,11 +117,13 @@ void PMSurfaceOfRevolutionEdit::updateControlPointSelection()
          {
             m_pPoints->select( i );
          }
-      /*
+      m_pPoints->clearSelection();
       for( i = 0; i < np; i++, ++it )
          if( ( *it )->selected() )
-            m_pPoints->select( i );*/
-      
+         {
+            m_pPoints->select( i );
+         }
+
       m_pPoints->blockSignals( sb );
       m_pPoints->blockSelectionUpdates( false );
    }

@@ -50,7 +50,7 @@ PMRenderModesDialog::PMRenderModesDialog( const PMRenderModeList& modes, int ind
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout( mainLayout );
 
-    connect( buttonBox, SIGNAL( accepted() ), this, SLOT( accept() ) );
+    connect( buttonBox, SIGNAL( accepted() ), this, SLOT( slotOk() ) );
     connect( buttonBox, SIGNAL (rejected() ), this, SLOT( reject() ) );
 
     m_selectionIndex = index;
@@ -262,7 +262,7 @@ PMRenderModeDialog::PMRenderModeDialog( const PMRenderMode& mode, QWidget* paren
     QVBoxLayout* mainLayout = new QVBoxLayout( this );
     modeButtonBox = new QDialogButtonBox( QDialogButtonBox::Ok|QDialogButtonBox::Cancel );
 
-    connect( modeButtonBox, SIGNAL( accepted() ), this, SLOT( accept() ) );
+    connect( modeButtonBox, SIGNAL( accepted() ), this, SLOT( slotOk() ) );
     connect( modeButtonBox, SIGNAL( rejected() ), this, SLOT( reject() ) );
 
     m_mode = mode;
@@ -421,7 +421,7 @@ PMRenderModeDialog::PMRenderModeDialog( const PMRenderMode& mode, QWidget* paren
    connect( m_pJitterAmountEdit, SIGNAL( dataChanged() ), SLOT( slotChanged() ) );
    connect( m_pAntialiasDepthEdit, SIGNAL( dataChanged() ), SLOT( slotChanged() ) );
    connect( m_pAlphaBox, SIGNAL( toggled( bool ) ), SLOT( slotToggled( bool ) ) );
-   connect( modeButtonBox, SIGNAL( clicked( QAbstractButton* ) ), this, SLOT( slotOk( QAbstractButton* ) ) );
+   //connect( modeButtonBox, SIGNAL( clicked( QAbstractButton* ) ), this, SLOT( slotOk( QAbstractButton* ) ) );
 }
 
 void PMRenderModeDialog::setButton( QPushButton *btn, bool b )
@@ -601,10 +601,11 @@ int PMRenderModeDialog::indexToQuality( int index )
 
    return c_indexToQuality[index];
 }
-
-void PMRenderModeDialog::slotOk( QAbstractButton *button  )
+//button->text()=="OK" &&
+//void PMRenderModeDialog::slotOk( QAbstractButton *button  )
+void PMRenderModeDialog::slotOk()
 {
-   if( button->text()=="&OK" && saveChanges() )
+   if( saveChanges() )
       accept();
 }
 

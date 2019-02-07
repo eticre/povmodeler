@@ -20,21 +20,11 @@
 #ifndef PMSOREDIT_H
 #define PMSOREDIT_H
 
-
-
 #include "pmsolidobjectedit.h"
 #include "pmvectoredit.h"
-#include <QList>
-//Added by qt3to4:
-#include <QLabel>
-#include <QVBoxLayout>
+#include "pmvectorlistedit.h"
 
 class PMSurfaceOfRevolution;
-class QVBoxLayout;
-class QCheckBox;
-class QPushButton;
-class QLabel;
-class PMVectorListEdit;
 
 /**
  * Dialog edit class for @ref PMSurfaceOfRevolution
@@ -44,6 +34,7 @@ class PMSurfaceOfRevolutionEdit : public PMSolidObjectEdit
    Q_OBJECT
    typedef PMSolidObjectEdit Base;
 public:
+   ~PMSurfaceOfRevolutionEdit();
    /**
     * Creates a PMSurfaceOfRevolutionEdit with parent and name
     */

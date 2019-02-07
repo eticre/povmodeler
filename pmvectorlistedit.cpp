@@ -74,7 +74,8 @@ PMVectorListEdit::PMVectorListEdit( const QString& c1, const QString& c2,
 
 PMVectorListEdit::PMVectorListEdit( const QString& c1, const QString& c2,
                                     const QString& c3, QWidget* parent )
-      : QTableView( parent )
+    : QTableView( parent )
+
 {
    m_model = new QStandardItemModel( 1, 3, this );
    m_model->setHorizontalHeaderItem( 0, new QStandardItem( QString( c1 ) ) );
@@ -275,7 +276,7 @@ bool PMVectorListEdit::isSelected( int i ) const
 
 void PMVectorListEdit::select( int i )
 {
-   //selectRow( i );
+   selectRow( i );
 }
 
 void PMVectorListEdit::select( int start_row, int end_row )
