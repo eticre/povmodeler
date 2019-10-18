@@ -220,7 +220,7 @@ PMPart::~PMPart()
    for (int i = 0; i < m_readWriteActions.size(); ++i) {
         delete m_readWriteActions.at(i);
    }
-   delete m_hash_readWriteActions;
+   if(m_hash_readWriteActions) delete m_hash_readWriteActions;
    delete m_pparent;
    delete m_pwidget;
    delete m_pView;

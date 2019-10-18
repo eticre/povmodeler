@@ -181,8 +181,10 @@ void PMLibraryEntryPreview::slotEditCopy()
 
 PMLibraryEntryPreview::~PMLibraryEntryPreview()
 {
-   delete m_pPart;
-   m_pPart = nullptr;// -//eticre
+  /* if(m_pPart){
+       delete m_pPart;
+       m_pPart = nullptr;
+   }*/// -//eticre
 }
 
 bool PMLibraryEntryPreview::showPreview( QString lib_path, bool readOnly, bool subLib )
