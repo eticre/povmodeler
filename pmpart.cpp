@@ -221,9 +221,10 @@ PMPart::~PMPart()
         delete m_readWriteActions.at(i);
    }
    if(m_hash_readWriteActions) delete m_hash_readWriteActions;
-   delete m_pparent;
-   delete m_pwidget;
-   delete m_pView;
+   //delete m_pparent;
+   m_pparent = nullptr;
+   //delete m_pwidget;
+   //delete m_pView;
    m_pView = nullptr;
    delete m_pCutAction;
    delete m_pCopyAction;
@@ -241,31 +242,35 @@ PMPart::~PMPart()
    m_pDeleteAction = nullptr;
    m_pHideAction = nullptr;
    m_pShowAction = nullptr;
-   delete menuSolidPri;
-   delete menuFinitePatch;
-   delete menuInfiniteSolid;
-   delete menuCsg;
-   delete menuMaterial;
-   delete menuInterior;
-   delete menuTexture;
-   delete menuPhotons;
-   delete menuAthmo;
-   delete menuTrans;
-   menuSolidPri = nullptr;
-   menuFinitePatch = nullptr;
-   menuInfiniteSolid = nullptr;
-   menuCsg = nullptr;
-   menuMaterial = nullptr;
-   menuInterior = nullptr;
-   menuTexture = nullptr;
-   menuPhotons = nullptr;
-   menuAthmo = nullptr;
-   menuTrans = nullptr;
+   if(m_pShell){
+       delete menuSolidPri;
+       delete menuFinitePatch;
+       delete menuInfiniteSolid;
+       delete menuCsg;
+       delete menuMaterial;
+       delete menuInterior;
+       delete menuTexture;
+       delete menuPhotons;
+       delete menuAthmo;
+       delete menuTrans;
+       menuSolidPri = nullptr;
+       menuFinitePatch = nullptr;
+       menuInfiniteSolid = nullptr;
+       menuCsg = nullptr;
+       menuMaterial = nullptr;
+       menuInterior = nullptr;
+       menuTexture = nullptr;
+       menuPhotons = nullptr;
+       menuAthmo = nullptr;
+       menuTrans = nullptr;
+       delete menu_gdl;
+       menu_gdl = nullptr;
+       delete menuRenderModes;
+       menuRenderModes=nullptr;
+   }
    delete editMenu;
    editMenu = nullptr;
-   delete menu_gdl;
-   menu_gdl = nullptr;
-   delete menuRenderModes;
+
    delete m_pRenderComboAction;
    if( m_pSymbolTable )
        delete m_pSymbolTable;

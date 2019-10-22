@@ -57,6 +57,7 @@ PMLibraryEntryPreview::PMLibraryEntryPreview( QWidget* parent ) :
    setAcceptDrops( true );
    // m_pPart = new PMPart( this, "treeview", NULL, false, true );
    m_pPart = new PMPart( this, this,  true, true, nullptr );
+   m_pPart->setUrl(QUrl("libPreview"));
    m_pPart->setReadWrite( false );
    m_readOnly = false;
    m_modified = false;
@@ -181,10 +182,10 @@ void PMLibraryEntryPreview::slotEditCopy()
 
 PMLibraryEntryPreview::~PMLibraryEntryPreview()
 {
-  /* if(m_pPart){
+  if(m_pPart){
        delete m_pPart;
        m_pPart = nullptr;
-   }*/// -//eticre
+   }
 }
 
 bool PMLibraryEntryPreview::showPreview( QString lib_path, bool readOnly, bool subLib )

@@ -40,7 +40,7 @@
 PMPrismEdit::PMPrismEdit( QWidget* parent )
       : Base( parent )
 {
-   m_pDisplayedObject = 0;
+   m_pDisplayedObject = nullptr;
    m_lastSplineType = 0;
 }
 
@@ -111,7 +111,7 @@ void PMPrismEdit::displayObject( PMObject* o )
    if( o->isA( "Prism" ) )
    {
       bool readOnly = o->isReadOnly();
-      m_pDisplayedObject = ( PMPrism* ) o;
+      m_pDisplayedObject = static_cast<PMPrism*>(o);
 
       switch( m_pDisplayedObject->splineType() )
       {
@@ -194,15 +194,15 @@ void PMPrismEdit::createEdits( const QList< QList<PMVector> >& sp )
    {
       deleteEdits();
 
-      QIcon addIcon = QIcon::fromTheme( "pmaddpoint" );
-      QIcon removeIcon = QIcon::fromTheme( "pmrenovepoint" );
-      QIcon addPrismIcon = QIcon::fromTheme( "pmaddsubprism" );
+      QIcon addIcon = QIcon( ":/smallicon/icons/povicons/small/pmaddpoint" );
+      QIcon removeIcon = QIcon( ":/smallicon/icons/povicons/small/pmremovepoint" );
+      QIcon addPrismIcon = QIcon( ":/smallicon/icons/povicons/small/pmaddsubprism" );
       QVBoxLayout* tvl = new QVBoxLayout( m_pEditWidget);
 //TODO PORT QT5       tvl->setSpacing( QDialog::spacingHint() );
-      QHBoxLayout* hl = 0;
+      QHBoxLayout* hl = nullptr;
       QVBoxLayout* vl;
-      QLabel* label = 0;
-      QPushButton* button = 0;
+      QLabel* label = nullptr;
+      QPushButton* button = nullptr;
       PMVectorListEdit* vle;
       int spnr = 0;
       
@@ -211,8 +211,7 @@ void PMPrismEdit::createEdits( const QList< QList<PMVector> >& sp )
          // create all edits for one sub prism
          hl = new QHBoxLayout();
          tvl->addLayout( hl );
-         label = new QLabel( ( "Sub prism :" + QString::number( spnr + 1 ) ),
-                             m_pEditWidget );
+         label = new QLabel(("Sub prism :" + QString::number(spnr + 1)), m_pEditWidget );
          hl->addWidget( label );
          hl->addStretch( 1 );
          m_labels.append( label );
@@ -257,7 +256,7 @@ void PMPrismEdit::createEdits( const QList< QList<PMVector> >& sp )
          hl->addLayout( vl );
          
          button = new QPushButton( m_pEditWidget );
-         button->setIcon( QIcon::fromTheme( "pmaddpointabove" ) );
+         button->setIcon( QIcon( ":/smallicon/icons/povicons/small/pmaddpointabove" ) );
          connect( button, SIGNAL( clicked() ), SLOT( slotAddPointAbove() ) );
          m_addAboveButtons.append( button );
          button->show();
@@ -269,7 +268,7 @@ void PMPrismEdit::createEdits( const QList< QList<PMVector> >& sp )
          button->show();
          vl->addWidget( button );
          button = new QPushButton( m_pEditWidget );
-         button->setIcon( QIcon::fromTheme( "pmremovepoint" ) );
+         button->setIcon( QIcon( ":/smallicon/icons/povicons/small/pmremovepoint" ) );
          connect( button, SIGNAL( clicked() ), SLOT( slotRemovePoint() ) );
          m_removeButtons.append( button );
          button->show();
@@ -299,7 +298,7 @@ void PMPrismEdit::createEdits( const QList< QList<PMVector> >& sp )
 
    QList< PMVectorListEdit* >::Iterator vlit = m_points.begin();
    QList< QList< PMVector > >::ConstIterator spit;
-   PMVectorListEdit* vle = 0;
+   PMVectorListEdit* vle = nullptr;
    bool newSize = false;
    
    for( spit = sp.begin(); spit != sp.end(); ++spit, ++vlit )
@@ -450,7 +449,7 @@ void PMPrismEdit::slotSweepChanged( int )
 
 void PMPrismEdit::slotAddPointAbove()
 {
-   QPushButton* bt = ( QPushButton* ) sender();
+   QPushButton* bt = static_cast<QPushButton*>(sender());
    if( bt )
    {
       int subIndex = m_addAboveButtons.indexOf( bt );
@@ -486,7 +485,7 @@ void PMPrismEdit::slotAddPointAbove()
 
 void PMPrismEdit::slotAddPointBelow()
 {
-   QPushButton* bt = ( QPushButton* ) sender();
+   QPushButton* bt = static_cast<QPushButton*>(sender());
    if( bt )
    {
       int subIndex = m_addBelowButtons.indexOf( bt );
@@ -524,7 +523,7 @@ void PMPrismEdit::slotAddPointBelow()
 
 void PMPrismEdit::slotRemovePoint()
 {
-   QPushButton* bt = ( QPushButton* ) sender();
+   QPushButton* bt = static_cast<QPushButton*>(sender());
    if( bt )
    {
       int subIndex = m_removeButtons.indexOf( bt );
@@ -559,7 +558,7 @@ void PMPrismEdit::slotAddSubPrism()
                                 "subPrismWithBezierSplines" );
    }
    
-   QPushButton* button = ( QPushButton* ) sender();
+   QPushButton* button = static_cast<QPushButton*>(sender());
    if( button )
    {
       int index = m_subPrismAddButtons.indexOf( button );
@@ -600,7 +599,7 @@ void PMPrismEdit::slotAddSubPrism()
 
 void PMPrismEdit::slotRemoveSubPrism()
 {
-   QPushButton* button = ( QPushButton* ) sender();
+   QPushButton* button = static_cast<QPushButton*>(sender());
    if( button )
    {
       int index = m_subPrismRemoveButtons.indexOf( button );
@@ -623,7 +622,7 @@ void PMPrismEdit::slotRemoveSubPrism()
 
 void PMPrismEdit::slotSelectionChanged()
 {
-   PMVectorListEdit* edit = ( PMVectorListEdit* ) sender();
+   PMVectorListEdit* edit = static_cast<PMVectorListEdit*>(sender());
    if( edit )
    {
       QList< QList< PMVector > > points = m_pDisplayedObject->points();
