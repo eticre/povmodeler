@@ -63,7 +63,7 @@ PMObjectDrag::PMObjectDrag( PMPart* part, PMObject* object )
 
 	setData( c_kpmDocumentMimeFormat, modelerData );
     qDebug() << "Added mime type " << c_kpmDocumentMimeFormat
-						  << " " << modelerData.size() << " bytes" << endl;
+                          << " " << modelerData.size() << " bytes" << Qt::endl;
 
    const QList< PMIOFormat* >& formats = part->ioManager()->formats();
    foreach( PMIOFormat* it, formats )
@@ -86,10 +86,10 @@ PMObjectDrag::PMObjectDrag( PMPart* part, PMObject* object )
                 setData( it->mimeType(), data );
 
             qDebug() << "Added mime type " << it->mimeType()
-                              << " " << data.size() << " bytes" << endl;
+                              << " " << data.size() << " bytes" << Qt::endl;
          }
          else
-            qCritical() << "Format claims to support exporting, but doesn't provide a serializer" << endl;
+            qCritical() << "Format claims to support exporting, but doesn't provide a serializer" << Qt::endl;
 
          buffer.close();
       }
@@ -131,7 +131,7 @@ PMObjectDrag::PMObjectDrag( PMPart* part, const PMObjectList& objList )
 
 	setData( c_kpmDocumentMimeFormat, modelerData );
     qDebug() << "Added mime type " << c_kpmDocumentMimeFormat
-						  << " " << modelerData.size() << " bytes" << endl;
+                          << " " << modelerData.size() << " bytes" << Qt::endl;
 
    const QList< PMIOFormat* >& formats = part->ioManager()->formats();
    foreach( PMIOFormat* fit, formats )
@@ -154,10 +154,10 @@ PMObjectDrag::PMObjectDrag( PMPart* part, const PMObjectList& objList )
                 setData( fit->mimeType(), data );
 
             qDebug() << "Added mime type " << fit->mimeType()
-                              << " " << data.size() << " bytes" << endl;
+                              << " " << data.size() << " bytes" << Qt::endl;
          }
          else
-            qCritical() << "Format claims to support exporting, but doesn't provide a serializer" << endl;
+            qCritical() << "Format claims to support exporting, but doesn't provide a serializer" << Qt::endl;
 
          buffer.close();
       }

@@ -52,7 +52,7 @@ protected:
 
       if( m_index >= list.count() )
       {
-         qCritical(  ) << "Range error in PMTextureMapBase::ValueProperty::set" << endl;
+         qCritical(  ) << "Range error in PMTextureMapBase::ValueProperty::set" << Qt::endl;
          return false;
       }
 
@@ -68,7 +68,7 @@ protected:
 
       if( m_index >= list.count() )
       {
-         qCritical(  ) << "Range error in PMTextureMapBase::ValueProperty::get" << endl;
+         qCritical(  ) << "Range error in PMTextureMapBase::ValueProperty::get" << Qt::endl;
          return PMVariant();
       }
 

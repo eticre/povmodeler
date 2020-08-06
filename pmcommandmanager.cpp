@@ -92,7 +92,7 @@ void PMCommandManager::clear()
 	foreach( PMCommand* cmd, m_redoCommands ) delete cmd;
    m_redoCommands.clear();
    m_commands.clear();
-   emit updateUndoRedo( QString::null, QString() );
+   emit updateUndoRedo( QString(), QString() );
 }
 
 void PMCommandManager::cmdObjectChanged( PMObject* obj, const int mode )

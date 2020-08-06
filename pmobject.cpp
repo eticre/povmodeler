@@ -42,7 +42,7 @@ PMObject::PMObject( PMPart* part )
    pmt_item = nullptr;
 
    if( !m_pPart )
-      qCritical() << "PMObject::PMObject: The part may not be null" << endl;
+      qCritical() << "PMObject::PMObject: The part may not be null" << Qt::endl;
 }
 
 PMObject::PMObject( const PMObject& o )

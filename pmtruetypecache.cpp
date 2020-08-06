@@ -139,7 +139,7 @@ bool PMTrueTypeFont::isValid()
          qDebug() << "Font: " << m_face->family_name
                            << " style " << m_face->style_name
                            << " units_per_EM " << m_face->units_per_EM
-                           << " height " << m_face->height << endl;
+                           << " height " << m_face->height << Qt::endl;
 #endif
             
       m_validChecked = true;
@@ -177,7 +177,7 @@ PMTrueTypeOutline* PMTrueTypeFont::outline( QChar c )
             FT_Glyph_Metrics* m = &( m_face->glyph->metrics );
             qDebug() << "Glyph w: " << m->width << " h: " << m->height
                               << " hbx: " << m->horiBearingX << " hby: " << m->horiBearingY
-                              << " ha: " << m->horiAdvance << endl;
+                              << " ha: " << m->horiAdvance << Qt::endl;
          }
 #endif
          
@@ -260,7 +260,7 @@ PMTrueTypeOutline::PMTrueTypeOutline( FT_OutlineGlyph glyph, FT_Face face )
          qDebug() << "    <" << ol->points[dp].x << ", "
                            << ol->points[dp].y << ">, "
                            << ( ( ol->tags[dp] & 1 ) == 1 ) << " "
-                           << ( ( ol->tags[dp] & 2 ) == 2 ) << endl;
+                           << ( ( ol->tags[dp] & 2 ) == 2 ) << Qt::endl;
       }
    }
    */

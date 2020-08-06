@@ -178,7 +178,7 @@ void PMObjectLibrarySettings::slotCreateObjectLibrary()
                        QMessageBox::Ok, QMessageBox::NoButton);
             break;
          default:
-            qCritical() << "Unexpected error in slotCreateObjectLibrary." << endl;
+            qCritical() << "Unexpected error in slotCreateObjectLibrary." << Qt::endl;
       }
    }
 }

@@ -101,7 +101,7 @@ protected:
 
       if( m_index >= list.count() )
       {
-         qCritical(  ) << "Range error in PMSurfaceOfRevolution::PointProperty::get" << endl;
+         qCritical(  ) << "Range error in PMSurfaceOfRevolution::PointProperty::get" << Qt::endl;
          return PMVariant();
       }
 

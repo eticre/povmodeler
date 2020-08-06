@@ -35,7 +35,7 @@ class PMDragWidget : public QWidget
 {
    Q_OBJECT
 public:
-   PMDragWidget( QWidget* parent = 0, Qt::WindowFlags f = 0 );
+   PMDragWidget( QWidget* parent = 0, QFlag f=0 );
    
    virtual void startDrag();
 

@@ -417,7 +417,7 @@ void PMLayoutSettings::slotViewEntrySelected( QModelIndex mindex )
             
       if( !found )
       {
-         qCritical() << "Unknown view type in PMLayoutSettings::slotViewEntrySelected" << endl;
+         qCritical() << "Unknown view type in PMLayoutSettings::slotViewEntrySelected" << Qt::endl;
          m_pViewTypeEdit->setCurrentIndex( 0 );
       }
       else

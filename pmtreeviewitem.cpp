@@ -120,7 +120,7 @@ QString PMTreeViewItem::key( int, bool ) const
 {
    QString result;
    if( m_pObject->parent() )
-      result.sprintf( "%06i", m_pObject->parent()->findChild( m_pObject ) );
+      result.asprintf( "%06i", m_pObject->parent()->findChild( m_pObject ) );
    else
       result = "000000";
    return result;

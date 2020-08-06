@@ -97,7 +97,7 @@ QString PMResourceLocator::lookUp( const QString& file )
       if( !m_cache.insert( file, ni ) )
          delete ni;
       qDebug() << "File \"" << file << "\" found in "
-                        << fullPath << endl;
+                        << fullPath << Qt::endl;
    }
 
    return fullPath;

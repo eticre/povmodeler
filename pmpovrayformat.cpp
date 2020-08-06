@@ -35,7 +35,7 @@ void PMPovrayFormat::registerMethod( const QString& className,
    PMPovraySerializeMethodInfo* info = m_methodDict.value( className );
    //if( info )
    //   qDebug() << "Serialization method for " << className
-   //                       << " shadows old implementation" << endl;
+   //                       << " shadows old implementation" << Qt::endl;
    info = new PMPovraySerializeMethodInfo( method );
    m_methodDict.insert( className, info );
 }

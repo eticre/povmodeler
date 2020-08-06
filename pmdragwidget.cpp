@@ -19,7 +19,7 @@
 //Added by qt3to4:
 #include <QMouseEvent>
 
-PMDragWidget::PMDragWidget(QWidget* parent, Qt::WindowFlags f )
+PMDragWidget::PMDragWidget(QWidget* parent, QFlag f )
       : QWidget( parent, f )
 {
    dragging = false;

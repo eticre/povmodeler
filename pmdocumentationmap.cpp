@@ -130,7 +130,7 @@ void PMDocumentationMap::loadMap()
       QString fileName = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "povmodeler/povraydocmap.xml" );
       if( fileName.isEmpty() )
       {
-         qCritical(  ) << "Povray documentation map not found" << endl;
+         qCritical(  ) << "Povray documentation map not found" << Qt::endl;
          return;
       }
       
@@ -138,7 +138,7 @@ void PMDocumentationMap::loadMap()
       if( !file.open( QIODevice::ReadOnly ) )
       {
          qCritical(  ) << "Could not open the povray documentation map file"
-                           << endl;
+                           << Qt::endl;
          return;
       }
 

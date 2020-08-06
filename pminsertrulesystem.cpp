@@ -50,10 +50,10 @@ PMRuleClass::PMRuleClass( QDomElement& e )
    m_pPrototypeManager = s_pPrototypeManager;
    m_className = e.attribute( "name" );
    if( m_className.isEmpty() )
-      qCritical(  ) << "RuleSystem: Invalid class name" << endl;
+      qCritical(  ) << "RuleSystem: Invalid class name" << Qt::endl;
    if( !m_pPrototypeManager->existsClass( m_className ) && m_className != "Declib" && m_className != "Not_in_tree" )
       qCritical(  ) << "RuleSystem: Unknown class: "
-                        << m_className << endl;
+                        << m_className << Qt::endl;
 }
 
 bool PMRuleClass::matches( const QString& className )
@@ -69,7 +69,7 @@ PMRuleGroup::PMRuleGroup( QDomElement& e,
    m_pGroup = 0;
    QString groupName = e.attribute( "name" );
    if( groupName.isEmpty() )
-      qCritical(  ) << "RuleSystem: Invalid group name" << endl;
+      qCritical(  ) << "RuleSystem: Invalid group name" << Qt::endl;
    // find group
    PMRuleDefineGroup* it;
    foreach( it, localGroups )
@@ -80,7 +80,7 @@ PMRuleGroup::PMRuleGroup( QDomElement& e,
          m_pGroup = it;
    if( !m_pGroup )
       qCritical(  ) << "RuleSystem: Group not defined: "
-                        << groupName << endl;
+                        << groupName << Qt::endl;
 }
 
 bool PMRuleGroup::matches( const QString& className )
@@ -96,7 +96,7 @@ PMRuleDefineGroup::PMRuleDefineGroup( QDomElement& e,
 {
    m_name = e.attribute( "name" );
    if( m_name.isEmpty() )
-      qCritical(  ) << "RuleSystem: Invalid group name" << endl;
+      qCritical(  ) << "RuleSystem: Invalid group name" << Qt::endl;
 
    QDomNode m = e.firstChild();
    while( !m.isNull() )
@@ -205,7 +205,7 @@ PMRuleProperty::PMRuleProperty( QDomElement& e )
 {
    m_property = e.attribute( "name" );
    if( m_property.isNull() )
-      qCritical(  ) << "RuleSystem: Invalid property name" << endl;
+      qCritical(  ) << "RuleSystem: Invalid property name" << Qt::endl;
 }
 
 PMVariant PMRuleProperty::evaluate( const PMObject* o )
@@ -213,7 +213,7 @@ PMVariant PMRuleProperty::evaluate( const PMObject* o )
    PMVariant v = o->property( m_property );
    if( v.isNull() )
       qCritical(  ) << "RuleSystem: Invalid property name: "
-                        << m_property << endl;
+                        << m_property << Qt::endl;
    return v;
 }
 
@@ -223,7 +223,7 @@ PMRuleConstant::PMRuleConstant( QDomElement& e )
 {
    QString v = e.attribute( "value" );
    if( v.isNull() )
-      qCritical(  ) << "RuleSystem: Invalid value" << endl;
+      qCritical(  ) << "RuleSystem: Invalid value" << Qt::endl;
 
    m_value = PMVariant( v );
 }
@@ -535,7 +535,7 @@ PMRuleCompare::PMRuleCompare( QDomElement& e,
       m = m.nextSibling();
    }
    if( !m_pValue[1] )
-      qCritical(  ) << "RuleSystem: Comparison needs two values" << endl;
+      qCritical(  ) << "RuleSystem: Comparison needs two values" << Qt::endl;
 }
 
 bool PMRuleCompare::evaluate( const PMObject* object )
@@ -573,7 +573,7 @@ bool PMRuleCompare::evaluate( const PMObject* object )
    }
    if( convertError )
    {
-      qCritical(  ) << "RuleSystem: Types in comparison must match" << endl;
+      qCritical(  ) << "RuleSystem: Types in comparison must match" << Qt::endl;
       return false;
    }
 
@@ -606,22 +606,22 @@ bool PMRuleLess::compare( const PMVariant& v1, const PMVariant& v2 )
          c = v1.stringData() < v2.stringData();
          break;
       case PMVariant::Bool:
-         qCritical(  ) << "RuleSystem: Less: Can't compare booleans" << endl;
+         qCritical(  ) << "RuleSystem: Less: Can't compare booleans" << Qt::endl;
          break;
       case PMVariant::ThreeState:
-         qCritical(  ) << "RuleSystem: Less: Can't compare ThreeStates" << endl;
+         qCritical(  ) << "RuleSystem: Less: Can't compare ThreeStates" << Qt::endl;
          break;
       case PMVariant::Vector:
-         qCritical(  ) << "RuleSystem: Less: Can't compare vectors" << endl;
+         qCritical(  ) << "RuleSystem: Less: Can't compare vectors" << Qt::endl;
          break;
       case PMVariant::Color:
-         qCritical(  ) << "RuleSystem: Less: Can't compare colors" << endl;
+         qCritical(  ) << "RuleSystem: Less: Can't compare colors" << Qt::endl;
          break;
       case PMVariant::ObjectPointer:
-         qCritical(  ) << "RuleSystem: Less: Can't compare object pointers" << endl;
+         qCritical(  ) << "RuleSystem: Less: Can't compare object pointers" << Qt::endl;
          break;
       case PMVariant::None:
-         qCritical(  ) << "RuleSystem: Less: Value has type none" << endl;
+         qCritical(  ) << "RuleSystem: Less: Value has type none" << Qt::endl;
          break;
    }
    return c;
@@ -653,22 +653,22 @@ bool PMRuleGreater::compare( const PMVariant& v1, const PMVariant& v2 )
          c = v1.stringData() > v2.stringData();
          break;
       case PMVariant::Bool:
-         qCritical(  ) << "RuleSystem: Greater: Can't compare booleans" << endl;
+         qCritical(  ) << "RuleSystem: Greater: Can't compare booleans" << Qt::endl;
          break;
       case PMVariant::ThreeState:
-         qCritical(  ) << "RuleSystem: Greater: Can't compare ThreeStates" << endl;
+         qCritical(  ) << "RuleSystem: Greater: Can't compare ThreeStates" << Qt::endl;
          break;
       case PMVariant::Vector:
-         qCritical(  ) << "RuleSystem: Greater: Can't compare vectors" << endl;
+         qCritical(  ) << "RuleSystem: Greater: Can't compare vectors" << Qt::endl;
          break;
       case PMVariant::Color:
-         qCritical(  ) << "RuleSystem: Greater: Can't compare colors" << endl;
+         qCritical(  ) << "RuleSystem: Greater: Can't compare colors" << Qt::endl;
          break;
       case PMVariant::ObjectPointer:
-         qCritical(  ) << "RuleSystem: Greater: Can't compare object pointers" << endl;
+         qCritical(  ) << "RuleSystem: Greater: Can't compare object pointers" << Qt::endl;
          break;
       case PMVariant::None:
-         qCritical(  ) << "RuleSystem: Greater: Value has type none" << endl;
+         qCritical(  ) << "RuleSystem: Greater: Value has type none" << Qt::endl;
          break;
    }
    return c;
@@ -706,16 +706,16 @@ bool PMRuleEqual::compare( const PMVariant& v1, const PMVariant& v2 )
          c = v1.threeStateData() == v2.threeStateData();
          break;
       case PMVariant::Vector:
-         qCritical(  ) << "RuleSystem: Equal: Can't compare vectors" << endl;
+         qCritical(  ) << "RuleSystem: Equal: Can't compare vectors" << Qt::endl;
          break;
       case PMVariant::Color:
-         qCritical(  ) << "RuleSystem: Equal: Can't compare colors" << endl;
+         qCritical(  ) << "RuleSystem: Equal: Can't compare colors" << Qt::endl;
          break;
       case PMVariant::ObjectPointer:
-         qCritical(  ) << "RuleSystem: Equal: Can't compare object pointers" << endl;
+         qCritical(  ) << "RuleSystem: Equal: Can't compare object pointers" << Qt::endl;
          break;
       case PMVariant::None:
-         qCritical(  ) << "RuleSystem: Equal: Value has type none" << endl;
+         qCritical(  ) << "RuleSystem: Equal: Value has type none" << Qt::endl;
          break;
    }
    return c;
@@ -774,7 +774,7 @@ PMRuleTargetClass::PMRuleTargetClass( QDomElement& e,
 {
    m_class = e.attribute( "name" );
    if( m_class.isEmpty() )
-      qCritical(  ) << "RuleSystem: Invalid class name" << endl;
+      qCritical(  ) << "RuleSystem: Invalid class name" << Qt::endl;
 
    appendRules( e, globalGroups );
 }
@@ -835,7 +835,7 @@ void PMInsertRuleSystem::loadRules( const QString& fileName )
       if( ruleFile.isEmpty() )
       {
          qCritical(  ) << "Rule file 'povmodeler/" << fileName
-                           << "' not found." << endl;
+                           << "' not found." << Qt::endl;
          return;
       }
    }
@@ -844,7 +844,7 @@ void PMInsertRuleSystem::loadRules( const QString& fileName )
    if( !file.open( QIODevice::ReadOnly ) )
    {
       qCritical(  ) << "Could not open rule file 'povmodeler/" << fileName
-                        << "'" << endl;
+                        << "'" << Qt::endl;
       return;
    }
 
@@ -854,7 +854,7 @@ void PMInsertRuleSystem::loadRules( const QString& fileName )
    QDomElement e = doc.documentElement();
    if( e.attribute( "format" ) != "1.0" )
       qCritical(  ) << "Rule format " << e.attribute( "format" )
-                        << " not supported." << endl;
+                        << " not supported." << Qt::endl;
    else
    {
       QDomNode c = e.firstChild();

@@ -34,9 +34,9 @@ PMLibraryObject::PMLibraryObject()
    m_preview = nullptr;
    m_objects = nullptr;
    m_path = nullptr;
-   m_name = QString::null;
-   m_description = QString::null;
-   m_keywords = QString::null;
+   m_name = QString();
+   m_description = QString();
+   m_keywords = QString();
 }
 
 PMLibraryObject::PMLibraryObject( QString url )
@@ -226,7 +226,7 @@ void PMLibraryObject::saveLibraryInfo()
    // Pre-condition for the execution of this method.
  /*  if( !m_path || !m_path->isOpen() )//eticre isOpened
    {
-      qCritical(  ) << "Trying to save to an unopened data file." << endl;
+      qCritical(  ) << "Trying to save to an unopened data file." << Qt::endl;
       exit( 1 );
    }*/
 
@@ -276,7 +276,7 @@ void PMLibraryObject::savePreview()
    // Pre-condition for the execution of this method.
    /*if( !m_data || !m_data->isOpen() )//eticre isOpened
    {
-      qCritical(  ) << "Trying to save to an unopened data file." << endl;
+      qCritical(  ) << "Trying to save to an unopened data file." << Qt::endl;
       exit( 1 );
    }*/
 
@@ -298,7 +298,7 @@ void PMLibraryObject::saveObjects()
    // Pre-condition for the execution of this method.
    /*if( !m_data || !m_data->isOpen() )//eticre --isOpened
    {
-      qCritical(  ) << "Trying to save to an unopened data file." << endl;
+      qCritical(  ) << "Trying to save to an unopened data file." << Qt::endl;
       exit( 1 );
    }*/
 

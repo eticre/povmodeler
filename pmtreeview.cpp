@@ -508,7 +508,9 @@ void PMTreeView::moveMouseManager( QMouseEvent *e )
               // d->setPixmap( "pmdrag" );
              }
 
-            Qt::DropAction result = d->start( Qt::CopyAction | Qt::MoveAction );
+            //Qt::DropAction result = d->start( Qt::CopyAction | Qt::MoveAction );
+            Qt::DropAction result = d->exec( Qt::CopyAction | Qt::MoveAction );
+
             if( result == Qt::MoveAction )
             {
                if( !targetDisplaysPart( d->target() ) )

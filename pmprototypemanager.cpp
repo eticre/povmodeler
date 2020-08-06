@@ -147,14 +147,14 @@ void PMPrototypeManager::addPrototype( PMObject* obj )
    {
       qCritical() << "PMPrototypeManager: Class '"
                         << metaObject->className()
-                        << "' already registered." << endl;
+                        << "' already registered." << Qt::endl;
    }
    else
    {
       if( metaObject->isAbstract() )
          qCritical() << "PMPrototypeManager: The meta object for the prototype "
                            << metaObject->className()
-                           << " doesn't have a factory method" << endl;
+                           << " doesn't have a factory method" << Qt::endl;
 
       m_prototypes.append( metaObject );
       m_lowerCaseDict.insert( metaObject->className().toLower(), metaObject->className() );
@@ -181,7 +181,7 @@ void PMPrototypeManager::addDeclarationType( const QString& className,
 {
    PMMetaObject* m = metaObject( className );
    if( !m )
-      qCritical() << "PMPrototypeManager::addDeclarationType: Unknown class " << className << endl;
+      qCritical() << "PMPrototypeManager::addDeclarationType: Unknown class " << className << Qt::endl;
    else
       m_declareDescriptions.push_back( PMDeclareDescription( m, description, pixmap ) );
 }

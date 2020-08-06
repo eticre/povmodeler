@@ -74,7 +74,7 @@ PMViewBase* PMViewFactory::newViewInstance( const QString& viewType,
    if( f )
       return f->newInstance( parent, part );
 
-   qCritical() << "Unknown view type \"" << viewType << "\"" << endl;
+   qCritical() << "Unknown view type \"" << viewType << "\"" << Qt::endl;
    return nullptr;
 }
 
@@ -84,7 +84,7 @@ PMViewOptions* PMViewFactory::newOptionsInstance( const QString& viewType ) cons
    if( f )
       return f->newOptionsInstance();
 
-   qCritical() << "Unknown view type \"" << viewType << "\"" << endl;
+   qCritical() << "Unknown view type \"" << viewType << "\"" << Qt::endl;
    return nullptr;
 }
 

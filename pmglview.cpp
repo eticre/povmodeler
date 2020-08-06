@@ -61,7 +61,7 @@ bool PMGLView::s_bDirect = true;
 
 
 PMGLView::PMGLView( PMPart* part, PMViewType t,
-                    QWidget* parent, Qt::WindowFlags f )
+                    QWidget* parent, QFlag f )
       : PMViewBase( parent, f /*| Qt::MSWindowsOwnDC | Qt::WA_OpaquePaintEvent*/ )
 {
    //eticresetAttribute( Qt::WA_PaintOutsidePaintEvent, true );
@@ -551,9 +551,9 @@ void PMGLView::wheelEvent( QWheelEvent* e )//eticre resize ok
 {
    if( m_type != PMViewCamera )
    {
-      double s = exp( e->delta() / 4 * c_sizeFactor );
-      double deltaX = screenToInternalX( e->x() );
-      double deltaY = screenToInternalY( e->y() );
+      double s = exp( e->angleDelta().y() / 4 * c_sizeFactor );
+      double deltaX = screenToInternalX( e->position().x() );
+      double deltaY = screenToInternalY( e->position().y() );
       double c = 1.0 / ( m_dScale * s ) - 1.0 / m_dScale;
       m_dTransX += deltaX * c;
       m_dTransY += deltaY * c;
@@ -1470,7 +1470,7 @@ void PMGLViewOptions::saveData( QDomElement& e )
          break;
       default:
          qCritical() << ( "Unknown GL view type." )
-                           << endl;
+                           << Qt::endl;
          break;
    }
 }

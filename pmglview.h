@@ -67,7 +67,7 @@ public:
     * Constructor
     */
    PMGLView(PMPart* part, PMViewType t,
-             QWidget* parent = nullptr, Qt::WindowFlags f = nullptr );
+             QWidget* parent = nullptr, QFlag f=0 );
    /**
     * Destructor
     */

@@ -146,7 +146,7 @@ public:
  *
  * @author Max Judin.
  */
-PMDockMainWindow::PMDockMainWindow( QWidget* parent, Qt::WindowFlags f )//pmshell start program
+PMDockMainWindow::PMDockMainWindow( QWidget* parent, QFlag f )//pmshell start program
         :QMainWindow( parent, f )
 {
 	dockManager = new PMDockManager( this );
@@ -373,7 +373,7 @@ void PMDockWidgetHeader::setDragEnabled(bool b)
 
 
 /*************************************************************************/
-PMDockWidget::PMDockWidget(PMDockManager* dockManager, const QPixmap &pixmap, QWidget* parent, const QString& strCaption, const QString& strTabPageLabel, WindowFlags f)
+PMDockWidget::PMDockWidget(PMDockManager* dockManager, const QPixmap &pixmap, QWidget* parent, const QString& strCaption, const QString& strTabPageLabel, QFlag f)
 		: QWidget( parent, f )
         ,formerBrotherDockWidget(nullptr)
 		,currentDockPos(DockNone)

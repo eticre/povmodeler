@@ -55,10 +55,10 @@ void PMIOManager::addFormat( PMIOFormat* format )
          m_dict.insert( format->name(), format );
       }
       else
-         qCritical(  ) << "Format " << format->name() << "already registered" << endl;
+         qCritical(  ) << "Format " << format->name() << "already registered" << Qt::endl;
    }
    else
-      qCritical(  ) << "Format " << format->name() << "already registered" << endl;
+      qCritical(  ) << "Format " << format->name() << "already registered" << Qt::endl;
 }
 
 void PMIOManager::removeFormat( const QString& name )

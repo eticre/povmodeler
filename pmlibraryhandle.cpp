@@ -92,7 +92,7 @@ void PMLibraryHandle::loadLibraryInfo()
 
    if( !file.open( QIODevice::ReadOnly ) )
    {
-      qCritical(  ) << "Could not find the library index." << endl;
+      qCritical(  ) << "Could not find the library index." << Qt::endl;
       return;
    }
 
@@ -104,7 +104,7 @@ void PMLibraryHandle::loadLibraryInfo()
 
    if( e.tagName() != "library" )
    {
-      qCritical(  ) << "This doesn't appear to be a library index." << endl;
+      qCritical(  ) << "This doesn't appear to be a library index." << Qt::endl;
       return;
    }
 

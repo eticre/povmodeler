@@ -51,7 +51,7 @@ public:
    virtual void setIndex( int /*dimension*/, int index )
    {
       if( index < 0 || index > 15 )
-         qCritical(  ) << "Illegal index in PMBicubicPatch::PointProperty::setIndex" << endl;
+         qCritical(  ) << "Illegal index in PMBicubicPatch::PointProperty::setIndex" << Qt::endl;
       else
          m_index = index;
    }
@@ -88,7 +88,7 @@ public:
    virtual void setIndex( int /*dimension*/, int index )
    {
       if( index < 0 || index > 3 )
-         qCritical() << "Illegal index in PMBicubicPatch::UVVectorProperty::setIndex" << endl;
+         qCritical() << "Illegal index in PMBicubicPatch::UVVectorProperty::setIndex" << Qt::endl;
       else
          m_index = index;
    }

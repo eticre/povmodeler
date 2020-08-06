@@ -167,23 +167,23 @@ QStringList PMRenderMode::commandLineSwitches() const
    if( m_subSection )
    {
       if( m_startRow < 1.0 )
-         tmp.sprintf( "+SR%4.2f", m_startRow );
+         tmp.asprintf( "+SR%4.2f", m_startRow );
       else
          tmp = QString( "+SR%1" ).arg( ( int ) ( m_startRow + 0.5 ) );
       cl.append( tmp );
       if( m_endRow < 1.0 )
-         tmp.sprintf( "+ER%4.2f", m_endRow );
+         tmp.asprintf( "+ER%4.2f", m_endRow );
       else
          tmp = QString( "+ER%1" ).arg( ( int ) ( m_endRow + 0.5 ) );
       cl.append( tmp );
       
       if( m_startColumn < 1.0 )
-         tmp.sprintf( "+SC%4.2f", m_startColumn );
+         tmp.asprintf( "+SC%4.2f", m_startColumn );
       else
          tmp = QString( "+SC%1" ).arg( ( int ) ( m_startColumn + 0.5 ) );
       cl.append( tmp );
       if( m_endColumn < 1.0 )
-         tmp.sprintf( "+EC%4.2f", m_endColumn );
+         tmp.asprintf( "+EC%4.2f", m_endColumn );
       else
          tmp = QString( "+EC%1" ).arg( ( int ) ( m_endColumn + 0.5 ) );
       cl.append( tmp );
@@ -199,11 +199,11 @@ QStringList PMRenderMode::commandLineSwitches() const
    {
       cl.append( QString( "+A" ) );
       cl.append( QString( "+AM%1" ).arg( m_samplingMethod ) );
-      tmp.sprintf( "+A%5.3f", m_antialiasThreshold );
+      tmp.asprintf( "+A%5.3f", m_antialiasThreshold );
       cl.append( tmp );
       if( m_antialiasJitter )
       {
-         tmp.sprintf( "+J%5.3f", m_antialiasJitterAmount );
+         tmp.asprintf( "+J%5.3f", m_antialiasJitterAmount );
          cl.append( tmp );
       }
       else

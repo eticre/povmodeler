@@ -93,7 +93,7 @@ public:
    /**
     * Default constructor
     */
-    PMViewBase( QWidget* parent, Qt::WindowFlags f = nullptr )
+    PMViewBase( QWidget* parent, QFlag f=0 )
          : QWidget( parent, f )
    {
    }

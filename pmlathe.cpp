@@ -100,7 +100,7 @@ protected:
 
       if( m_index >= list.count() )
       {
-         qCritical(  ) << "Range error in PMLathe::PointProperty::get" << endl;
+         qCritical(  ) << "Range error in PMLathe::PointProperty::get" << Qt::endl;
          return PMVariant();
       }
 

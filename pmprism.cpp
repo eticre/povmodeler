@@ -130,12 +130,12 @@ protected:
       QList< QList<PMVector> > list = p->points();
       if( m_index[0] >= list.count() )
       {
-         qCritical(  ) << "Range error in PMPrism::PointProperty::get" << endl;
+         qCritical(  ) << "Range error in PMPrism::PointProperty::get" << Qt::endl;
          return PMVariant();
       }
       if( m_index[1] >= list[m_index[0]].count() )
       {
-         qCritical(  ) << "Range error in PMPrism::PointProperty::get" << endl;
+         qCritical(  ) << "Range error in PMPrism::PointProperty::get" << Qt::endl;
          return PMVariant();
       }
 

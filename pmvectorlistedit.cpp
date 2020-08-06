@@ -143,7 +143,7 @@ void PMVectorListEdit::setVectors( const QList<PMVector>& l,
       }
    }
    if( it != l.end() )
-      qCritical(  ) << "Wrong size of vector list in PMVectorListEdit::setVectors" << endl;
+      qCritical(  ) << "Wrong size of vector list in PMVectorListEdit::setVectors" << Qt::endl;
 }
 
 QList<PMVector> PMVectorListEdit::vectors() const
@@ -163,7 +163,7 @@ void PMVectorListEdit::setVector( int r, const PMVector& v, int precision )
    if( r < 0 || r >= m_size )
    {
       qCritical(  ) << "Wrong vector index in PMVectorListEdit::setVector"
-                        << endl;
+                        << Qt::endl;
       return;
    }
 
@@ -190,7 +190,7 @@ PMVector PMVectorListEdit::vector( int r ) const
    if( r < 0 || r >= m_size )
    {
       qCritical(  ) << "Wrong vector index in PMVectorListEdit::vector"
-                        << endl;
+                        << Qt::endl;
       return v;
    }
 

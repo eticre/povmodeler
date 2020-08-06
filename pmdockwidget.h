@@ -391,12 +391,13 @@ public:
 	 */
 	PMDockWidget( PMDockManager* dockManager,
                       const QPixmap &pixmap, QWidget* parent = nullptr, const QString& strCaption = QString(),
-                      const QString& strTabPageLabel = QLatin1String( " " ), Qt::WindowFlags f = 0);
+                      const QString& strTabPageLabel = QLatin1String( " " ), QFlag f=0);
 
 	/**
 	 * Destructs a dockwidget.
 	 */
 	virtual ~PMDockWidget();
+
 
 	/**
 	 * The possible positions where a dockwidget can dock to another dockwidget
@@ -1164,7 +1165,7 @@ public:
 	 *
 	 * @param name object name
 	 */
-    PMDockMainWindow( QWidget* parent = nullptr, Qt::WindowFlags f = nullptr/* | Qt::WDestructiveClose*/ );//qt3
+    PMDockMainWindow( QWidget* parent = nullptr, QFlag f=0 );
 
     //PMDockMainWindow( QWidget* parent = 0L, Qt::WindowFlags f=KDE_DEFAULT_WINDOWFLAGS );
 

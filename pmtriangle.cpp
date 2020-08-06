@@ -50,7 +50,7 @@ public:
    virtual void setIndex( int /*dimension*/, int index )
    {
       if( index < 0 || index > 2 )
-         qCritical(  ) << "Illegal index in PMTriangle::PointProperty::setIndex" << endl;
+         qCritical(  ) << "Illegal index in PMTriangle::PointProperty::setIndex" << Qt::endl;
       else
          m_index = index;
    }
@@ -86,7 +86,7 @@ public:
    virtual void setIndex( int /*dimension*/, int index )
    {
       if( index < 0 || index > 2 )
-         qCritical(  ) << "Illegal index in PMTriangle::NormalProperty::setIndex" << endl;
+         qCritical(  ) << "Illegal index in PMTriangle::NormalProperty::setIndex" << Qt::endl;
       else
          m_index = index;
    }
@@ -123,7 +123,7 @@ public:
    virtual void setIndex( int /*dimension*/, int index )
    {
       if( index < 0 || index > 2 )
-         qCritical(  ) << "Illegal index in PMTriangle::UVVectorProperty::setIndex" << endl;
+         qCritical(  ) << "Illegal index in PMTriangle::UVVectorProperty::setIndex" << Qt::endl;
       else
          m_index = index;
    }

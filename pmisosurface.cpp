@@ -280,7 +280,7 @@ void PMIsoSurface::setEvaluateValue( int index, double v )
 {
    if( index < 0 || index > 2 )
    {
-      qCritical(  ) << "Illegal index in PMIsoSurface::setEvaluateValue" << endl;
+      qCritical(  ) << "Illegal index in PMIsoSurface::setEvaluateValue" << Qt::endl;
       return;
    }
 

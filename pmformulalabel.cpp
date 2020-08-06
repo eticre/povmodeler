@@ -98,14 +98,14 @@ void PMFormulaLabel::drawContents( QPainter* p )
          if( m_exponents[i] > 0 )
          {
             p->drawText( cr, Qt::AlignVCenter | Qt::AlignLeft, s_xyz[i] );
-            cr.setLeft( cr.left() + m1.width( s_xyz[i] ) );
+            cr.setLeft( cr.left() + m1.horizontalAdvance( s_xyz[i] ) );
             if( m_exponents[i] > 1 )
             {
                cr.setBottom( cr.bottom() - up );
                p->setFont( f2 );
                p->drawText( cr, Qt::AlignVCenter | Qt::AlignLeft,
                             s_digit[m_exponents[i]] );
-               cr.setLeft( cr.left() + m2.width( s_digit[m_exponents[i]] ) + 1 );
+               cr.setLeft( cr.left() + m2.horizontalAdvance( s_digit[m_exponents[i]] ) + 1 );
                cr.setBottom( cr.bottom() + up );
                p->setFont( font() );
             }
@@ -130,7 +130,7 @@ void PMFormulaLabel::calculateSizeHint()
 
    QFontMetrics m1( font() );
    if( sum == 0 )
-      m_sizeHint.setWidth( m1.width( s_nullString ) );
+      m_sizeHint.setWidth( m1.horizontalAdvance( s_nullString ) );
    else
    {
       QFontMetrics m2( exponentFont() );
@@ -140,9 +140,9 @@ void PMFormulaLabel::calculateSizeHint()
       {
          if( m_exponents[i] > 0 )
          {
-            width += m1.width( s_xyz[i] );
+            width += m1.horizontalAdvance( s_xyz[i] );
             if( m_exponents[i] > 1 )
-               width += m2.width( s_digit[m_exponents[i]] ) + 1;
+               width += m2.horizontalAdvance( s_digit[m_exponents[i]] ) + 1;
          }
       }
       m_sizeHint.setWidth( width );
