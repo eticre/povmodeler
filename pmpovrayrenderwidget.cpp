@@ -37,6 +37,8 @@
 #include <QSettings>
 
 QString PMPovrayRenderWidget::s_povrayCommand = c_defaultPovrayCommand;
+//QString PMPovrayRenderWidget::s_povrayCommand = "/usr/bin/povray";
+
 QStringList PMPovrayRenderWidget::s_libraryPaths;
 
 PMPovrayRenderWidget::PMPovrayRenderWidget( QWidget* parent )
@@ -151,7 +153,8 @@ bool PMPovrayRenderWidget::render( const QByteArray& scene,
                    "Please check your installation "
                    "or set another povray command." ,
                    QMessageBox::Ok, QMessageBox::NoButton);
-      delete m_pProcess;
+      //m_pProcess->close();
+      //delete m_pProcess;
       m_pProcess = nullptr;
       return false;
    }
@@ -219,14 +222,12 @@ void PMPovrayRenderWidget::slotRenderingFinished()
 void PMPovrayRenderWidget::paintEvent( QPaintEvent* ev )
 {
    //if( is_preview ) return;
-
    QPainter painter( this );
    painter.drawImage( QPoint( 0, 0 ), m_image );
 
-
-   //painter.drawTiledPixmap( ev->rect().left(), ev->rect().top(),
-   //                        ev->rect().width(), ev->rect().height(),
-    //                   m_pixmap, ev->rect().left(), ev->rect().top() );
+   painter.drawTiledPixmap( ev->rect().left(), ev->rect().top(),
+                          ev->rect().width(), ev->rect().height(),
+                    m_pixmap, ev->rect().left(), ev->rect().top() );
  //  bitBlt( this, ev->rect().left(), ev->rect().top(),
    //        &m_pixmap, ev->rect().left(), ev->rect().top(),
      //      ev->rect().width(), ev->rect().height()/*, CopyROP*/ );
