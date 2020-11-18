@@ -38,9 +38,9 @@ public:
    /**
     * Creates a modal PMInsertErrorDialog with parent and name.
     */
-   PMInsertErrorDialog( int NumberOfObjects, int NumberOfInsertErrors,
-                       const QStringList& details,
-                       QWidget* parent = 0 );
+    PMInsertErrorDialog( int NumberOfObjects, int NumberOfInsertErrors,
+                        const QStringList& details,
+                        QWidget* parent = nullptr );
 protected slots:
    void slotUser1();
 
