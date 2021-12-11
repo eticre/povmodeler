@@ -776,9 +776,10 @@ void PMShell::slotControlPointMsg( const QString& msg )
      statusBarLabel->setText( QString( " " ) + msg + QString( " " ));
 }
 
+/*
 bool PMShell::overwriteURL( const QUrl& u )
 {
-   if( u.isLocalFile() )
+   if( u.isValid() )
    {
       QFileInfo info;
       QString name( u.path() );
@@ -796,6 +797,8 @@ bool PMShell::overwriteURL( const QUrl& u )
    }
    return ( false );
 }
+*/
+// eticre unnecessary
 
 void PMShell::slotSelectedLayout( QAction* action )
 {

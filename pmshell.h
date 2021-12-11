@@ -77,7 +77,7 @@ public:
     * Returns true if the files is not a local file, the file does'n exist
     * or the file should be overwritten.
     */
-   static bool overwriteURL( const QUrl &u );
+   //static bool overwriteURL( const QUrl &u ); eticre unnecessary
    /***eticre view-hide Declare with name have "_" at first char***/
    /**
      eticre show hidden obj not_in_tree

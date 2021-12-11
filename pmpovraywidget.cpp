@@ -253,8 +253,8 @@ void PMPovrayWidget::slotSave()
    QUrl url = QFileDialog::getSaveFileUrl( this, tr( "Save Image File" ), QUrl() );  // QUrl(), KImageIO::pattern( KImageIO::Writing ) );
    if( url.isEmpty() )
       return;
-   if( !PMShell::overwriteURL( url ) )
-      return;
+   //if( !PMShell::overwriteURL( url ) )
+     // return;
 
    if( !url.isValid() )
    {

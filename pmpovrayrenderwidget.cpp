@@ -95,8 +95,7 @@ bool PMPovrayRenderWidget::render( const QByteArray& scene,
 
    m_pProcess = new QProcess( this );
 
-   connect( m_pProcess, SIGNAL( finished( int, QProcess::ExitStatus ) ),
-                        SLOT( slotRenderingFinished() ) );
+   connect(m_pProcess, SIGNAL(finished(int,QProcess::ExitStatus)),SLOT(slotRenderingFinished()));
 
    QStringList::ConstIterator it;
    QStringList args = m_renderMode.commandLineSwitches();
@@ -208,12 +207,12 @@ void PMPovrayRenderWidget::slotRenderingFinished()
          m_image.loadFromData( m_pProcess->readAllStandardOutput() );
          emit povrayMessage( QString( m_pProcess->readAllStandardError() ) );
          repaint();
-         emit( finished( 0 ) );
+         emit finished(0);
    }
    else
    {
       emit povrayMessage( QString( m_pProcess->readAllStandardError() ) );
-      emit( finished( -1000 ) ); // call void PMDialogEditBase::slotPreviewFinished( int exitStatus )
+      emit finished(-1000); // call void PMDialogEditBase::slotPreviewFinished( int exitStatus )
    }
 
    cleanup();
