@@ -3,15 +3,13 @@ Requirements for KPovModeler 1.0
 
 The program requires:
 
-- KDE-3.0 with header files
-
-- Qt-3.0.2 with header files
+- Qt-5.x with header files
 
 - Freetype2 (Text view structures will be disabled otherwise)
 
 - OpenGL, glut, glu, glx libraries and header files
 
-- The Qt OpenGL extension is _NOT_ required any more!
+Note: The Qt OpenGL extension is _NOT_ required any more!
 
 If you still have problems compiling the application,
 visit http://www.kpovmodeler.org/install.html
